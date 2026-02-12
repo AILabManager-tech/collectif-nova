@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Sophie Martin RH — HR Consultant for SMBs",
+    "description": "Organizational diagnostics, HR process implementation and management coaching for SMBs of 15 to 50 employees in Quebec."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Book a consultation"
+  },
+  "home": {
+    "hero": {
+      "title": "Your HR partner — without the corporate overhead",
+      "subtitle": "I diagnose. I implement. I coach. So you can have HR that actually works.",
+      "cta": "Book a free discovery call",
+      "cta_secondary": "Explore my services"
+    },
+    "pain": {
+      "title": "Navigating HR alone?",
+      "owner": {
+        "title": "Overwhelmed owner",
+        "description": "You're handling recruitment, conflicts, and evaluations on top of everything else. It works... until it doesn't."
+      },
+      "manager": {
+        "title": "Manager without HR training",
+        "description": "Your managers are winging difficult conversations and performance reviews. Talent is walking out."
+      },
+      "growing": {
+        "title": "Growing SMB",
+        "description": "Your ad-hoc processes can't keep up. What worked at 10 employees breaks at 30."
+      }
+    },
+    "services": {
+      "title": "A three-step approach",
+      "diagnostic": {
+        "title": "Diagnostic",
+        "description": "We take stock. I analyze your current HR situation without judgment — processes, challenges, opportunities."
+      },
+      "implementation": {
+        "title": "Implementation",
+        "description": "We build together. I put in place lasting HR processes, adapted to your reality."
+      },
+      "coaching": {
+        "title": "Coaching",
+        "description": "We ensure the handoff. I train your managers to maintain these gains autonomously."
+      }
+    },
+    "testimonials": {
+      "title": "What my clients say"
+    },
+    "cta_final": {
+      "title": "Ready to structure your HR?",
+      "subtitle": "No hard sell. Just a real conversation about what we can do together.",
+      "button": "Book a free discovery call"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Services — Diagnostic, Implementation, HR Coaching",
+      "description": "Discover my three HR support pillars for SMBs: organizational diagnostic, process implementation and management coaching."
+    },
+    "hero": {
+      "title": "Services",
+      "subtitle": "Three pillars to structure, implement and sustain HR that holds up."
+    },
+    "diagnostic": {
+      "title": "Organizational diagnostic",
+      "description": "Understanding where you stand — no judgment.",
+      "includes": "What's included",
+      "item1": "Confidential interviews with key stakeholders",
+      "item2": "Audit of current HR policies, processes and practices",
+      "item3": "Prioritized recommendations report",
+      "duration": "2-3 weeks",
+      "result": "You know exactly what's holding you back — and how to fix it."
+    },
+    "implementation": {
+      "title": "HR process implementation",
+      "description": "Building processes that last — not just a document gathering dust.",
+      "includes": "Process examples",
+      "item1": "Recruitment: from sourcing to 90-day onboarding",
+      "item2": "Performance reviews: goals, feedback, development",
+      "item3": "Retention: compensation, culture, career paths",
+      "item4": "Compliance: labor standards, internal policies",
+      "duration": "8-12 weeks",
+      "result": "Documented processes, your team trained to maintain them."
+    },
+    "coaching": {
+      "title": "Management coaching",
+      "description": "Turning your managers into confident HR leaders.",
+      "includes": "Popular topics",
+      "item1": "Difficult conversations (performance, discipline)",
+      "item2": "Delegation and constructive feedback",
+      "item3": "Team conflict management",
+      "item4": "Leadership and company culture",
+      "duration": "3-6 months",
+      "result": "Autonomous managers who know how to lead their teams."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "How much does it cost?",
+      "a1": "A full diagnostic ranges from $2,000 to $4,000. Process implementation from $8,000 to $15,000. I can narrow it down after our first conversation — no pricing surprises.",
+      "q2": "Is my company too small?",
+      "a2": "My sweet spot is SMBs with 15 to 50 employees. Big enough for HR issues to really cost you, not big enough for a full-time HR department. That's where I create the most value.",
+      "q3": "How long does it take?",
+      "a3": "Diagnostic: 2-3 weeks. Implementation: 8-12 weeks. Coaching: 3-6 months. It all depends on scope and your availability.",
+      "q4": "Do you offer support after the engagement?",
+      "a4": "Yes, optionally. Monthly check-ins, ad-hoc support, or quarterly reviews — whatever suits your needs.",
+      "q5": "What's the difference between a coach and an HR consultant?",
+      "a5": "A coach focuses on the leader's personal development. I go further: I diagnose, implement concrete processes, AND coach. It's a complete approach.",
+      "q6": "Do you work in French too?",
+      "a6": "Absolutely. I'm fully bilingual — consultations, coaching and documentation in both French and English."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About — Sophie Martin, HR Consultant",
+      "description": "12 years in corporate HR leadership, 3 years as an SMB ally in Quebec. Learn about my journey and philosophy."
+    },
+    "hero": {
+      "title": "About",
+      "subtitle": "12 years in HR leadership. 3 years as an SMB ally."
+    },
+    "story": {
+      "title": "Why I left the corporate world",
+      "p1": "For 12 years, I was HR Director at a manufacturing company in Quebec City. I saw firsthand: owners burning out, managers winging it, talent leaving for lack of structure.",
+      "p2": "I was done with corporate. I wanted real impact — not just filling boxes in a system. In an SMB, when you change something, you see the difference the following week.",
+      "p3": "I launched my practice to offer SMBs what big firms charge $50,000 a year for — but in an accessible, concrete and lasting way."
+    },
+    "philosophy": {
+      "title": "My philosophy",
+      "p1": "My goal is to make you autonomous. Not to create dependency. After 6 months, your team knows how to maintain the processes. You don't need me anymore — and that's exactly what I aim for."
+    },
+    "values": {
+      "empathy": {
+        "title": "Empathy",
+        "description": "I understand the reality of SMB owners. No judgment, just solutions."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "You know upfront what it costs, how long it takes, and what you'll get."
+      },
+      "autonomy": {
+        "title": "Empowerment",
+        "description": "I leave when you're ready. My success is measured by your autonomy."
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Book a Free Discovery Call",
+      "description": "Contact Sophie Martin RH for a free discovery consultation. SMBs of 15 to 50 employees in Quebec."
+    },
+    "hero": {
+      "title": "Let's talk about your situation",
+      "subtitle": "No hard sell. Just a real conversation about what we can do together."
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "company": "Company",
+      "employees": "Number of employees",
+      "challenge": "Your main HR challenge",
+      "challenge_placeholder": "Briefly describe your situation...",
+      "submit": "Send",
+      "response_time": "I respond within 24 hours. Usually sooner."
+    },
+    "info": {
+      "email_label": "Email",
+      "phone_label": "Phone",
+      "location_label": "Location",
+      "location": "Quebec City, QC",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "footer": {
+    "copyright": "Sophie Martin RH. All rights reserved.",
+    "tagline": "HR ally for growing SMBs"
+  },
+  "common": {
+    "duration": "Duration",
+    "learn_more": "Learn more",
+    "back_home": "Back to home"
+  }
+}

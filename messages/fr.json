@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Sophie Martin RH — Consultante RH pour PME",
+    "description": "Diagnostic organisationnel, implantation de processus RH et coaching de gestionnaires pour les PME de 15 à 50 employés au Québec."
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À propos",
+    "contact": "Contact",
+    "cta": "Réservez une consultation"
+  },
+  "home": {
+    "hero": {
+      "title": "Votre alliée RH — sans le poids bureaucratique",
+      "subtitle": "Je diagnostic. J'implante. Je coache. Pour que vous ayez une RH qui fonctionne vraiment.",
+      "cta": "Réservez une consultation découverte",
+      "cta_secondary": "Découvrir mes services"
+    },
+    "pain": {
+      "title": "Vous naviguez seul dans la RH?",
+      "owner": {
+        "title": "Propriétaire débordé",
+        "description": "Vous gérez le recrutement, les conflits et les évaluations en plus de tout le reste. Ça marche... jusqu'à ce que ça marche plus."
+      },
+      "manager": {
+        "title": "Gestionnaire sans formation RH",
+        "description": "Vos gestionnaires improvisent les conversations difficiles et les évaluations de performance. Les talents partent."
+      },
+      "growing": {
+        "title": "PME en croissance",
+        "description": "Vos processus ad-hoc ne suivent plus. Ce qui fonctionnait à 10 employés ne fonctionne plus à 30."
+      }
+    },
+    "services": {
+      "title": "Une approche en trois temps",
+      "diagnostic": {
+        "title": "Diagnostic",
+        "description": "On fait le point. J'analyse votre situation RH actuelle sans jugement — processus, défis, opportunités."
+      },
+      "implementation": {
+        "title": "Implantation",
+        "description": "On construit ensemble. Je mets en place des processus RH durables, adaptés à votre réalité."
+      },
+      "coaching": {
+        "title": "Coaching",
+        "description": "On assure la relève. Je forme vos gestionnaires pour qu'ils maintiennent ces acquis de façon autonome."
+      }
+    },
+    "testimonials": {
+      "title": "Ce que mes clients en disent"
+    },
+    "cta_final": {
+      "title": "Prêt à structurer votre RH?",
+      "subtitle": "Pas de hard sell. Juste une vraie conversation sur ce qu'on peut faire ensemble.",
+      "button": "Réservez une consultation découverte"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Services — Diagnostic, Implantation, Coaching RH",
+      "description": "Découvrez mes trois volets d'accompagnement RH pour PME : diagnostic organisationnel, implantation de processus et coaching de gestionnaires."
+    },
+    "hero": {
+      "title": "Services",
+      "subtitle": "Trois volets pour structurer, implanter et maintenir une RH qui tient la route."
+    },
+    "diagnostic": {
+      "title": "Diagnostic organisationnel",
+      "description": "Comprendre où vous en êtes — sans jugement.",
+      "includes": "Ce que ça inclut",
+      "item1": "Entretiens confidentiels avec les parties prenantes",
+      "item2": "Audit des politiques, processus et pratiques RH actuels",
+      "item3": "Rapport de recommandations priorisées",
+      "duration": "2-3 semaines",
+      "result": "Vous savez exactement ce qui bloque — et comment le fixer."
+    },
+    "implementation": {
+      "title": "Implantation de processus RH",
+      "description": "Construire des processus qui durent — pas juste un document sur une tablette.",
+      "includes": "Exemples de processus",
+      "item1": "Recrutement : du sourcing à l'intégration 90 jours",
+      "item2": "Évaluation de performance : objectifs, feedback, développement",
+      "item3": "Rétention : compensation, culture, parcours de carrière",
+      "item4": "Conformité : normes du travail, politiques internes",
+      "duration": "8-12 semaines",
+      "result": "Des processus documentés, votre équipe formée pour les maintenir."
+    },
+    "coaching": {
+      "title": "Coaching de gestionnaires",
+      "description": "Transformer vos gestionnaires en leaders RH confiants.",
+      "includes": "Sujets populaires",
+      "item1": "Conversations difficiles (performance, discipline)",
+      "item2": "Délégation et feedback constructif",
+      "item3": "Gestion de conflits d'équipe",
+      "item4": "Leadership et culture d'entreprise",
+      "duration": "3-6 mois",
+      "result": "Des gestionnaires autonomes qui savent gérer leur monde."
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "q1": "Combien ça coûte?",
+      "a1": "Un diagnostic complet se situe entre 2 000 $ et 4 000 $. L'implantation de processus entre 8 000 $ et 15 000 $. Je peux affiner après notre première conversation — pas de surprises tarifaires.",
+      "q2": "Mon entreprise est-elle trop petite?",
+      "a2": "Mon créneau, c'est les PME de 15 à 50 employés. Assez pour que les enjeux RH coûtent réellement, pas assez gros pour un département RH à temps plein. C'est là que je crée le plus de valeur.",
+      "q3": "Combien de temps ça prend?",
+      "a3": "Diagnostic : 2-3 semaines. Implantation : 8-12 semaines. Coaching : 3-6 mois. Tout dépend de l'ampleur et de votre disponibilité.",
+      "q4": "Offrez-vous du support après le mandat?",
+      "a4": "Oui, en option. Suivi mensuel, accompagnement ad-hoc, ou point trimestriel — selon vos besoins.",
+      "q5": "Quelle est la différence entre un coach et une consultante RH?",
+      "a5": "Un coach se concentre sur le développement personnel du leader. Moi, je vais plus loin : je diagnostic, j'implante des processus concrets, ET je coache. C'est une approche complète.",
+      "q6": "Travaillez-vous en anglais aussi?",
+      "a6": "Absolument. Je suis bilingue — consultations, coaching et documentation en français et en anglais."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "À propos — Sophie Martin, consultante RH",
+      "description": "12 ans en direction RH corporative, 3 ans comme alliée des PME au Québec. Découvrez mon parcours et ma philosophie."
+    },
+    "hero": {
+      "title": "À propos",
+      "subtitle": "12 ans en direction RH. 3 ans comme alliée des PME."
+    },
+    "story": {
+      "title": "Pourquoi j'ai quitté le corporate",
+      "p1": "Pendant 12 ans, j'ai été directrice RH dans un manufacturier à Québec. J'ai vu de près : des propriétaires qui s'épuisent, des gestionnaires qui improvisent, des talents qui partent faute de structure.",
+      "p2": "J'en pouvais plus du corporate. Je voulais avoir un vrai impact — pas juste remplir des cases dans un système. Dans une PME, quand tu changes quelque chose, tu vois la différence la semaine d'après.",
+      "p3": "J'ai lancé ma pratique pour offrir aux PME ce que les grandes firmes facturent 50 000 $ par an — mais de façon accessible, concrète et durable."
+    },
+    "philosophy": {
+      "title": "Ma philosophie",
+      "p1": "Mon but, c'est de vous rendre autonome. Pas de créer une dépendance. Après 6 mois, votre équipe sait maintenir les processus. Vous n'avez plus besoin de moi — et c'est exactement ce que je vise."
+    },
+    "values": {
+      "empathy": {
+        "title": "Empathie",
+        "description": "Je comprends la réalité des propriétaires de PME. Pas de jugement, juste des solutions."
+      },
+      "transparency": {
+        "title": "Transparence",
+        "description": "Vous savez d'avance ce que ça coûte, combien de temps ça prend, et ce que vous allez avoir."
+      },
+      "autonomy": {
+        "title": "Autonomisation",
+        "description": "Je pars quand vous êtes prêts. Mon succès se mesure à votre autonomie."
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Réservez une consultation découverte",
+      "description": "Contactez Sophie Martin RH pour une consultation découverte gratuite. PME de 15 à 50 employés au Québec."
+    },
+    "hero": {
+      "title": "Parlons de votre situation",
+      "subtitle": "Pas de hard sell. Juste une vraie conversation sur ce qu'on peut faire ensemble."
+    },
+    "form": {
+      "name": "Votre nom",
+      "email": "Courriel",
+      "company": "Entreprise",
+      "employees": "Nombre d'employés",
+      "challenge": "Votre défi RH principal",
+      "challenge_placeholder": "Décrivez brièvement votre situation...",
+      "submit": "Envoyer",
+      "response_time": "Je réponds sous 24h. Généralement plus tôt."
+    },
+    "info": {
+      "email_label": "Courriel",
+      "phone_label": "Téléphone",
+      "location_label": "Localisation",
+      "location": "Québec, QC",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "footer": {
+    "copyright": "Sophie Martin RH. Tous droits réservés.",
+    "tagline": "Alliée RH des PME en croissance"
+  },
+  "common": {
+    "duration": "Durée",
+    "learn_more": "En savoir plus",
+    "back_home": "Retour à l'accueil"
+  }
+}

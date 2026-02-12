@@ -3,25 +3,69 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF8F5;
+  --foreground: #3D3D35;
+  --sage: #87947A;
+  --sage-dark: #6B7A5E;
+  --terracotta: #C4785B;
+  --gold: #D4AF37;
+  --cream: #FAF8F5;
+  --cream-dark: #F0EBE3;
+  --charcoal: #3D3D35;
+  --taupe: #8B8B80;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-200 text-charcoal font-body antialiased;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading text-charcoal;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-medium;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    @apply bg-sage-200 text-charcoal;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@layer components {
+  .section-padding {
+    @apply px-6 py-16 md:px-8 md:py-24 lg:px-12 lg:py-32;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .container-narrow {
+    @apply mx-auto max-w-4xl;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
   }
 }
