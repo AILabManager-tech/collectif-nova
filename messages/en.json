@@ -306,6 +306,14 @@
     "cta_button": "Free consultation",
     "blog": "Blog"
   },
+  "chatbot": {
+    "toggle": "Open chat",
+    "title": "Sophie Martin RH",
+    "subtitle": "Virtual assistant",
+    "close": "Close",
+    "placeholder": "Type your message...",
+    "send": "Send"
+  },
   "common": {
     "duration": "Duration",
     "learn_more": "Learn more",

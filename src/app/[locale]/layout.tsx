@@ -6,6 +6,7 @@ import { Lora, Poppins } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ChatWidget } from "@/components/interactive/ChatWidget";
 import { JsonLd, localBusinessSchema } from "@/components/seo/JsonLd";
 import type { Metadata } from "next";
 import "../globals.css";
@@ -77,6 +78,7 @@ export default async function RootLayout({
           <Header />
           <div className="min-h-screen">{children}</div>
           <Footer />
+          <ChatWidget />
         </NextIntlClientProvider>
       </body>
     </html>

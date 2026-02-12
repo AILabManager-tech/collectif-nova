@@ -306,6 +306,14 @@
     "cta_button": "Consultation gratuite",
     "blog": "Blogue"
   },
+  "chatbot": {
+    "toggle": "Ouvrir le clavardage",
+    "title": "Sophie Martin RH",
+    "subtitle": "Assistante virtuelle",
+    "close": "Fermer",
+    "placeholder": "Écrivez votre message...",
+    "send": "Envoyer"
+  },
   "common": {
     "duration": "Durée",
     "learn_more": "En savoir plus",
