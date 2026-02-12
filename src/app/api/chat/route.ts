@@ -1,7 +1,9 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
 
-const client = new Anthropic();
+const client = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
 
 const SYSTEM_FR = `Tu es l'assistante virtuelle de Sophie Martin RH, consultante en ressources humaines spécialisée dans les PME québécoises de 15 à 50 employés. Tu opères sur le site web de Sophie comme premier point de contact intelligent.
 
@@ -231,9 +233,10 @@ export async function POST(req: NextRequest) {
 
     return Response.json({ message: text });
   } catch (error) {
-    console.error("Chat API error:", error);
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error("Chat API error:", msg);
     return Response.json(
-      { error: "Failed to get response" },
+      { error: "Failed to get response", detail: msg },
       { status: 500 }
     );
   }
