@@ -4,16 +4,19 @@ import { useTranslations } from "next-intl";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { AuroraBackground } from "@/components/animations/AuroraBackground";
-import { StaggerGrid } from "@/components/animations/StaggerGrid";
-import { ParallaxSection } from "@/components/animations/ParallaxSection";
 import { CountUp } from "@/components/animations/CountUp";
 import { LineReveal } from "@/components/animations/LineReveal";
 import { FloatingElement } from "@/components/animations/FloatingElement";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { ScrollTimeline } from "@/components/interactive/ScrollTimeline";
+import { DiagnosticQuiz } from "@/components/interactive/DiagnosticQuiz";
+import { CostCalculator } from "@/components/interactive/CostCalculator";
+import { FlipCards } from "@/components/interactive/FlipCards";
+import { TestimonialsCarousel } from "@/components/interactive/TestimonialsCarousel";
+import { StaggerGrid } from "@/components/animations/StaggerGrid";
 
 export function HomeContent() {
   const t = useTranslations("home");
-  const isFr = t("hero.title").includes("alliée");
 
   return (
     <main>
@@ -71,19 +74,19 @@ export function HomeContent() {
               <p className="font-heading text-3xl font-bold text-sage-600 md:text-4xl">
                 <CountUp to={12} suffix="+" />
               </p>
-              <p className="mt-1 text-sm text-taupe">{isFr ? "Ans d'expérience" : "Years of experience"}</p>
+              <p className="mt-1 text-sm text-taupe">{t("stats.experience")}</p>
             </div>
             <div>
               <p className="font-heading text-3xl font-bold text-terracotta-500 md:text-4xl">
                 <CountUp to={50} suffix="+" />
               </p>
-              <p className="mt-1 text-sm text-taupe">{isFr ? "PME accompagnées" : "SMBs supported"}</p>
+              <p className="mt-1 text-sm text-taupe">{t("stats.clients")}</p>
             </div>
             <div>
               <p className="font-heading text-3xl font-bold text-gold-600 md:text-4xl">
                 <CountUp to={15} suffix="-50" />
               </p>
-              <p className="mt-1 text-sm text-taupe">{isFr ? "Employés / entreprise" : "Employees / company"}</p>
+              <p className="mt-1 text-sm text-taupe">{t("stats.employees")}</p>
             </div>
           </div>
         </div>
@@ -111,42 +114,20 @@ export function HomeContent() {
         </div>
       </section>
 
-      {/* Services */}
-      <ParallaxSection speed={0.15}>
-        <section id="services" className="section-padding">
-          <div className="container-wide">
-            <AnimatedSection>
-              <TextReveal as="h2" className="mb-4 text-center">
-                {t("services.title")}
-              </TextReveal>
-            </AnimatedSection>
-            <LineReveal className="mx-auto mb-12 w-24" color="bg-sage-400" delay={0.3} />
-            <StaggerGrid className="grid gap-8 md:grid-cols-3" stagger={0.18}>
-              {(["diagnostic", "implementation", "coaching"] as const).map((key, index) => (
-                <div key={key} className="group relative overflow-hidden rounded-xl border border-cream-400 bg-white p-8 transition-all duration-300 hover:border-sage-300 hover:shadow-lg">
-                  <span className="absolute -right-4 -top-4 font-heading text-[80px] font-bold leading-none text-sage-100 transition-colors group-hover:text-sage-200">
-                    {index + 1}
-                  </span>
-                  <div className="relative z-10">
-                    <h3 className="mb-3">{t(`services.${key}.title`)}</h3>
-                    <p className="text-taupe">{t(`services.${key}.description`)}</p>
-                  </div>
-                </div>
-              ))}
-            </StaggerGrid>
-          </div>
-        </section>
-      </ParallaxSection>
+      {/* Services Timeline */}
+      <ScrollTimeline />
 
-      {/* Testimonials */}
-      <section className="section-padding bg-cream-400">
-        <div className="container-narrow text-center">
-          <AnimatedSection>
-            <h2 className="mb-12">{t("testimonials.title")}</h2>
-            <p className="text-taupe italic text-lg">&ldquo;Témoignages à venir&rdquo;</p>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Diagnostic Quiz */}
+      <DiagnosticQuiz />
+
+      {/* Cost Calculator */}
+      <CostCalculator />
+
+      {/* Myths Flip Cards */}
+      <FlipCards />
+
+      {/* Testimonials Before/After */}
+      <TestimonialsCarousel />
 
       {/* Final CTA */}
       <section id="contact" className="relative overflow-hidden section-padding">

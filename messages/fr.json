@@ -17,6 +17,11 @@
       "cta": "Réservez une consultation découverte",
       "cta_secondary": "Découvrir mes services"
     },
+    "stats": {
+      "experience": "Ans d'expérience",
+      "clients": "PME accompagnées",
+      "employees": "Employés / entreprise"
+    },
     "pain": {
       "title": "Vous naviguez seul dans la RH?",
       "owner": {
@@ -36,15 +41,18 @@
       "title": "Une approche en trois temps",
       "diagnostic": {
         "title": "Diagnostic",
-        "description": "On fait le point. J'analyse votre situation RH actuelle sans jugement — processus, défis, opportunités."
+        "description": "On fait le point. J'analyse votre situation RH actuelle sans jugement — processus, défis, opportunités.",
+        "duration": "2-3 semaines"
       },
       "implementation": {
         "title": "Implantation",
-        "description": "On construit ensemble. Je mets en place des processus RH durables, adaptés à votre réalité."
+        "description": "On construit ensemble. Je mets en place des processus RH durables, adaptés à votre réalité.",
+        "duration": "8-12 semaines"
       },
       "coaching": {
         "title": "Coaching",
-        "description": "On assure la relève. Je forme vos gestionnaires pour qu'ils maintiennent ces acquis de façon autonome."
+        "description": "On assure la relève. Je forme vos gestionnaires pour qu'ils maintiennent ces acquis de façon autonome.",
+        "duration": "3-6 mois"
       }
     },
     "testimonials": {
@@ -54,6 +62,120 @@
       "title": "Prêt à structurer votre RH?",
       "subtitle": "Pas de hard sell. Juste une vraie conversation sur ce qu'on peut faire ensemble.",
       "button": "Réservez une consultation découverte"
+    }
+  },
+  "quiz": {
+    "title": "Évaluez votre maturité RH",
+    "subtitle": "5 questions rapides pour savoir où vous en êtes",
+    "q1": {
+      "question": "Comment gérez-vous le recrutement?",
+      "a": "Au feeling, quand c'est urgent",
+      "b": "On a un processus, mais informel",
+      "c": "Processus structuré avec guide d'entrevue"
+    },
+    "q2": {
+      "question": "Comment se font les évaluations de performance?",
+      "a": "On n'en fait pas vraiment",
+      "b": "Une fois par an, quand on y pense",
+      "c": "Régulières avec objectifs clairs"
+    },
+    "q3": {
+      "question": "Vos politiques RH sont...",
+      "a": "Inexistantes ou dans ma tête",
+      "b": "Écrites mais pas à jour",
+      "c": "Documentées et communiquées"
+    },
+    "q4": {
+      "question": "La gestion des conflits se fait...",
+      "a": "En mode pompier quand ça explose",
+      "b": "On essaie de régler, mais sans méthode",
+      "c": "Avec un processus clair de résolution"
+    },
+    "q5": {
+      "question": "L'intégration des nouveaux employés...",
+      "a": "C'est 'bienvenue, voici ton bureau'",
+      "b": "On a un plan sommaire de première semaine",
+      "c": "Programme structuré de 90 jours"
+    },
+    "score": "Votre score",
+    "next_step": "Prochaine étape recommandée",
+    "restart": "Recommencer",
+    "results": {
+      "low": {
+        "title": "Zone rouge — Urgence RH",
+        "description": "Vos processus RH sont minimaux. C'est normal pour une PME en croissance, mais ça vous coûte cher en roulement et en temps. Un diagnostic rapide pourrait tout changer.",
+        "cta": "Réservez votre diagnostic"
+      },
+      "mid": {
+        "title": "Zone jaune — Fondations à consolider",
+        "description": "Vous avez des bases, mais elles ne sont pas solides. Quelques processus clés bien implantés pourraient transformer votre quotidien de gestionnaire.",
+        "cta": "Découvrez l'implantation"
+      },
+      "high": {
+        "title": "Zone verte — Optimisation",
+        "description": "Bravo! Vous avez de bonnes bases RH. Le coaching de gestionnaires pourrait amener votre équipe au niveau supérieur.",
+        "cta": "Explorez le coaching"
+      }
+    }
+  },
+  "calculator": {
+    "title": "Combien vous coûte le chaos RH?",
+    "subtitle": "Estimez l'impact financier du roulement de personnel",
+    "employees_label": "Nombre d'employés",
+    "salary_label": "Salaire moyen annuel",
+    "turnover_label": "Taux de roulement annuel",
+    "result_title": "Coût annuel estimé du roulement",
+    "formula": "Le roulement coûte en moyenne 33% du salaire annuel par départ",
+    "departures": "départs estimés / année",
+    "cost_per": "coût par départ",
+    "cta": "Réduisons ce chiffre ensemble"
+  },
+  "myths": {
+    "title": "Mythes RH — Ce qu'on entend souvent",
+    "subtitle": "Cliquez pour découvrir la réalité",
+    "m1": {
+      "myth": "La RH, c'est juste pour les grandes entreprises",
+      "reality": "Dès 15 employés, les enjeux RH coûtent réellement. Un processus de recrutement défaillant peut vous coûter 50 000 $ par mauvaise embauche."
+    },
+    "m2": {
+      "myth": "Un bon salaire suffit pour garder les employés",
+      "reality": "Le salaire arrive 4e dans les raisons de départ. Le manque de reconnaissance, de développement et un mauvais gestionnaire passent avant."
+    },
+    "m3": {
+      "myth": "Les évaluations de performance, ça sert à rien",
+      "reality": "Mal faites, oui. Bien faites, elles réduisent le roulement de 14.9% et augmentent l'engagement. C'est l'outil le plus sous-estimé."
+    },
+    "m4": {
+      "myth": "Je connais mon monde, pas besoin de processus",
+      "reality": "Ça marche à 10 employés. À 30, c'est impossible de tout suivre. Sans processus, les bonnes intentions deviennent des angles morts."
+    }
+  },
+  "testimonials": {
+    "title": "Transformations concrètes",
+    "subtitle": "Résultats réels, noms changés pour confidentialité",
+    "c1": {
+      "industry": "Manufacturier — 35 employés",
+      "before_title": "Avant",
+      "before": "Roulement de 40%. Aucun processus d'intégration. Les gestionnaires évitaient les conversations difficiles.",
+      "after_title": "Après 6 mois",
+      "after": "Roulement réduit à 18%. Programme d'intégration 90 jours. Gestionnaires formés au feedback constructif.",
+      "metric": "-55% roulement"
+    },
+    "c2": {
+      "industry": "Services professionnels — 22 employés",
+      "before_title": "Avant",
+      "before": "Recrutement au feeling. 3 mois pour combler un poste. Mauvaises embauches fréquentes.",
+      "after_title": "Après 3 mois",
+      "after": "Processus structuré. Temps de comblement réduit à 5 semaines. Guide d'entrevue standardisé.",
+      "metric": "-60% temps recrutement"
+    },
+    "c3": {
+      "industry": "Construction — 48 employés",
+      "before_title": "Avant",
+      "before": "Aucune politique écrite. Conflits gérés au cas par cas. Propriétaire épuisé par les urgences RH.",
+      "after_title": "Après 4 mois",
+      "after": "Manuel employé complet. Processus de gestion des conflits. Gestionnaires autonomes pour 80% des situations.",
+      "metric": "80% autonomie"
     }
   },
   "services": {
@@ -135,15 +257,18 @@
     "values": {
       "empathy": {
         "title": "Empathie",
-        "description": "Je comprends la réalité des propriétaires de PME. Pas de jugement, juste des solutions."
+        "description": "Je comprends la réalité des propriétaires de PME. Pas de jugement, juste des solutions.",
+        "example": "Quand un propriétaire me dit qu'il fait les paies à minuit, je ne le juge pas — je l'aide à sortir de ce cycle."
       },
       "transparency": {
         "title": "Transparence",
-        "description": "Vous savez d'avance ce que ça coûte, combien de temps ça prend, et ce que vous allez avoir."
+        "description": "Vous savez d'avance ce que ça coûte, combien de temps ça prend, et ce que vous allez avoir.",
+        "example": "Mon offre de service inclut toujours un échéancier détaillé, un budget fixe et des livrables clairs. Pas de zone grise."
       },
       "autonomy": {
         "title": "Autonomisation",
-        "description": "Je pars quand vous êtes prêts. Mon succès se mesure à votre autonomie."
+        "description": "Je pars quand vous êtes prêts. Mon succès se mesure à votre autonomie.",
+        "example": "Après 6 mois, vos gestionnaires gèrent les évaluations de performance seuls. Vous n'avez plus besoin de moi — mission accomplie."
       }
     }
   },
@@ -176,7 +301,10 @@
   },
   "footer": {
     "copyright": "Sophie Martin RH. Tous droits réservés.",
-    "tagline": "Alliée RH des PME en croissance"
+    "tagline": "Alliée RH des PME en croissance",
+    "cta": "Prêt à structurer votre RH?",
+    "cta_button": "Consultation gratuite",
+    "blog": "Blogue"
   },
   "common": {
     "duration": "Durée",

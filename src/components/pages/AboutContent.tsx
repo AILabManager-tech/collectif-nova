@@ -1,13 +1,69 @@
 "use client";
 
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { TextReveal } from "@/components/animations/TextReveal";
-import { StaggerGrid } from "@/components/animations/StaggerGrid";
 import { LineReveal } from "@/components/animations/LineReveal";
 import { CountUp } from "@/components/animations/CountUp";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const values = ["empathy", "transparency", "autonomy"] as const;
+const valueIcons = ["💛", "🔍", "🚀"];
+
+function ValueCard({ valueKey, icon, index }: { valueKey: string; icon: string; index: number }) {
+  const t = useTranslations("about.values");
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      className="group"
+    >
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full rounded-xl bg-white p-8 text-left shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+        aria-expanded={expanded}
+      >
+        <div className="mb-4 flex items-center gap-3">
+          <span className="text-2xl">{icon}</span>
+          <h3 className="text-sage-600 transition-colors group-hover:text-terracotta-500">
+            {t(`${valueKey}.title`)}
+          </h3>
+          <motion.span
+            className="ml-auto text-taupe"
+            animate={{ rotate: expanded ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            ▾
+          </motion.span>
+        </div>
+        <p className="text-taupe">{t(`${valueKey}.description`)}</p>
+
+        <AnimatePresence>
+          {expanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <div className="mt-4 rounded-lg bg-sage-50 p-4">
+                <p className="text-sm italic text-sage-700">
+                  {t(`${valueKey}.example`)}
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </button>
+    </motion.div>
+  );
+}
 
 export function AboutContent() {
   const t = useTranslations("about");
@@ -77,17 +133,14 @@ export function AboutContent() {
         </div>
       </section>
 
+      {/* Values — interactive accordion cards */}
       <section className="section-padding">
         <div className="container-wide">
-          <StaggerGrid className="grid gap-8 md:grid-cols-3" stagger={0.15}>
-            {values.map((key) => (
-              <div key={key} className="group rounded-xl border border-cream-400 p-8 text-center transition-all duration-300 hover:border-sage-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="mb-3 text-sage-600 transition-colors group-hover:text-terracotta-500">{t(`values.${key}.title`)}</h3>
-                <LineReveal className="mx-auto mb-4 w-12" delay={0.2} />
-                <p className="text-taupe">{t(`values.${key}.description`)}</p>
-              </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {values.map((key, i) => (
+              <ValueCard key={key} valueKey={key} icon={valueIcons[i] ?? ""} index={i} />
             ))}
-          </StaggerGrid>
+          </div>
         </div>
       </section>
     </main>
