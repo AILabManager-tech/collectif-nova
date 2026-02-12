@@ -233,10 +233,9 @@ export async function POST(req: NextRequest) {
 
     return Response.json({ message: text });
   } catch (error) {
-    const msg = error instanceof Error ? error.message : String(error);
-    console.error("Chat API error:", msg);
+    console.error("Chat API error:", error);
     return Response.json(
-      { error: "Failed to get response", detail: msg },
+      { error: "Service temporarily unavailable" },
       { status: 500 }
     );
   }
