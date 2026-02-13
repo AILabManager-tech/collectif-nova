@@ -25,12 +25,14 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-cream-400 bg-cream-200/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-cream-200/70 backdrop-blur-xl border-b border-white/30 shadow-sm">
+      {/* Gradient accent line */}
+      <div className="h-0.5 bg-gradient-to-r from-sage-500 via-terracotta-400 to-gold-400" />
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo wordmark */}
         <Link href="/" className="font-heading text-xl font-semibold text-charcoal">
           Sophie Martin
-          <span className="text-sage-500"> RH</span>
+          <span className="text-gradient-warm"> RH</span>
         </Link>
 
         {/* Desktop nav */}
@@ -39,20 +41,23 @@ export function Header() {
             <Link
               key={key}
               href={href}
-              className={`text-sm font-medium transition-colors hover:text-sage-600 ${
+              className={`relative text-sm font-medium transition-colors hover:text-sage-600 ${
                 pathname === href
                   ? "text-sage-600"
                   : "text-charcoal-light"
               }`}
             >
               {t(key)}
+              {pathname === href && (
+                <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-sage-500" />
+              )}
             </Link>
           ))}
 
           {/* Language switcher */}
           <button
             onClick={switchLocale}
-            className="rounded-md border border-sage-200 px-3 py-1.5 text-xs font-medium text-taupe transition-colors hover:border-sage-400 hover:text-sage-600"
+            className="rounded-lg border border-sage-200/60 bg-white/50 px-3 py-1.5 text-xs font-medium text-taupe transition-all hover:border-sage-400 hover:text-sage-600 hover:bg-sage-50"
             aria-label="Switch language"
           >
             {locale === "fr" ? "EN" : "FR"}
@@ -61,7 +66,7 @@ export function Header() {
           {/* CTA */}
           <Link
             href="/contact"
-            className="rounded-lg bg-terracotta-500 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-terracotta-600 hover:scale-[1.02]"
+            className="rounded-xl bg-terracotta-500 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-terracotta-600 hover:scale-[1.02] hover:shadow-lg hover:shadow-terracotta-500/20"
           >
             {t("cta")}
           </Link>
@@ -94,7 +99,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="border-t border-cream-400 bg-cream-200 px-6 pb-6 pt-4 md:hidden">
+        <nav className="border-t border-cream-400/50 bg-cream-200/95 backdrop-blur-xl px-6 pb-6 pt-4 md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map(({ href, key }) => (
               <Link
@@ -113,7 +118,7 @@ export function Header() {
             <div className="flex items-center gap-4 pt-2">
               <button
                 onClick={switchLocale}
-                className="rounded-md border border-sage-200 px-3 py-1.5 text-sm text-taupe"
+                className="rounded-lg border border-sage-200 px-3 py-1.5 text-sm text-taupe"
                 aria-label={locale === "fr" ? "Switch to English" : "Passer au français"}
               >
                 {locale === "fr" ? "English" : "Français"}
@@ -121,7 +126,7 @@ export function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg bg-terracotta-500 px-5 py-2 text-sm font-medium text-white"
+                className="rounded-xl bg-terracotta-500 px-5 py-2 text-sm font-medium text-white"
               >
                 {t("cta")}
               </Link>

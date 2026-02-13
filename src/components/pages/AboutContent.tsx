@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { LineReveal } from "@/components/animations/LineReveal";
 import { CountUp } from "@/components/animations/CountUp";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { AuroraBackground } from "@/components/animations/AuroraBackground";
 
 const values = ["empathy", "transparency", "autonomy"] as const;
 const valueIcons = ["💛", "🔍", "🚀"];
@@ -25,7 +27,7 @@ function ValueCard({ valueKey, icon, index }: { valueKey: string; icon: string; 
     >
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full rounded-xl bg-white p-8 text-left shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+        className="w-full card-elevated text-left"
         aria-expanded={expanded}
       >
         <div className="mb-4 flex items-center gap-3">
@@ -52,7 +54,7 @@ function ValueCard({ valueKey, icon, index }: { valueKey: string; icon: string; 
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <div className="mt-4 rounded-lg bg-sage-50 p-4">
+              <div className="mt-4 rounded-xl bg-sage-50 p-4 border border-sage-100">
                 <p className="text-sm italic text-sage-700">
                   {t(`${valueKey}.example`)}
                 </p>
@@ -70,43 +72,59 @@ export function AboutContent() {
 
   return (
     <main>
-      <section className="section-padding flex items-center bg-cream-400">
-        <div className="container-narrow text-center">
-          <TextReveal className="mb-4">{t("hero.title")}</TextReveal>
+      {/* Hero with image */}
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1920&q=80&auto=format"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 hero-image-overlay" />
+        <AuroraBackground />
+        <div className="container-narrow text-center relative z-10 section-padding">
+          <TextReveal className="mb-4 !text-white">{t("hero.title")}</TextReveal>
           <AnimatedSection delay={0.4} direction="none">
-            <p className="text-lg text-taupe md:text-xl">{t("hero.subtitle")}</p>
+            <p className="text-lg text-cream-300/90 md:text-xl">{t("hero.subtitle")}</p>
           </AnimatedSection>
           <LineReveal className="mx-auto mt-8 w-24" delay={0.6} />
         </div>
       </section>
 
-      <section className="border-b border-cream-400 bg-white/50 backdrop-blur-sm">
-        <div className="container-wide py-8">
-          <div className="grid grid-cols-3 gap-8 text-center">
-            <div>
-              <p className="font-heading text-3xl font-bold text-sage-600 md:text-4xl">
-                <CountUp to={12} suffix=" ans" />
-              </p>
-              <p className="mt-1 text-sm text-taupe">Direction RH</p>
-            </div>
-            <div>
-              <p className="font-heading text-3xl font-bold text-terracotta-500 md:text-4xl">
-                <CountUp to={3} suffix=" ans" />
-              </p>
-              <p className="mt-1 text-sm text-taupe">Consultante PME</p>
-            </div>
-            <div>
-              <p className="font-heading text-3xl font-bold text-gold-600 md:text-4xl">
-                <CountUp to={100} suffix="%" />
-              </p>
-              <p className="mt-1 text-sm text-taupe">Autonomie visée</p>
+      {/* Stats */}
+      <section className="relative -mt-12 z-20">
+        <div className="container-wide px-6">
+          <div className="glass rounded-2xl p-8">
+            <div className="grid grid-cols-3 gap-8 text-center">
+              <div>
+                <p className="font-heading text-3xl font-bold text-sage-600 md:text-4xl">
+                  <CountUp to={12} suffix=" ans" />
+                </p>
+                <p className="mt-1 text-sm text-taupe">Direction RH</p>
+              </div>
+              <div>
+                <p className="font-heading text-3xl font-bold text-terracotta-500 md:text-4xl">
+                  <CountUp to={3} suffix=" ans" />
+                </p>
+                <p className="mt-1 text-sm text-taupe">Consultante PME</p>
+              </div>
+              <div>
+                <p className="font-heading text-3xl font-bold text-gold-600 md:text-4xl">
+                  <CountUp to={100} suffix="%" />
+                </p>
+                <p className="mt-1 text-sm text-taupe">Autonomie visée</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container-narrow">
+      {/* Story */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 gradient-mesh-bg" />
+        <div className="container-narrow relative z-10">
           <AnimatedSection>
             <TextReveal as="h2" className="mb-4">{t("story.title")}</TextReveal>
           </AnimatedSection>
@@ -121,21 +139,36 @@ export function AboutContent() {
         </div>
       </section>
 
-      <section className="section-padding bg-cream-400">
-        <div className="container-narrow">
-          <AnimatedSection>
-            <TextReveal as="h2" className="mb-4">{t("philosophy.title")}</TextReveal>
-          </AnimatedSection>
-          <LineReveal className="mb-6 w-16" color="bg-sage-400" delay={0.3} />
-          <AnimatedSection delay={0.2}>
-            <p className="text-lg leading-relaxed text-taupe">{t("philosophy.p1")}</p>
-          </AnimatedSection>
+      {/* Philosophy — with image */}
+      <section className="relative overflow-hidden">
+        <div className="grid md:grid-cols-2">
+          <div className="relative min-h-[400px]">
+            <Image
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80&auto=format"
+              alt="Collaboration d'équipe"
+              fill
+              className="object-cover"
+              sizes="50vw"
+            />
+          </div>
+          <div className="section-padding flex items-center bg-cream-300/50">
+            <div className="max-w-lg">
+              <AnimatedSection>
+                <TextReveal as="h2" className="mb-4">{t("philosophy.title")}</TextReveal>
+              </AnimatedSection>
+              <LineReveal className="mb-6 w-16" color="bg-sage-400" delay={0.3} />
+              <AnimatedSection delay={0.2}>
+                <p className="text-lg leading-relaxed text-taupe">{t("philosophy.p1")}</p>
+              </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Values — interactive accordion cards */}
-      <section className="section-padding">
-        <div className="container-wide">
+      {/* Values */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 gradient-mesh-bg" />
+        <div className="container-wide relative z-10">
           <div className="grid gap-6 md:grid-cols-3">
             {values.map((key, i) => (
               <ValueCard key={key} valueKey={key} icon={valueIcons[i] ?? ""} index={i} />

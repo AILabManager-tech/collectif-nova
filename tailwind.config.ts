@@ -63,6 +63,25 @@ const config: Config = {
           dark: "#2A2A24",
         },
         taupe: "#8B8B80",
+        teal: {
+          50: "#F0FDFA",
+          100: "#CCFBF1",
+          200: "#99F6E4",
+          300: "#5EEAD4",
+          400: "#2DD4BF",
+          500: "#14B8A6",
+          600: "#0D9488",
+          700: "#0F766E",
+        },
+        violet: {
+          50: "#F5F3FF",
+          100: "#EDE9FE",
+          200: "#DDD6FE",
+          300: "#C4B5FD",
+          400: "#A78BFA",
+          500: "#8B5CF6",
+          600: "#7C3AED",
+        },
       },
       fontFamily: {
         heading: ["var(--font-lora)", "serif"],
@@ -81,11 +100,44 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateX(20px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.6s ease-out forwards",
         "fade-in-left": "fade-in-left 0.6s ease-out forwards",
         "fade-in-right": "fade-in-right 0.6s ease-out forwards",
+        shimmer: "shimmer 3s linear infinite",
+        float: "float 6s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 8s ease infinite",
+        "glow-pulse": "glow-pulse 4s ease-in-out infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "grid-pattern":
+          "linear-gradient(rgba(135,148,122,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(135,148,122,0.08) 1px, transparent 1px)",
+      },
+      backgroundSize: {
+        "grid-40": "40px 40px",
       },
     },
   },

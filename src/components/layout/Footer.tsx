@@ -7,18 +7,24 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal-dark text-cream-400">
+    <footer className="relative overflow-hidden bg-charcoal-dark text-cream-400">
+      {/* Gradient accent line at top */}
+      <div className="h-1 bg-gradient-to-r from-sage-500 via-terracotta-400 to-gold-400" />
+
       {/* Mini CTA bar */}
-      <div className="border-b border-charcoal bg-charcoal px-6 py-8 text-center">
-        <p className="mb-4 font-heading text-xl font-semibold text-cream-200">
-          {t("cta")}
-        </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center justify-center rounded-lg bg-terracotta-500 px-8 py-3 font-medium text-white transition-all hover:bg-terracotta-600 hover:scale-[1.02]"
-        >
-          {t("cta_button")}
-        </Link>
+      <div className="relative border-b border-charcoal bg-gradient-to-r from-charcoal-dark via-charcoal to-charcoal-dark px-6 py-10 text-center">
+        <div className="absolute inset-0 grid-overlay opacity-10" />
+        <div className="relative z-10">
+          <p className="mb-5 font-heading text-2xl font-semibold text-cream-200">
+            {t("cta")}
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-xl bg-terracotta-500 px-8 py-3 font-medium text-white transition-all hover:bg-terracotta-600 hover:scale-[1.02] hover:shadow-lg hover:shadow-terracotta-500/20"
+          >
+            {t("cta_button")}
+          </Link>
+        </div>
       </div>
 
       <div className="mx-auto max-w-6xl px-6 py-12">
@@ -27,7 +33,7 @@ export function Footer() {
           <div>
             <p className="font-heading text-xl font-semibold text-cream-200">
               Sophie Martin
-              <span className="text-sage-400"> RH</span>
+              <span className="text-gradient-warm"> RH</span>
             </p>
             <p className="mt-2 text-sm text-cream-600">{t("tagline")}</p>
           </div>
@@ -76,7 +82,8 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-10 border-t border-charcoal-light pt-6 text-center text-xs text-cream-700">
+        <div className="section-divider mt-10 mb-6 opacity-20" />
+        <div className="text-center text-xs text-cream-700">
           &copy; {year} {t("copyright")}
         </div>
       </div>
