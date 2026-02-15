@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sophie Martin RH — HR Consultant for SMBs",
-    "description": "Organizational diagnostics, HR process implementation and management coaching for SMBs of 15 to 50 employees in Quebec."
+    "title": "HR Factory — HR Consultant for Industrial SMBs",
+    "description": "Organizational diagnostics, HR process implementation and management coaching for SMBs of 10 to 50 employees — industrial, manufacturing, construction sectors."
   },
   "nav": {
     "home": "Home",
@@ -12,8 +12,8 @@
   },
   "home": {
     "hero": {
-      "title": "Your HR partner — without the corporate overhead",
-      "subtitle": "I diagnose. I implement. I coach. So you can have HR that actually works.",
+      "title": "HR, forged to last.",
+      "subtitle": "I diagnose. I implement. I coach. So your team holds strong.",
       "cta": "Book a free discovery call",
       "cta_secondary": "Explore my services"
     },
@@ -41,7 +41,7 @@
       "title": "A three-step approach",
       "diagnostic": {
         "title": "Diagnostic",
-        "description": "We take stock. I analyze your current HR situation without judgment — processes, challenges, opportunities.",
+        "description": "We take stock. I analyze your current HR situation — processes, challenges, opportunities.",
         "duration": "2-3 weeks"
       },
       "implementation": {
@@ -60,7 +60,7 @@
     },
     "cta_final": {
       "title": "Ready to structure your HR?",
-      "subtitle": "No hard sell. Just a real conversation about what we can do together.",
+      "subtitle": "No sales pitch. Just a straight conversation about what we can do together.",
       "button": "Book a free discovery call"
     }
   },
@@ -224,7 +224,7 @@
       "q1": "How much does it cost?",
       "a1": "A full diagnostic ranges from $2,000 to $4,000. Process implementation from $8,000 to $15,000. I can narrow it down after our first conversation — no pricing surprises.",
       "q2": "Is my company too small?",
-      "a2": "My sweet spot is SMBs with 15 to 50 employees. Big enough for HR issues to really cost you, not big enough for a full-time HR department. That's where I create the most value.",
+      "a2": "My sweet spot is SMBs with 10 to 50 employees — industrial, manufacturing, construction and services sectors. Big enough for HR issues to really cost you, not big enough for a full-time HR department.",
       "q3": "How long does it take?",
       "a3": "Diagnostic: 2-3 weeks. Implementation: 8-12 weeks. Coaching: 3-6 months. It all depends on scope and your availability.",
       "q4": "Do you offer support after the engagement?",
@@ -237,16 +237,16 @@
   },
   "about": {
     "meta": {
-      "title": "About — Sophie Martin, HR Consultant",
-      "description": "12 years in corporate HR leadership, 3 years as an SMB ally in Quebec. Learn about my journey and philosophy."
+      "title": "About — HR Factory",
+      "description": "12 years in corporate HR leadership, 3 years as an HR consultant for industrial SMBs in Quebec. Learn about my journey and philosophy."
     },
     "hero": {
       "title": "About",
-      "subtitle": "12 years in HR leadership. 3 years as an SMB ally."
+      "subtitle": "12 years in HR leadership. 3 years as an HR consultant for industrial SMBs."
     },
     "story": {
       "title": "Why I left the corporate world",
-      "p1": "For 12 years, I was HR Director at a manufacturing company in Quebec City. I saw firsthand: owners burning out, managers winging it, talent leaving for lack of structure.",
+      "p1": "For 12 years, I was HR Director in the manufacturing sector in Quebec City. I saw firsthand: owners burning out, managers winging it, talent leaving for lack of structure.",
       "p2": "I was done with corporate. I wanted real impact — not just filling boxes in a system. In an SMB, when you change something, you see the difference the following week.",
       "p3": "I launched my practice to offer SMBs what big firms charge $50,000 a year for — but in an accessible, concrete and lasting way."
     },
@@ -256,8 +256,8 @@
     },
     "values": {
       "empathy": {
-        "title": "Empathy",
-        "description": "I understand the reality of SMB owners. No judgment, just solutions.",
+        "title": "Pragmatism",
+        "description": "I understand the reality of industrial SMB owners. No theory, just solutions that hold up.",
         "example": "When an owner tells me they're doing payroll at midnight, I don't judge — I help them break that cycle."
       },
       "transparency": {
@@ -275,11 +275,11 @@
   "contact": {
     "meta": {
       "title": "Contact — Book a Free Discovery Call",
-      "description": "Contact Sophie Martin RH for a free discovery consultation. SMBs of 15 to 50 employees in Quebec."
+      "description": "Contact HR Factory for a free discovery consultation. SMBs of 10 to 50 employees — industrial, manufacturing, construction sectors in Quebec."
     },
     "hero": {
       "title": "Let's talk about your situation",
-      "subtitle": "No hard sell. Just a real conversation about what we can do together."
+      "subtitle": "No sales pitch. Just a straight conversation about what we can do together."
     },
     "form": {
       "name": "Your name",
@@ -300,15 +300,15 @@
     }
   },
   "footer": {
-    "copyright": "Sophie Martin RH. All rights reserved.",
-    "tagline": "HR ally for growing SMBs",
+    "copyright": "HR Factory — Émilie Poirier. All rights reserved.",
+    "tagline": "Forging your HR.",
     "cta": "Ready to structure your HR?",
     "cta_button": "Free consultation",
     "blog": "Blog"
   },
   "chatbot": {
     "toggle": "Open chat",
-    "title": "Sophie Martin RH",
+    "title": "HR Factory",
     "subtitle": "Virtual assistant",
     "close": "Close",
     "placeholder": "Type your message...",

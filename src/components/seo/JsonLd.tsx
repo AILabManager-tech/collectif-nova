@@ -14,10 +14,10 @@ export function JsonLd({ data }: JsonLdProps) {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Sophie Martin RH",
+  name: "L'Usine RH",
   description:
     "Consultante RH pour PME de 15 à 50 employés au Québec. Diagnostic organisationnel, implantation de processus RH et coaching de gestionnaires.",
-  url: "https://sophiemartinrh.ca",
+  url: "https://emiliepoirierrh.ca",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Québec",
@@ -44,7 +44,7 @@ export function buildServiceSchema(locale: string) {
     "@type": "Service",
     provider: {
       "@type": "LocalBusiness",
-      name: "Sophie Martin RH",
+      name: isFr ? "L'Usine RH" : "HR Factory",
     },
     serviceType: isFr ? "Consultation RH" : "HR Consulting",
     areaServed: {

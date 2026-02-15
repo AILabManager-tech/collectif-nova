@@ -31,8 +31,8 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo wordmark */}
         <Link href="/" className="font-heading text-xl font-semibold text-charcoal">
-          Sophie Martin
-          <span className="text-gradient-warm"> RH</span>
+          {locale === "fr" ? "L'Usine" : "HR Factory"}
+          {locale === "fr" && <span className="text-gradient-warm"> RH</span>}
         </Link>
 
         {/* Desktop nav */}

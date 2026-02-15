@@ -29,10 +29,10 @@ export function HomeContent() {
     <main>
       {/* Hero — full screen with background image */}
       <section className="relative flex min-h-screen items-center overflow-hidden">
-        {/* Background image — happy people at work */}
+        {/* NEXOS: Background image — factory workers team camaraderie */}
         <Image
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80&auto=format"
-          alt=""
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80&auto=format"
+          alt="Équipe d'ouvriers heureux collaborant en usine"
           fill
           priority
           className="object-cover"
@@ -159,19 +159,19 @@ export function HomeContent() {
               ))}
             </StaggerGrid>
 
-            {/* Image side — team collaboration */}
+            {/* NEXOS: Image side — blue collar / white collar collaboration */}
             <AnimatedSection direction="right" delay={0.3}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format"
-                  alt="Équipe heureuse en collaboration"
+                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80&auto=format"
+                  alt="Collaboration cols bleus et cols blancs en milieu industriel"
                   width={800}
                   height={600}
                   className="object-cover w-full h-[400px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-dark/60 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-white font-heading text-lg font-semibold">Des équipes épanouies, ça se construit.</p>
+                  <p className="text-white font-heading text-lg font-semibold">Des équipes solides, ça se forge.</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -187,11 +187,11 @@ export function HomeContent() {
       {/* Diagnostic Quiz */}
       <DiagnosticQuiz />
 
-      {/* Image banner — workplace happiness */}
+      {/* NEXOS: Image banner — industrial team pride */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80&auto=format"
-          alt=""
+          src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&q=80&auto=format"
+          alt="Équipe industrielle fière et diversifiée"
           fill
           className="object-cover"
           sizes="100vw"
@@ -223,11 +223,11 @@ export function HomeContent() {
       {/* Testimonials Before/After */}
       <TestimonialsCarousel />
 
-      {/* Final CTA — with background image */}
+      {/* NEXOS: Final CTA — diverse industrial team happy */}
       <section id="contact" className="relative overflow-hidden min-h-[60vh] flex items-center">
         <Image
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80&auto=format"
-          alt=""
+          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&q=80&auto=format"
+          alt="Équipe industrielle diversifiée et souriante"
           fill
           className="object-cover"
           sizes="100vw"

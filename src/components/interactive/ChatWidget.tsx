@@ -10,10 +10,10 @@ interface Message {
 }
 
 const GREETING_FR =
-  "Bonjour! Je suis l'assistante virtuelle de Sophie Martin RH. Je peux vous faire un diagnostic RH rapide en 5 questions, ou répondre à vos questions sur les ressources humaines en PME. Comment puis-je vous aider?";
+  "Bonjour! Je suis l'assistante virtuelle de L'Usine RH. Je peux vous faire un diagnostic RH rapide en 5 questions, ou répondre à vos questions sur les ressources humaines en PME. Comment puis-je vous aider?";
 
 const GREETING_EN =
-  "Hello! I'm the virtual assistant for Sophie Martin RH. I can run a quick HR diagnostic in 5 questions, or answer your questions about HR for SMBs. How can I help?";
+  "Hello! I'm the virtual assistant for HR Factory. I can run a quick HR diagnostic in 5 questions, or answer your questions about HR for SMBs. How can I help?";
 
 export function ChatWidget() {
   const locale = useLocale();
@@ -69,8 +69,8 @@ export function ChatWidget() {
           role: "assistant",
           content:
             locale === "en"
-              ? "Sorry, I encountered an error. Please try again or contact Sophie directly."
-              : "Désolée, une erreur est survenue. Veuillez réessayer ou contacter Sophie directement.",
+              ? "Sorry, I encountered an error. Please try again or contact Émilie directly."
+              : "Désolée, une erreur est survenue. Veuillez réessayer ou contacter Émilie directement.",
         },
       ]);
     } finally {

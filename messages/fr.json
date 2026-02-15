@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sophie Martin RH — Consultante RH pour PME",
-    "description": "Diagnostic organisationnel, implantation de processus RH et coaching de gestionnaires pour les PME de 15 à 50 employés au Québec."
+    "title": "L'Usine RH — Consultante RH pour PME industrielles",
+    "description": "On diagnostique. On implante. On coache. Processus RH durables pour PME de 10 à 50 employés — secteurs industriel, manufacturier, construction."
   },
   "nav": {
     "home": "Accueil",
@@ -12,8 +12,8 @@
   },
   "home": {
     "hero": {
-      "title": "Votre alliée RH — sans le poids bureaucratique",
-      "subtitle": "Je diagnostic. J'implante. Je coache. Pour que vous ayez une RH qui fonctionne vraiment.",
+      "title": "Vos RH, forgées pour durer.",
+      "subtitle": "Je diagnostique. J'implante. Je coache. Pour que votre équipe tienne le coup.",
       "cta": "Réservez une consultation découverte",
       "cta_secondary": "Découvrir mes services"
     },
@@ -41,7 +41,7 @@
       "title": "Une approche en trois temps",
       "diagnostic": {
         "title": "Diagnostic",
-        "description": "On fait le point. J'analyse votre situation RH actuelle sans jugement — processus, défis, opportunités.",
+        "description": "On fait le point. J'analyse votre situation RH actuelle — processus, défis, opportunités.",
         "duration": "2-3 semaines"
       },
       "implementation": {
@@ -60,7 +60,7 @@
     },
     "cta_final": {
       "title": "Prêt à structurer votre RH?",
-      "subtitle": "Pas de hard sell. Juste une vraie conversation sur ce qu'on peut faire ensemble.",
+      "subtitle": "Pas de cirque commercial. Juste une discussion franche sur ce qu'on peut faire ensemble.",
       "button": "Réservez une consultation découverte"
     }
   },
@@ -224,29 +224,29 @@
       "q1": "Combien ça coûte?",
       "a1": "Un diagnostic complet se situe entre 2 000 $ et 4 000 $. L'implantation de processus entre 8 000 $ et 15 000 $. Je peux affiner après notre première conversation — pas de surprises tarifaires.",
       "q2": "Mon entreprise est-elle trop petite?",
-      "a2": "Mon créneau, c'est les PME de 15 à 50 employés. Assez pour que les enjeux RH coûtent réellement, pas assez gros pour un département RH à temps plein. C'est là que je crée le plus de valeur.",
+      "a2": "Mon créneau, c'est les PME de 10 à 50 employés — secteurs industriel, manufacturier, construction et services. Assez pour que les enjeux RH coûtent réellement, pas assez gros pour un département RH à temps plein.",
       "q3": "Combien de temps ça prend?",
       "a3": "Diagnostic : 2-3 semaines. Implantation : 8-12 semaines. Coaching : 3-6 mois. Tout dépend de l'ampleur et de votre disponibilité.",
       "q4": "Offrez-vous du support après le mandat?",
       "a4": "Oui, en option. Suivi mensuel, accompagnement ad-hoc, ou point trimestriel — selon vos besoins.",
       "q5": "Quelle est la différence entre un coach et une consultante RH?",
-      "a5": "Un coach se concentre sur le développement personnel du leader. Moi, je vais plus loin : je diagnostic, j'implante des processus concrets, ET je coache. C'est une approche complète.",
+      "a5": "Un coach se concentre sur le développement personnel du leader. Moi, je vais plus loin : je diagnostique, j'implante des processus concrets, ET je coache. C'est une approche complète.",
       "q6": "Travaillez-vous en anglais aussi?",
       "a6": "Absolument. Je suis bilingue — consultations, coaching et documentation en français et en anglais."
     }
   },
   "about": {
     "meta": {
-      "title": "À propos — Sophie Martin, consultante RH",
-      "description": "12 ans en direction RH corporative, 3 ans comme alliée des PME au Québec. Découvrez mon parcours et ma philosophie."
+      "title": "À propos — L'Usine RH",
+      "description": "12 ans en direction RH corporative, 3 ans comme consultante RH pour PME industrielles au Québec. Découvrez mon parcours et ma philosophie."
     },
     "hero": {
       "title": "À propos",
-      "subtitle": "12 ans en direction RH. 3 ans comme alliée des PME."
+      "subtitle": "12 ans en direction RH. 3 ans comme consultante RH pour PME industrielles."
     },
     "story": {
       "title": "Pourquoi j'ai quitté le corporate",
-      "p1": "Pendant 12 ans, j'ai été directrice RH dans un manufacturier à Québec. J'ai vu de près : des propriétaires qui s'épuisent, des gestionnaires qui improvisent, des talents qui partent faute de structure.",
+      "p1": "Pendant 12 ans, j'ai été directrice RH dans le secteur manufacturier à Québec. J'ai vu de près : des propriétaires qui s'épuisent, des gestionnaires qui improvisent, des talents qui partent faute de structure.",
       "p2": "J'en pouvais plus du corporate. Je voulais avoir un vrai impact — pas juste remplir des cases dans un système. Dans une PME, quand tu changes quelque chose, tu vois la différence la semaine d'après.",
       "p3": "J'ai lancé ma pratique pour offrir aux PME ce que les grandes firmes facturent 50 000 $ par an — mais de façon accessible, concrète et durable."
     },
@@ -256,8 +256,8 @@
     },
     "values": {
       "empathy": {
-        "title": "Empathie",
-        "description": "Je comprends la réalité des propriétaires de PME. Pas de jugement, juste des solutions.",
+        "title": "Pragmatisme",
+        "description": "Je comprends la réalité des propriétaires de PME industrielles. Pas de théorie, juste des solutions qui tiennent la route.",
         "example": "Quand un propriétaire me dit qu'il fait les paies à minuit, je ne le juge pas — je l'aide à sortir de ce cycle."
       },
       "transparency": {
@@ -275,11 +275,11 @@
   "contact": {
     "meta": {
       "title": "Contact — Réservez une consultation découverte",
-      "description": "Contactez Sophie Martin RH pour une consultation découverte gratuite. PME de 15 à 50 employés au Québec."
+      "description": "Contactez L'Usine RH pour une consultation découverte gratuite. PME de 10 à 50 employés — secteurs industriel, manufacturier, construction au Québec."
     },
     "hero": {
       "title": "Parlons de votre situation",
-      "subtitle": "Pas de hard sell. Juste une vraie conversation sur ce qu'on peut faire ensemble."
+      "subtitle": "Pas de cirque commercial. Juste une discussion franche sur ce qu'on peut faire ensemble."
     },
     "form": {
       "name": "Votre nom",
@@ -300,15 +300,15 @@
     }
   },
   "footer": {
-    "copyright": "Sophie Martin RH. Tous droits réservés.",
-    "tagline": "Alliée RH des PME en croissance",
+    "copyright": "L'Usine RH — Émilie Poirier. Tous droits réservés.",
+    "tagline": "On forge vos RH.",
     "cta": "Prêt à structurer votre RH?",
     "cta_button": "Consultation gratuite",
     "blog": "Blogue"
   },
   "chatbot": {
     "toggle": "Ouvrir le clavardage",
-    "title": "Sophie Martin RH",
+    "title": "L'Usine RH",
     "subtitle": "Assistante virtuelle",
     "close": "Fermer",
     "placeholder": "Écrivez votre message...",

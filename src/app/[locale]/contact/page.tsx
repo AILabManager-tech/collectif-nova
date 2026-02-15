@@ -12,10 +12,10 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: `https://sophiemartinrh.ca/${locale}/contact`,
+      canonical: `https://emiliepoirierrh.ca/${locale}/contact`,
       languages: {
-        fr: "https://sophiemartinrh.ca/fr/contact",
-        en: "https://sophiemartinrh.ca/en/contact",
+        fr: "https://emiliepoirierrh.ca/fr/contact",
+        en: "https://emiliepoirierrh.ca/en/contact",
       },
     },
   };

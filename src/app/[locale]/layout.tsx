@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { Lora, Poppins } from "next/font/google";
+import { Oswald, Barlow } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -11,17 +11,18 @@ import { JsonLd, localBusinessSchema } from "@/components/seo/JsonLd";
 import type { Metadata } from "next";
 import "../globals.css";
 
-const lora = Lora({
+// NEXOS: Typographie industrielle — HR Factory / L'Usine RH
+const oswald = Oswald({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-lora",
+  variable: "--font-oswald",
   display: "swap",
 });
 
-const poppins = Poppins({
+const barlow = Barlow({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-barlow",
   display: "swap",
 });
 
@@ -33,23 +34,23 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "meta" });
 
   return {
-    metadataBase: new URL("https://sophiemartinrh.ca"),
+    metadataBase: new URL("https://hrfactory.ca"),
     title: {
       default: t("title"),
-      template: "%s | Sophie Martin RH",
+      template: "%s | HR Factory / L'Usine RH",
     },
     description: t("description"),
     openGraph: {
       type: "website",
       locale: locale === "fr" ? "fr_CA" : "en_CA",
       alternateLocale: locale === "fr" ? "en_CA" : "fr_CA",
-      siteName: "Sophie Martin RH",
+      siteName: "HR Factory / L'Usine RH",
     },
     alternates: {
-      canonical: `https://sophiemartinrh.ca/${locale}`,
+      canonical: `https://hrfactory.ca/${locale}`,
       languages: {
-        fr: "https://sophiemartinrh.ca/fr",
-        en: "https://sophiemartinrh.ca/en",
+        fr: "https://hrfactory.ca/fr",
+        en: "https://hrfactory.ca/en",
       },
     },
   };
@@ -71,7 +72,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${lora.variable} ${poppins.variable}`}>
+    <html lang={locale} className={`${oswald.variable} ${barlow.variable}`}>
       <body className="font-body bg-cream-200 text-charcoal antialiased">
         <JsonLd data={localBusinessSchema} />
         <NextIntlClientProvider messages={messages}>

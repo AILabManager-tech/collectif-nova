@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://sophiemartinrh.ca/sitemap.xml",
+    sitemap: "https://emiliepoirierrh.ca/sitemap.xml",
   };
 }

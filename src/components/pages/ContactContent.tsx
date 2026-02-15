@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { AuroraBackground } from "@/components/animations/AuroraBackground";
 
 export function ContactContent() {
   const t = useTranslations("contact");
+  const locale = useLocale();
 
   return (
     <main>
@@ -151,10 +152,10 @@ export function ContactContent() {
                         {t("info.email_label")}
                       </p>
                       <a
-                        href="mailto:info@sophiemartinrh.ca"
+                        href="mailto:info@emiliepoirierrh.ca"
                         className="text-cream-100 transition-colors hover:text-white"
                       >
-                        info@sophiemartinrh.ca
+                        info@emiliepoirierrh.ca
                       </a>
                     </div>
                   </div>
@@ -184,7 +185,7 @@ export function ContactContent() {
                         rel="noopener noreferrer"
                         className="text-cream-100 transition-colors hover:text-white"
                       >
-                        Sophie Martin RH
+                        {locale === "fr" ? "L'Usine RH" : "HR Factory"}
                       </a>
                     </div>
                   </div>

@@ -1,9 +1,10 @@
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 
 export function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
+  const locale = useLocale();
   const year = new Date().getFullYear();
 
   return (
@@ -32,8 +33,8 @@ export function Footer() {
           {/* Brand */}
           <div>
             <p className="font-heading text-xl font-semibold text-cream-200">
-              Sophie Martin
-              <span className="text-gradient-warm"> RH</span>
+              {locale === "fr" ? "L'Usine" : "HR Factory"}
+              {locale === "fr" && <span className="text-gradient-warm"> RH</span>}
             </p>
             <p className="mt-2 text-sm text-cream-600">{t("tagline")}</p>
           </div>

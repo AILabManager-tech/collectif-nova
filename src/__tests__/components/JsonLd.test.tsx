@@ -20,7 +20,7 @@ describe("JsonLd", () => {
     const parsed = JSON.parse(script!.textContent!);
     expect(parsed["@context"]).toBe("https://schema.org");
     expect(parsed["@type"]).toBe("LocalBusiness");
-    expect(parsed.name).toBe("Sophie Martin RH");
+    expect(parsed.name).toBe("L'Usine RH");
   });
 });
 
