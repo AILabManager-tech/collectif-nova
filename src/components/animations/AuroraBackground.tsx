@@ -1,8 +1,37 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
+/**
+ * AuroraBackground - Animated gradient blobs and geometric shapes overlay.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <AuroraBackground />
+ * ```
+ */
 export function AuroraBackground() {
+  const shouldReduceMotion = useReducedMotion();
+
+  // When reduced motion is preferred, render static blobs without animation
+  if (shouldReduceMotion) {
+    return (
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 grid-overlay opacity-50" />
+        <div className="absolute -left-1/4 -top-1/4 h-[700px] w-[700px] rounded-full bg-sage-400/20 blur-[140px]" />
+        <div className="absolute -right-1/4 top-1/4 h-[600px] w-[600px] rounded-full bg-terracotta-400/15 blur-[120px]" />
+        <div className="absolute -bottom-1/4 left-1/3 h-[500px] w-[500px] rounded-full bg-gold-400/12 blur-[100px]" />
+        <div className="absolute right-1/4 top-0 h-[350px] w-[350px] rounded-full bg-teal-400/8 blur-[100px]" />
+        <div className="absolute -left-1/4 bottom-1/4 h-[300px] w-[300px] rounded-full bg-violet-400/6 blur-[80px]" />
+        <div className="absolute right-[15%] top-[20%] h-16 w-16 rotate-45 rounded-lg border border-sage-300/20" />
+        <div className="absolute left-[10%] bottom-[30%] h-10 w-10 rounded-full border border-terracotta-300/15 opacity-30" />
+        <div className="absolute left-[60%] top-[60%] h-24 w-px bg-gradient-to-b from-transparent via-sage-400/20 to-transparent opacity-20" />
+        <div className="absolute right-[30%] bottom-[15%] h-px w-24 bg-gradient-to-r from-transparent via-gold-400/25 to-transparent opacity-20" />
+      </div>
+    );
+  }
+
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
       {/* Grid pattern overlay */}

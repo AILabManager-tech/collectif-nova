@@ -1,6 +1,14 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { CookieSettingsButton } from "@/components/legal/CookieConsent";
 
+/**
+ * Site footer with navigation links, contact info, and legal links.
+ *
+ * @component
+ * @example
+ * <Footer />
+ */
 export function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
@@ -36,7 +44,7 @@ export function Footer() {
               {locale === "fr" ? "L'Usine" : "HR Factory"}
               {locale === "fr" && <span className="text-gradient-warm"> RH</span>}
             </p>
-            <p className="mt-2 text-sm text-cream-600">{t("tagline")}</p>
+            <p className="mt-2 text-sm text-cream-400">{t("tagline")}</p>
           </div>
 
           {/* Navigation */}
@@ -82,9 +90,24 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Legal links */}
         <div className="section-divider mt-10 mb-6 opacity-20" />
-        <div className="text-center text-xs text-cream-700">
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6">
+          <Link
+            href="/politique-confidentialite"
+            className="text-xs text-cream-400 transition-colors hover:text-cream-200"
+          >
+            {locale === "fr" ? "Politique de confidentialité" : "Privacy Policy"}
+          </Link>
+          <Link
+            href="/mentions-legales"
+            className="text-xs text-cream-400 transition-colors hover:text-cream-200"
+          >
+            {locale === "fr" ? "Mentions légales" : "Legal Notice"}
+          </Link>
+          <CookieSettingsButton />
+        </div>
+        <div className="mt-4 text-center text-xs text-cream-500">
           &copy; {year} {t("copyright")}
         </div>
       </div>

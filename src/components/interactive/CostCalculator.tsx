@@ -6,6 +6,15 @@ import { useTranslations } from "next-intl";
 import { CountUp } from "@/components/animations/CountUp";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
+/**
+ * CostCalculator - Interactive slider-based calculator estimating employee turnover costs.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <CostCalculator />
+ * ```
+ */
 export function CostCalculator() {
   const t = useTranslations("calculator");
   const [employees, setEmployees] = useState(25);

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://emiliepoirierrh.ca";
 
-const routes = ["", "/services", "/a-propos", "/contact"];
+const routes = ["", "/services", "/a-propos", "/contact", "/politique-confidentialite", "/mentions-legales"];
 const locales = ["fr", "en"];
 
 export default function sitemap(): MetadataRoute.Sitemap {

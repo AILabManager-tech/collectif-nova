@@ -10,6 +10,15 @@ const options = ["a", "b", "c"] as const;
 type Option = (typeof options)[number];
 const scores: Record<Option, number> = { a: 0, b: 10, c: 20 };
 
+/**
+ * DiagnosticQuiz - Multi-step HR diagnostic quiz with scoring and personalized results.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <DiagnosticQuiz />
+ * ```
+ */
 export function DiagnosticQuiz() {
   const t = useTranslations("quiz");
   const [current, setCurrent] = useState(0);

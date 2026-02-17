@@ -5,6 +5,35 @@ const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
+// ─── Rate limiting (in-memory, per serverless instance) ─────────────
+const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
+const RATE_LIMIT_MAX = 10;           // max requests per window per IP
+const MAX_MESSAGES = 20;             // max messages per request
+const MAX_MESSAGE_LENGTH = 2000;     // max chars per message
+
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+
+  entry.count++;
+  return entry.count > RATE_LIMIT_MAX;
+}
+
+// Cleanup stale entries every 5 minutes
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of rateLimitMap) {
+    if (now > entry.resetAt) rateLimitMap.delete(ip);
+  }
+}, 300_000);
+
 const SYSTEM_FR = `Tu es l'assistante virtuelle de L'Usine RH, consultante en ressources humaines spécialisée dans les PME québécoises de 15 à 50 employés. Tu opères sur le site web comme premier point de contact intelligent.
 
 ## TON IDENTITÉ
@@ -209,11 +238,36 @@ interface ChatMessage {
 }
 
 export async function POST(req: NextRequest) {
+  // Rate limiting
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (isRateLimited(ip)) {
+    return Response.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   try {
     const { messages, locale } = (await req.json()) as {
       messages: ChatMessage[];
       locale: string;
     };
+
+    // Input validation
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return Response.json({ error: "Invalid request" }, { status: 400 });
+    }
+    if (messages.length > MAX_MESSAGES) {
+      return Response.json({ error: "Too many messages" }, { status: 400 });
+    }
+    for (const m of messages) {
+      if (!m.role || !m.content || typeof m.content !== "string") {
+        return Response.json({ error: "Invalid message format" }, { status: 400 });
+      }
+      if (m.content.length > MAX_MESSAGE_LENGTH) {
+        return Response.json({ error: "Message too long" }, { status: 400 });
+      }
+    }
 
     const systemPrompt = locale === "en" ? SYSTEM_EN : SYSTEM_FR;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { useRef, type ReactNode, type MouseEvent } from "react";
 
 interface MagneticButtonProps {
@@ -12,6 +12,17 @@ interface MagneticButtonProps {
   type?: "button" | "submit";
 }
 
+/**
+ * MagneticButton - Button or link that follows the cursor with a magnetic pull effect.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <MagneticButton href="/contact" strength={0.3}>
+ *   Contact us
+ * </MagneticButton>
+ * ```
+ */
 export function MagneticButton({
   children,
   className,
@@ -21,6 +32,7 @@ export function MagneticButton({
   type = "button",
 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -38,6 +50,7 @@ export function MagneticButton({
   );
 
   function handleMouse(e: MouseEvent) {
+    if (shouldReduceMotion) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -62,14 +75,16 @@ export function MagneticButton({
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={handleLeave}
-      style={{ x: springX, y: springY }}
+      style={shouldReduceMotion ? undefined : { x: springX, y: springY }}
       className="inline-block"
     >
       <Tag className={`relative overflow-hidden ${className ?? ""}`} {...linkProps}>
-        <motion.span
-          className="pointer-events-none absolute inset-0 rounded-[inherit] bg-white/20"
-          style={{ opacity: glowOpacity }}
-        />
+        {!shouldReduceMotion && (
+          <motion.span
+            className="pointer-events-none absolute inset-0 rounded-[inherit] bg-white/20"
+            style={{ opacity: glowOpacity }}
+          />
+        )}
         <span className="relative z-10">{children}</span>
       </Tag>
     </motion.div>

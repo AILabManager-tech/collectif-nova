@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
 interface StaggerGridProps {
@@ -29,13 +29,35 @@ const itemVariants = {
   },
 };
 
+/**
+ * StaggerGrid - Renders children in a grid with staggered reveal animations on scroll.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <StaggerGrid stagger={0.12} className="grid grid-cols-3 gap-4">
+ *   {items.map(item => <Card key={item.id} />)}
+ * </StaggerGrid>
+ * ```
+ */
 export function StaggerGrid({
   children,
   className,
   stagger = 0.12,
 }: StaggerGridProps) {
   const ref = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+
+  if (shouldReduceMotion) {
+    return (
+      <div ref={ref} className={className}>
+        {children.map((child, i) => (
+          <div key={i}>{child}</div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <motion.div

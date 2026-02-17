@@ -6,7 +6,7 @@ import { Oswald, Barlow } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ChatWidget } from "@/components/interactive/ChatWidget";
+import { ClientWidgets } from "@/components/layout/ClientWidgets";
 import { JsonLd, localBusinessSchema } from "@/components/seo/JsonLd";
 import type { Metadata } from "next";
 import "../globals.css";
@@ -27,14 +27,15 @@ const barlow = Barlow({
 });
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
 
   return {
-    metadataBase: new URL("https://hrfactory.ca"),
+    metadataBase: new URL("https://emiliepoirierrh.ca"),
     title: {
       default: t("title"),
       template: "%s | HR Factory / L'Usine RH",
@@ -44,27 +45,32 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "fr" ? "fr_CA" : "en_CA",
       alternateLocale: locale === "fr" ? "en_CA" : "fr_CA",
-      siteName: "HR Factory / L'Usine RH",
+      siteName: "L'Usine RH",
+      title: t("title"),
+      description: t("description"),
     },
     alternates: {
-      canonical: `https://hrfactory.ca/${locale}`,
+      canonical: `https://emiliepoirierrh.ca/${locale}`,
       languages: {
-        fr: "https://hrfactory.ca/fr",
-        en: "https://hrfactory.ca/en",
+        fr: "https://emiliepoirierrh.ca/fr",
+        en: "https://emiliepoirierrh.ca/en",
       },
     },
+    themeColor: "#5a7a64",
+    icons: { icon: "/favicon.ico" },
   };
 }
 
 interface RootLayoutProps {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: RootLayoutProps) {
+  const { locale } = await params;
   if (!routing.locales.includes(locale as "fr" | "en")) {
     notFound();
   }
@@ -74,12 +80,18 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={`${oswald.variable} ${barlow.variable}`}>
       <body className="font-body bg-cream-200 text-charcoal antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-sage-600 focus:px-4 focus:py-2 focus:text-white"
+        >
+          Skip to main content
+        </a>
         <JsonLd data={localBusinessSchema} />
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <div className="min-h-screen">{children}</div>
+          <div id="main-content" className="min-h-screen">{children}</div>
           <Footer />
-          <ChatWidget />
+          <ClientWidgets />
         </NextIntlClientProvider>
       </body>
     </html>

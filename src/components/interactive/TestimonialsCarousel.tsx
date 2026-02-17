@@ -6,6 +6,15 @@ import { useTranslations } from "next-intl";
 
 const cases = ["c1", "c2", "c3"] as const;
 
+/**
+ * TestimonialsCarousel - Tabbed carousel showing before/after case studies with animated metrics.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <TestimonialsCarousel />
+ * ```
+ */
 export function TestimonialsCarousel() {
   const t = useTranslations("testimonials");
   const [active, setActive] = useState(0);

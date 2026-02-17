@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, useInView, useMotionValue, useTransform, animate, useReducedMotion } from "framer-motion";
 import { useRef, useEffect } from "react";
 
 interface CountUpProps {
@@ -12,6 +12,15 @@ interface CountUpProps {
   className?: string;
 }
 
+/**
+ * CountUp - Animates a number counting up when scrolled into view.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <CountUp to={100} suffix="%" duration={2} />
+ * ```
+ */
 export function CountUp({
   from = 0,
   to,
@@ -21,23 +30,24 @@ export function CountUp({
   className,
 }: CountUpProps) {
   const ref = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const motionValue = useMotionValue(from);
+  const motionValue = useMotionValue(shouldReduceMotion ? to : from);
   const rounded = useTransform(motionValue, (v) => Math.round(v));
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || shouldReduceMotion) return;
     const controls = animate(motionValue, to, {
       duration,
       ease: [0.25, 0.46, 0.45, 0.94],
     });
     return controls.stop;
-  }, [isInView, motionValue, to, duration]);
+  }, [isInView, shouldReduceMotion, motionValue, to, duration]);
 
   return (
     <span ref={ref} className={className}>
       {prefix}
-      <motion.span>{rounded}</motion.span>
+      {shouldReduceMotion ? <span>{to}</span> : <motion.span>{rounded}</motion.span>}
       {suffix}
     </span>
   );

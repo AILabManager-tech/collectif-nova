@@ -13,6 +13,15 @@ interface FaqAccordionProps {
   items: FaqItem[];
 }
 
+/**
+ * FaqAccordion - Accessible accordion that displays a list of FAQ items with expand/collapse.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <FaqAccordion items={[{ question: "Why?", answer: "Because." }]} />
+ * ```
+ */
 export function FaqAccordion({ items }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

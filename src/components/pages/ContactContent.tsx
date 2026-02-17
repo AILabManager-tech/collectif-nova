@@ -1,14 +1,40 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/Button";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { AuroraBackground } from "@/components/animations/AuroraBackground";
 
+/**
+ * Contact page content with inquiry form and business contact information.
+ *
+ * @component
+ * @example
+ * <ContactContent />
+ */
 export function ContactContent() {
   const t = useTranslations("contact");
   const locale = useLocale();
+  const [sending, setSending] = useState(false);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSending(true);
+
+    // Simulate API call (replace with real API later)
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      toast.success(t("form.success") || "Message envoyé avec succès !");
+      (e.target as HTMLFormElement).reset();
+    } catch {
+      toast.error(t("form.error") || "Une erreur est survenue. Veuillez réessayer.");
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <main>
@@ -16,7 +42,7 @@ export function ContactContent() {
       <section className="relative min-h-[40vh] flex items-center overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&q=80&auto=format"
-          alt=""
+          alt="Professionnels discutant dans un bureau moderne"
           fill
           priority
           className="object-cover"
@@ -43,7 +69,7 @@ export function ContactContent() {
             <AnimatedSection direction="left" className="md:col-span-3">
               <form
                 className="card-elevated space-y-5"
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubmit}
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
@@ -126,8 +152,30 @@ export function ContactContent() {
                   />
                 </div>
 
-                <Button type="submit" size="lg">
-                  {t("form.submit")}
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    required
+                    className="mt-1 h-4 w-4 rounded border-cream-400 text-sage-500 focus:ring-sage-500/20"
+                  />
+                  <span className="text-sm text-taupe">
+                    {t("form.consent_notice")}
+                  </span>
+                </label>
+
+                <Button type="submit" size="lg" disabled={sending}>
+                  {sending ? (
+                    <span className="flex items-center gap-2">
+                      <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      {t("form.sending") || "Envoi..."}
+                    </span>
+                  ) : (
+                    t("form.submit")
+                  )}
                 </Button>
 
                 <p className="text-sm text-taupe">{t("form.response_time")}</p>

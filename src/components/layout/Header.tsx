@@ -12,6 +12,13 @@ const navLinks = [
   { href: "/contact", key: "contact" },
 ] as const;
 
+/**
+ * Header navigation component with locale-aware links and mobile menu.
+ *
+ * @component
+ * @example
+ * <Header />
+ */
 export function Header() {
   const t = useTranslations("nav");
   const locale = useLocale() as Locale;
@@ -57,8 +64,8 @@ export function Header() {
           {/* Language switcher */}
           <button
             onClick={switchLocale}
-            className="rounded-lg border border-sage-200/60 bg-white/50 px-3 py-1.5 text-xs font-medium text-taupe transition-all hover:border-sage-400 hover:text-sage-600 hover:bg-sage-50"
-            aria-label="Switch language"
+            className="rounded-lg border border-sage-200/60 bg-white/50 px-3 py-1.5 text-xs font-medium text-taupe transition-all hover:border-sage-400 hover:text-sage-600 hover:bg-sage-50 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2"
+            aria-label={locale === "fr" ? "Passer à l'anglais" : "Switch to French"}
           >
             {locale === "fr" ? "EN" : "FR"}
           </button>
@@ -75,9 +82,10 @@ export function Header() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex flex-col gap-1.5 md:hidden"
-          aria-label="Toggle menu"
+          className="flex flex-col gap-1.5 md:hidden focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 rounded-md p-1"
+          aria-label={locale === "fr" ? "Ouvrir le menu" : "Toggle menu"}
           aria-expanded={mobileOpen}
+          aria-controls="mobile-nav"
         >
           <span
             className={`h-0.5 w-6 bg-charcoal transition-transform ${
@@ -99,7 +107,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="border-t border-cream-400/50 bg-cream-200/95 backdrop-blur-xl px-6 pb-6 pt-4 md:hidden">
+        <nav id="mobile-nav" className="border-t border-cream-400/50 bg-cream-200/95 backdrop-blur-xl px-6 pb-6 pt-4 md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map(({ href, key }) => (
               <Link
@@ -118,7 +126,7 @@ export function Header() {
             <div className="flex items-center gap-4 pt-2">
               <button
                 onClick={switchLocale}
-                className="rounded-lg border border-sage-200 px-3 py-1.5 text-sm text-taupe"
+                className="rounded-lg border border-sage-200 px-3 py-1.5 text-sm text-taupe focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2"
                 aria-label={locale === "fr" ? "Switch to English" : "Passer au français"}
               >
                 {locale === "fr" ? "English" : "Français"}

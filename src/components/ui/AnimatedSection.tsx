@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface AnimatedSectionProps {
@@ -17,13 +17,29 @@ const directions = {
   none: { x: 0, y: 0 },
 };
 
+/**
+ * AnimatedSection - Fades and slides children into view on scroll with configurable direction.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <AnimatedSection direction="up" delay={0.2}>
+ *   <p>Animated content</p>
+ * </AnimatedSection>
+ * ```
+ */
 export function AnimatedSection({
   children,
   className,
   delay = 0,
   direction = "up",
 }: AnimatedSectionProps) {
+  const shouldReduceMotion = useReducedMotion();
   const offset = directions[direction];
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div

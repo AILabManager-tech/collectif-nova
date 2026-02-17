@@ -27,6 +27,16 @@ type LinkProps = BaseProps &
 
 type Props = ButtonProps | LinkProps;
 
+/**
+ * Button - Polymorphic button/link component with variant and size support.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <Button variant="primary" size="md">Click me</Button>
+ * <Button href="/about" variant="outline">Learn more</Button>
+ * ```
+ */
 export function Button({
   variant = "primary",
   size = "md",

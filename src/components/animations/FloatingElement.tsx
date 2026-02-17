@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { type ReactNode } from "react";
 
 interface FloatingElementProps {
@@ -11,6 +11,17 @@ interface FloatingElementProps {
   delay?: number;
 }
 
+/**
+ * FloatingElement - Wraps children in a continuous floating animation.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <FloatingElement amplitude={12} duration={6}>
+ *   <div>Floating content</div>
+ * </FloatingElement>
+ * ```
+ */
 export function FloatingElement({
   children,
   className,
@@ -18,6 +29,12 @@ export function FloatingElement({
   duration = 6,
   delay = 0,
 }: FloatingElementProps) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}

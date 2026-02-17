@@ -23,6 +23,13 @@ const serviceColors = [
   "from-gold-400 to-gold-600",
 ];
 
+/**
+ * Services page content with detailed service cards, images, and FAQ accordion.
+ *
+ * @component
+ * @example
+ * <ServicesContent />
+ */
 export function ServicesContent() {
   const t = useTranslations("services");
   const common = useTranslations("common");

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
 interface ParallaxSectionProps {
@@ -9,12 +9,24 @@ interface ParallaxSectionProps {
   speed?: number;
 }
 
+/**
+ * ParallaxSection - Wraps children in a scroll-driven parallax effect with opacity fade.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <ParallaxSection speed={0.3}>
+ *   <p>Parallax content</p>
+ * </ParallaxSection>
+ * ```
+ */
 export function ParallaxSection({
   children,
   className,
   speed = 0.3,
 }: ParallaxSectionProps) {
   const ref = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -25,9 +37,13 @@ export function ParallaxSection({
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className ?? ""}`}>
-      <motion.div style={{ y, opacity }}>
-        {children}
-      </motion.div>
+      {shouldReduceMotion ? (
+        <div>{children}</div>
+      ) : (
+        <motion.div style={{ y, opacity }}>
+          {children}
+        </motion.div>
+      )}
     </div>
   );
 }

@@ -12,7 +12,7 @@
   --cream: #FAF8F5;
   --cream-dark: #F0EBE3;
   --charcoal: #3D3D35;
-  --taupe: #8B8B80;
+  --taupe: #6B6560;
 }
 
 @layer base {
@@ -115,10 +115,10 @@
   .hero-image-overlay {
     background: linear-gradient(
       135deg,
-      rgba(42,48,35,0.85) 0%,
-      rgba(61,61,53,0.7) 30%,
-      rgba(107,122,94,0.5) 60%,
-      rgba(196,120,91,0.3) 100%
+      rgba(42,48,35,0.92) 0%,
+      rgba(61,61,53,0.85) 30%,
+      rgba(107,122,94,0.75) 60%,
+      rgba(196,120,91,0.65) 100%
     );
   }
 

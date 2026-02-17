@@ -2,6 +2,14 @@ interface JsonLdProps {
   data: Record<string, unknown>;
 }
 
+/**
+ * Renders a JSON-LD structured data script tag for SEO.
+ *
+ * @component
+ * @param {JsonLdProps} props - The structured data object to serialize.
+ * @example
+ * <JsonLd data={localBusinessSchema} />
+ */
 export function JsonLd({ data }: JsonLdProps) {
   return (
     <script

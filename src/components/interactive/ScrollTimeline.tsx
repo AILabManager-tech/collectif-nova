@@ -8,6 +8,15 @@ const steps = ["diagnostic", "implementation", "coaching"] as const;
 const icons = ["🔍", "🛠", "🎯"];
 const colors = ["text-sage-600", "text-terracotta-500", "text-gold-600"];
 
+/**
+ * ScrollTimeline - Vertical scroll-driven timeline displaying service steps with animated progress line.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <ScrollTimeline />
+ * ```
+ */
 export function ScrollTimeline() {
   const t = useTranslations("home.services");
   const containerRef = useRef<HTMLDivElement>(null);

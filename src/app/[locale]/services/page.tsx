@@ -4,10 +4,11 @@ import { JsonLd, buildServiceSchema, buildFaqSchema } from "@/components/seo/Jso
 import type { Metadata } from "next";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services.meta" });
   return {
     title: t("title"),
@@ -23,10 +24,11 @@ export async function generateMetadata({
 }
 
 export default async function ServicesPage({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services.faq" });
   const faqItems = Array.from({ length: 6 }, (_, i) => ({
     question: t(`q${i + 1}`),

@@ -52,6 +52,15 @@ function FlipCard({ mythKey, index }: { mythKey: string; index: number }) {
   );
 }
 
+/**
+ * FlipCards - Grid of myth-busting cards that flip on click to reveal reality.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <FlipCards />
+ * ```
+ */
 export function FlipCards() {
   const t = useTranslations("myths");
 

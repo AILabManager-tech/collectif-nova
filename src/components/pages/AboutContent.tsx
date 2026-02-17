@@ -67,6 +67,13 @@ function ValueCard({ valueKey, icon, index }: { valueKey: string; icon: string; 
   );
 }
 
+/**
+ * About page content with story, philosophy, stats, and expandable value cards.
+ *
+ * @component
+ * @example
+ * <AboutContent />
+ */
 export function AboutContent() {
   const t = useTranslations("about");
 
@@ -76,7 +83,7 @@ export function AboutContent() {
       <section className="relative min-h-[50vh] flex items-center overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1920&q=80&auto=format"
-          alt=""
+          alt="Consultante RH souriante en milieu professionnel"
           fill
           priority
           className="object-cover"

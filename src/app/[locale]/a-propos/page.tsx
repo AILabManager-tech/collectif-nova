@@ -3,10 +3,11 @@ import { AboutContent } from "@/components/pages/AboutContent";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "about.meta" });
   return {
     title: t("title"),

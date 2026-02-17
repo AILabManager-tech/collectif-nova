@@ -56,7 +56,7 @@ const config: Config = {
           200: "#E1DBD1",
           300: "#D2C9BA",
           400: "#C3B7A3",
-          500: "#9C9690",
+          500: "#7A756F",
           600: "#7D7A75",
           700: "#5E5C5A",
           800: "#3F3E3D",
@@ -68,7 +68,7 @@ const config: Config = {
           light: "#3A3632",
           dark: "#1A1A1A",
         },
-        taupe: "#9C9690",
+        taupe: "#6B6560",
         teal: {
           50: "#F0FDFA",
           100: "#CCFBF1",

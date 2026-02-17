@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 interface TextRevealProps {
@@ -11,6 +11,17 @@ interface TextRevealProps {
   staggerChildren?: number;
 }
 
+/**
+ * TextReveal - Splits text into words and animates each word in with a staggered spring effect.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <TextReveal as="h2" delay={0.1}>
+ *   Your headline text here
+ * </TextReveal>
+ * ```
+ */
 export function TextReveal({
   children,
   className,
@@ -19,8 +30,17 @@ export function TextReveal({
   staggerChildren = 0.035,
 }: TextRevealProps) {
   const ref = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const words = children.split(" ");
+
+  if (shouldReduceMotion) {
+    return (
+      <Tag ref={ref} className={className}>
+        {children}
+      </Tag>
+    );
+  }
 
   const MotionTag = motion.create(Tag);
 

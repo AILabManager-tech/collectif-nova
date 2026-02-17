@@ -15,6 +15,13 @@ const GREETING_FR =
 const GREETING_EN =
   "Hello! I'm the virtual assistant for HR Factory. I can run a quick HR diagnostic in 5 questions, or answer your questions about HR for SMBs. How can I help?";
 
+/**
+ * Floating chat widget with AI-powered HR assistant for quick diagnostics.
+ *
+ * @component
+ * @example
+ * <ChatWidget />
+ */
 export function ChatWidget() {
   const locale = useLocale();
   const t = useTranslations("chatbot");
@@ -87,17 +94,19 @@ export function ChatWidget() {
 
   function formatMessage(text: string) {
     return text.split("\n").map((line, i) => {
-      // Bold
-      const formatted = line.replace(
-        /\*\*(.*?)\*\*/g,
-        '<strong class="font-semibold">$1</strong>'
-      );
+      const parts = line.split(/(\*\*.*?\*\*)/g);
       return (
-        <span
-          key={i}
-          dangerouslySetInnerHTML={{ __html: formatted }}
-          className="block"
-        />
+        <span key={i} className="block">
+          {parts.map((part, j) =>
+            part.startsWith("**") && part.endsWith("**") ? (
+              <strong key={j} className="font-semibold">
+                {part.slice(2, -2)}
+              </strong>
+            ) : (
+              part
+            )
+          )}
+        </span>
       );
     });
   }
@@ -163,6 +172,9 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
+            role="dialog"
+            aria-label={t("title")}
+            aria-modal="true"
             className="fixed bottom-24 right-6 z-50 flex h-[500px] w-[380px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl sm:w-[420px]"
           >
             {/* Header */}
