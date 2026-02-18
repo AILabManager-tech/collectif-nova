@@ -1,15 +1,11 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useReducedMotion,
-} from "framer-motion";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { useInView, useReducedMotion } from "@/hooks/useAnimations";
 
 /* ------------------------------------------------------------------ */
-/*  Project data — 4 fictional projects                               */
+/*  Project data -- 4 fictional projects                               */
 /* ------------------------------------------------------------------ */
 
 const PROJECT_KEYS = ["branding", "website", "social", "identity"] as const;
@@ -104,17 +100,17 @@ function ProjectCard({
   }, []);
 
   return (
-    <motion.div
+    <div
       ref={cardRef}
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      animate={{
-        rotateX: tilt.rotateX,
-        rotateY: tilt.rotateY,
+      style={{
+        perspective: 800,
+        transformStyle: "preserve-3d",
+        transform: `rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+        transition: "transform 0.15s ease-out",
       }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      style={{ perspective: 800, transformStyle: "preserve-3d" }}
       className={`group relative cursor-pointer overflow-hidden rounded-2xl border transition-colors duration-300 ${
         isActive
           ? "border-[#7B61FF] shadow-[0_0_30px_rgba(123,97,255,0.3)]"
@@ -153,7 +149,7 @@ function ProjectCard({
       {isActive && (
         <div className="pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-[#7B61FF]/50" />
       )}
-    </motion.div>
+    </div>
   );
 }
 
@@ -234,7 +230,7 @@ function BeforeAfterSlider({
         </div>
       </div>
 
-      {/* "After" side — clipped */}
+      {/* "After" side -- clipped */}
       <div
         className="absolute inset-0 flex items-center justify-center bg-[#1A1A2E]"
         style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
@@ -278,7 +274,7 @@ function BeforeAfterSlider({
 /* ------------------------------------------------------------------ */
 
 /**
- * ProjectShowcase3D — Portfolio showcase with 3D tilt cards and
+ * ProjectShowcase3D -- Portfolio showcase with 3D tilt cards and
  * a before/after comparison slider for the active project.
  *
  * @component
@@ -289,19 +285,40 @@ function BeforeAfterSlider({
  */
 export function ProjectShowcase3D() {
   const t = useTranslations("home.showcase");
-  const prefersReduced = useReducedMotion() ?? false;
+  const prefersReduced = useReducedMotion();
   const [activeProject, setActiveProject] = useState<ProjectKey>("branding");
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const headerInView = useInView(headerRef, { once: true });
+  const gridInView = useInView(gridRef, { once: true });
+
+  // Slider transition state
+  const [sliderVisible, setSliderVisible] = useState(true);
+  const [displayedProject, setDisplayedProject] = useState<ProjectKey>("branding");
+
+  useEffect(() => {
+    if (activeProject !== displayedProject) {
+      setSliderVisible(false);
+      const timeout = setTimeout(() => {
+        setDisplayedProject(activeProject);
+        setSliderVisible(true);
+      }, 350);
+      return () => clearTimeout(timeout);
+    }
+  }, [activeProject, displayedProject]);
 
   return (
     <section id="project-showcase" className="bg-[#0D0D0D] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <motion.div
-          initial={prefersReduced ? {} : { opacity: 0, y: 24 }}
-          whileInView={prefersReduced ? {} : { opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: "easeInOut" as const }}
+        <div
+          ref={headerRef}
           className="mb-12 text-center"
+          style={{
+            opacity: prefersReduced || headerInView ? 1 : 0,
+            transform: prefersReduced || headerInView ? "translateY(0)" : "translateY(24px)",
+            transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+          }}
         >
           <h2 className="mb-3 font-heading text-3xl font-bold text-[#F0F0F5] lg:text-4xl">
             {t("title")}
@@ -309,15 +326,17 @@ export function ProjectShowcase3D() {
           <p className="mx-auto max-w-xl font-body text-[#F0F0F5]/70">
             {t("subtitle")}
           </p>
-        </motion.div>
+        </div>
 
         {/* Project cards grid */}
-        <motion.div
-          initial={prefersReduced ? {} : { opacity: 0, y: 16 }}
-          whileInView={prefersReduced ? {} : { opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1, ease: "easeInOut" as const }}
+        <div
+          ref={gridRef}
           className="mb-12 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6"
+          style={{
+            opacity: prefersReduced || gridInView ? 1 : 0,
+            transform: prefersReduced || gridInView ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 0.5s ease-in-out 0.1s, transform 0.5s ease-in-out 0.1s",
+          }}
         >
           {PROJECT_KEYS.map((key) => (
             <ProjectCard
@@ -330,29 +349,27 @@ export function ProjectShowcase3D() {
               prefersReduced={prefersReduced}
             />
           ))}
-        </motion.div>
+        </div>
 
         {/* Before/After slider for active project */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeProject}
-            initial={prefersReduced ? { opacity: 0 } : { opacity: 0, scale: 0.98 }}
-            animate={prefersReduced ? { opacity: 1 } : { opacity: 1, scale: 1 }}
-            exit={prefersReduced ? { opacity: 0 } : { opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.35, ease: "easeInOut" as const }}
-          >
-            <div className="mb-4 text-center">
-              <span className="inline-block rounded-full bg-[#7B61FF]/20 px-4 py-1.5 text-sm font-semibold text-[#9B85FF]">
-                {t(`projects.${activeProject}.category`)}
-              </span>
-            </div>
-            <BeforeAfterSlider
-              projectKey={activeProject}
-              beforeLabel={t("before_label")}
-              afterLabel={t("after_label")}
-            />
-          </motion.div>
-        </AnimatePresence>
+        <div
+          style={{
+            opacity: sliderVisible ? 1 : 0,
+            transform: sliderVisible ? "scale(1)" : "scale(0.98)",
+            transition: prefersReduced ? "none" : "opacity 0.35s ease-in-out, transform 0.35s ease-in-out",
+          }}
+        >
+          <div className="mb-4 text-center">
+            <span className="inline-block rounded-full bg-[#7B61FF]/20 px-4 py-1.5 text-sm font-semibold text-[#9B85FF]">
+              {t(`projects.${displayedProject}.category`)}
+            </span>
+          </div>
+          <BeforeAfterSlider
+            projectKey={displayedProject}
+            beforeLabel={t("before_label")}
+            afterLabel={t("after_label")}
+          />
+        </div>
       </div>
     </section>
   );

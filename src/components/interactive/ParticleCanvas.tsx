@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "@/hooks/useAnimations";
 
 /* ------------------------------------------------------------------ */
 /*  Particle type and helpers                                         */
@@ -78,7 +78,7 @@ function getConnections(
 /* ------------------------------------------------------------------ */
 
 /**
- * ParticleCanvas — Decorative SVG particle network with floating dots
+ * ParticleCanvas -- Decorative SVG particle network with floating dots
  * and proximity-based connection lines.
  *
  * Used as a background element in the Hero section.
@@ -90,13 +90,20 @@ function getConnections(
  * ```
  */
 export function ParticleCanvas() {
-  const prefersReduced = useReducedMotion() ?? false;
+  const prefersReduced = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const animRef = useRef<number>(0);
   const [dimensions, setDimensions] = useState({ width: 1200, height: 600 });
   const [particles, setParticles] = useState<Particle[]>(() =>
     createParticles(1200, 600),
   );
+  const [svgOpacity, setSvgOpacity] = useState(0);
+
+  /* --- Fade in on mount ------------------------------------------ */
+  useEffect(() => {
+    const timeout = setTimeout(() => setSvgOpacity(1), 50);
+    return () => clearTimeout(timeout);
+  }, []);
 
   /* --- Responsive dimensions ------------------------------------ */
   useEffect(() => {
@@ -156,10 +163,11 @@ export function ParticleCanvas() {
       className="pointer-events-none absolute inset-0 overflow-hidden"
       aria-hidden="true"
     >
-      <motion.svg
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeInOut" as const }}
+      <svg
+        style={{
+          opacity: svgOpacity,
+          transition: "opacity 1.2s ease-in-out",
+        }}
         viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
         xmlns="http://www.w3.org/2000/svg"
         className="h-full w-full"
@@ -212,7 +220,7 @@ export function ParticleCanvas() {
             </feMerge>
           </filter>
         </defs>
-      </motion.svg>
+      </svg>
     </div>
   );
 }

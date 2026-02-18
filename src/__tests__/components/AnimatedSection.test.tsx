@@ -1,18 +1,8 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import { describe, it, expect, afterEach, vi } from "vitest";
 
-vi.mock("framer-motion", () => ({
-  motion: {
-    div: ({
-      children,
-      className,
-      ...rest
-    }: React.HTMLAttributes<HTMLDivElement>) => (
-      <div className={className} data-testid="animated" {...rest}>
-        {children}
-      </div>
-    ),
-  },
+vi.mock("@/hooks/useAnimations", () => ({
+  useInView: () => true,
   useReducedMotion: () => false,
 }));
 
@@ -36,7 +26,8 @@ describe("AnimatedSection", () => {
         <p>Test</p>
       </AnimatedSection>
     );
-    expect(screen.getByTestId("animated")).toHaveClass("my-class");
+    const wrapper = screen.getByText("Test").parentElement;
+    expect(wrapper).toHaveClass("my-class");
   });
 
   it("renders with direction=left", () => {

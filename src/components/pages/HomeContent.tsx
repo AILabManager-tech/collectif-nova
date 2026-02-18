@@ -1,9 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
-import { motion, useReducedMotion } from "framer-motion";
 import { Palette, Globe, Share2, Video } from "lucide-react";
 import { GlitchText } from "@/components/interactive/GlitchText";
 import { NeonBadge } from "@/components/interactive/NeonBadge";
@@ -14,6 +14,7 @@ import { FloatingElement } from "@/components/animations/FloatingElement";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { StaggerGrid } from "@/components/animations/StaggerGrid";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { useInView, useReducedMotion } from "@/hooks/useAnimations";
 
 const ParticleCanvas = dynamic(
   () => import("@/components/interactive/ParticleCanvas").then((m) => ({ default: m.ParticleCanvas })),
@@ -60,14 +61,18 @@ interface TestimonialCardProps {
 
 function TestimonialCard({ index, prefersReduced }: TestimonialCardProps) {
   const t = useTranslations("home.testimonials");
+  const ref = useRef<HTMLQuoteElement>(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <motion.blockquote
-      initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
-      whileInView={prefersReduced ? {} : { opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.15, ease: "easeInOut" as const }}
+    <blockquote
+      ref={ref}
       className="flex flex-col rounded-2xl border border-[#F0F0F5]/10 bg-[#1A1A2E] p-6"
+      style={{
+        opacity: prefersReduced || isInView ? 1 : 0,
+        transform: prefersReduced || isInView ? "translateY(0)" : "translateY(30px)",
+        transition: `opacity 0.5s ease-in-out ${index * 0.15}s, transform 0.5s ease-in-out ${index * 0.15}s`,
+      }}
     >
       {/* Stars */}
       <div className="mb-4 flex gap-1 text-[#7B61FF]" aria-hidden="true">
@@ -91,7 +96,7 @@ function TestimonialCard({ index, prefersReduced }: TestimonialCardProps) {
           <p className="text-xs text-[#F0F0F5]/70">{t(`${index}.role`)}</p>
         </div>
       </footer>
-    </motion.blockquote>
+    </blockquote>
   );
 }
 
@@ -112,12 +117,12 @@ function TestimonialCard({ index, prefersReduced }: TestimonialCardProps) {
  */
 export function HomeContent() {
   const t = useTranslations("home");
-  const prefersReduced = useReducedMotion() ?? false;
+  const prefersReduced = useReducedMotion();
 
   return (
     <main>
       {/* ============================================================ */}
-      {/*  1. Hero — DARK bg with ParticleCanvas + GlitchText          */}
+      {/*  1. Hero -- DARK bg with ParticleCanvas + GlitchText          */}
       {/* ============================================================ */}
       <section className="relative flex min-h-screen items-center overflow-hidden bg-[#0D0D0D]">
         <ParticleCanvas />
@@ -188,7 +193,7 @@ export function HomeContent() {
       </section>
 
       {/* ============================================================ */}
-      {/*  2. Stats — glassmorphism bar                                */}
+      {/*  2. Stats -- glassmorphism bar                                */}
       {/* ============================================================ */}
       <section className="relative -mt-16 z-20">
         <div className="container-wide px-6">
@@ -224,7 +229,7 @@ export function HomeContent() {
       </section>
 
       {/* ============================================================ */}
-      {/*  3. Services overview — 4 cards                              */}
+      {/*  3. Services overview -- 4 cards                              */}
       {/* ============================================================ */}
       <section id="services" className="section-padding relative overflow-hidden bg-[#0D0D0D]">
         <div className="container-wide relative">
@@ -268,12 +273,12 @@ export function HomeContent() {
       </section>
 
       {/* ============================================================ */}
-      {/*  4. ProjectShowcase3D — Interactive portfolio                 */}
+      {/*  4. ProjectShowcase3D -- Interactive portfolio                 */}
       {/* ============================================================ */}
       <ProjectShowcase3D />
 
       {/* ============================================================ */}
-      {/*  5. Testimonials — 3 client reviews                          */}
+      {/*  5. Testimonials -- 3 client reviews                          */}
       {/* ============================================================ */}
       <section className="section-padding relative overflow-hidden bg-[#0D0D0D]">
         <div className="container-wide relative z-10">
@@ -297,7 +302,7 @@ export function HomeContent() {
       </section>
 
       {/* ============================================================ */}
-      {/*  6. CTA Final — gradient violet->cyan                        */}
+      {/*  6. CTA Final -- gradient violet->cyan                        */}
       {/* ============================================================ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#7B61FF] to-[#00E5CC]" />

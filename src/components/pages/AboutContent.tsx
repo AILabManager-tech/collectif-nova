@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion, useReducedMotion } from "framer-motion";
 import { Lightbulb, Fingerprint, Zap } from "lucide-react";
 import { GlitchText } from "@/components/interactive/GlitchText";
 import { NeonBadge } from "@/components/interactive/NeonBadge";
@@ -61,12 +60,11 @@ const teamMembers = [
  */
 export function AboutContent() {
   const t = useTranslations("about");
-  const prefersReduced = useReducedMotion() ?? false;
 
   return (
     <main>
       {/* ============================================================ */}
-      {/*  1. Hero — dark bg with GlitchText + NeonBadge               */}
+      {/*  1. Hero -- dark bg with GlitchText + NeonBadge               */}
       {/* ============================================================ */}
       <section className="relative flex min-h-[45vh] items-center overflow-hidden bg-[#0D0D0D]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#7B61FF]/5 via-transparent to-transparent" />
@@ -99,7 +97,7 @@ export function AboutContent() {
       </section>
 
       {/* ============================================================ */}
-      {/*  2. Story — Vision + design philosophy                       */}
+      {/*  2. Story -- Vision + design philosophy                       */}
       {/* ============================================================ */}
       <section className="section-padding relative overflow-hidden bg-[#0D0D0D]">
         <div className="container-narrow relative z-10">
@@ -120,7 +118,7 @@ export function AboutContent() {
       </section>
 
       {/* ============================================================ */}
-      {/*  3. Values — 3 cards with icons                              */}
+      {/*  3. Values -- 3 cards with icons                              */}
       {/* ============================================================ */}
       <section className="section-padding relative overflow-hidden bg-[#111118]">
         <div className="container-wide relative z-10">
@@ -135,12 +133,8 @@ export function AboutContent() {
             {values.map(({ key, Icon, accent }) => {
               const colors = valueAccents[accent] ?? { icon: "text-[#7B61FF]", border: "border-[#7B61FF]/20 hover:border-[#7B61FF]/40", glow: "hover:shadow-[0_0_25px_rgba(123,97,255,0.15)]" };
               return (
-                <motion.div
+                <div
                   key={key}
-                  initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
-                  whileInView={prefersReduced ? {} : { opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, ease: "easeInOut" as const }}
                   className={`rounded-2xl border bg-[#1A1A2E] p-8 transition-all duration-300 ${colors.border} ${colors.glow}`}
                 >
                   <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0D0D0D]/50 ${colors.icon}`}>
@@ -152,7 +146,7 @@ export function AboutContent() {
                   <p className="text-[#F0F0F5]/70 leading-relaxed font-body">
                     {t(`values.${key}.description`)}
                   </p>
-                </motion.div>
+                </div>
               );
             })}
           </StaggerGrid>
@@ -160,7 +154,7 @@ export function AboutContent() {
       </section>
 
       {/* ============================================================ */}
-      {/*  4. Team — 3 members                                         */}
+      {/*  4. Team -- 3 members                                         */}
       {/* ============================================================ */}
       <section className="section-padding relative overflow-hidden bg-[#0D0D0D]">
         <div className="container-wide relative z-10">
@@ -178,12 +172,8 @@ export function AboutContent() {
 
           <StaggerGrid className="grid gap-8 md:grid-cols-3" stagger={0.15}>
             {teamMembers.map(({ key, initials, color }) => (
-              <motion.div
+              <div
                 key={key}
-                initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
-                whileInView={prefersReduced ? {} : { opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeInOut" as const }}
                 className="group rounded-2xl border border-[#F0F0F5]/10 bg-[#1A1A2E] p-8 text-center transition-all duration-300 hover:border-[#7B61FF]/30 hover:shadow-[0_0_25px_rgba(123,97,255,0.1)]"
               >
                 {/* Avatar placeholder */}
@@ -199,14 +189,14 @@ export function AboutContent() {
                 <p className="text-sm text-[#F0F0F5]/70 leading-relaxed font-body">
                   {t(`team.${key}.bio`)}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </StaggerGrid>
         </div>
       </section>
 
       {/* ============================================================ */}
-      {/*  5. CTA — Join the adventure                                 */}
+      {/*  5. CTA -- Join the adventure                                 */}
       {/* ============================================================ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#7B61FF] to-[#00E5CC]" />

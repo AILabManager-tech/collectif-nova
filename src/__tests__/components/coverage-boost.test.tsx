@@ -6,7 +6,7 @@
  * MagneticButton, Header (mobile menu) and ClientWidgets.
  * -----------------------------------------------------------------------
  */
-import { render, screen, fireEvent, cleanup, waitFor, act } from "@testing-library/react";
+import { render, screen, fireEvent, cleanup, waitFor } from "@testing-library/react";
 import { describe, it, expect, afterEach, beforeAll, vi } from "vitest";
 
 /* ------------------------------------------------------------------ */
@@ -21,74 +21,15 @@ beforeAll(() => {
 });
 
 /* ------------------------------------------------------------------ */
-/*  Mocks — framer-motion (inline factory)                             */
+/*  Mocks -- hooks/useAnimations                                       */
 /* ------------------------------------------------------------------ */
-vi.mock("framer-motion", () => {
-  const FRAMER_ONLY = new Set([
-    "initial", "animate", "exit", "transition", "whileInView",
-    "viewport", "variants", "whileHover", "whileTap", "layout",
-    "layoutId",
-  ]);
-  const mc = (Tag: string) => {
-    const C = ({ children, ...props }: Record<string, unknown>) => {
-      const safe: Record<string, unknown> = {};
-      for (const [k, v] of Object.entries(props)) {
-        // Keep event handlers (onClick, onMouseMove, etc.) and ref
-        if (typeof v === "function" && k.startsWith("on")) {
-          safe[k] = v;
-          continue;
-        }
-        if (k === "ref") {
-          safe[k] = v;
-          continue;
-        }
-        if (k === "style" && typeof v === "object") {
-          // pass style through
-          safe[k] = v;
-          continue;
-        }
-        if (FRAMER_ONLY.has(k)) continue;
-        if (typeof v === "object" || typeof v === "function") continue;
-        safe[k] = v;
-      }
-      const El = Tag as unknown as React.ElementType;
-      return <El {...safe}>{children as React.ReactNode}</El>;
-    };
-    C.displayName = `motion.${Tag}`;
-    return C;
-  };
-  return {
-    motion: {
-      div: mc("div"),
-      span: mc("span"),
-      button: mc("button"),
-      section: mc("section"),
-      a: mc("a"),
-      h1: mc("h1"),
-      h2: mc("h2"),
-      h3: mc("h3"),
-      p: mc("p"),
-      svg: mc("svg"),
-      circle: mc("circle"),
-      path: mc("path"),
-      line: mc("line"),
-      ellipse: mc("ellipse"),
-      g: mc("g"),
-      create: (tag: string) => mc(tag),
-    },
-    animate: () => ({ stop: () => {} }),
-    useInView: () => true,
-    useScroll: () => ({ scrollYProgress: { get: () => 0.5 } }),
-    useTransform: () => 0,
-    useMotionValue: (v: number = 0) => ({ set: vi.fn(), get: () => v }),
-    useSpring: () => ({ set: vi.fn(), get: () => 0 }),
-    useReducedMotion: () => false,
-    AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
-  };
-});
+vi.mock("@/hooks/useAnimations", () => ({
+  useInView: () => true,
+  useReducedMotion: () => false,
+}));
 
 /* ------------------------------------------------------------------ */
-/*  Mocks — next-intl                                                  */
+/*  Mocks -- next-intl                                                 */
 /* ------------------------------------------------------------------ */
 vi.mock("next-intl", () => ({
   useTranslations: () => (key: string) => key,
@@ -96,14 +37,14 @@ vi.mock("next-intl", () => ({
 }));
 
 /* ------------------------------------------------------------------ */
-/*  Mocks — next/image                                                 */
+/*  Mocks -- next/image                                                */
 /* ------------------------------------------------------------------ */
 vi.mock("next/image", () => ({
   default: (props: { alt: string; src: string }) => <img alt={props.alt} src={props.src} />,
 }));
 
 /* ------------------------------------------------------------------ */
-/*  Mocks — next/dynamic (for ClientWidgets)                           */
+/*  Mocks -- next/dynamic (for ClientWidgets)                          */
 /* ------------------------------------------------------------------ */
 vi.mock("next/dynamic", () => ({
   default: (loader: () => Promise<{ default: React.ComponentType }>) => {
@@ -122,7 +63,7 @@ vi.mock("next/dynamic", () => ({
 }));
 
 /* ------------------------------------------------------------------ */
-/*  Mocks — animation sub-components (simplified for interactive)      */
+/*  Mocks -- animation sub-components (simplified for interactive)     */
 /* ------------------------------------------------------------------ */
 vi.mock("@/components/animations/TextReveal", () => ({
   TextReveal: ({ children }: { children: React.ReactNode }) => <h2>{children}</h2>,
@@ -140,7 +81,7 @@ vi.mock("@/components/animations/StaggerGrid", () => ({
 }));
 
 /* ------------------------------------------------------------------ */
-/*  Mocks — i18n routing (for Header)                                  */
+/*  Mocks -- i18n routing (for Header)                                 */
 /* ------------------------------------------------------------------ */
 const mockReplace = vi.fn();
 vi.mock("@/i18n/routing", () => ({
@@ -164,14 +105,14 @@ vi.mock("@/i18n/routing", () => ({
 }));
 
 /* ------------------------------------------------------------------ */
-/*  Mocks — CookieConsent (for ClientWidgets)                          */
+/*  Mocks -- CookieConsent (for ClientWidgets)                         */
 /* ------------------------------------------------------------------ */
 vi.mock("@/components/legal/CookieConsent", () => ({
   CookieConsent: () => <div data-testid="cookie-consent">CookieConsent</div>,
 }));
 
 /* ------------------------------------------------------------------ */
-/*  Mocks — sonner (for ClientWidgets)                                 */
+/*  Mocks -- sonner (for ClientWidgets)                                */
 /* ------------------------------------------------------------------ */
 vi.mock("sonner", () => ({
   Toaster: () => <div data-testid="toaster">Toaster</div>,
@@ -196,9 +137,9 @@ import { Header } from "@/components/layout/Header";
 import { ClientWidgets } from "@/components/layout/ClientWidgets";
 
 /* ================================================================== */
-/*  1. ProjectShowcase3D — card interactions                           */
+/*  1. ProjectShowcase3D -- card interactions                          */
 /* ================================================================== */
-describe("ProjectShowcase3D — card interactions", () => {
+describe("ProjectShowcase3D -- card interactions", () => {
   it("renders section with project-showcase id", () => {
     render(<ProjectShowcase3D />);
     expect(document.getElementById("project-showcase")).toBeTruthy();
@@ -242,9 +183,9 @@ describe("ProjectShowcase3D — card interactions", () => {
 });
 
 /* ================================================================== */
-/*  2. GlitchText — rendering variants                                 */
+/*  2. GlitchText -- rendering variants                                */
 /* ================================================================== */
-describe("GlitchText — rendering variants", () => {
+describe("GlitchText -- rendering variants", () => {
   it("renders as span by default", () => {
     render(<GlitchText>Glitch</GlitchText>);
     const el = screen.getByText("Glitch");
@@ -283,9 +224,9 @@ describe("GlitchText — rendering variants", () => {
 });
 
 /* ================================================================== */
-/*  3. NeonBadge — color and size variants                             */
+/*  3. NeonBadge -- color and size variants                            */
 /* ================================================================== */
-describe("NeonBadge — color and size variants", () => {
+describe("NeonBadge -- color and size variants", () => {
   it("renders with violet color by default", () => {
     render(<NeonBadge>Default</NeonBadge>);
     const el = screen.getByText("Default");
@@ -325,9 +266,9 @@ describe("NeonBadge — color and size variants", () => {
 });
 
 /* ================================================================== */
-/*  4. MagneticButton — mouse events                                   */
+/*  4. MagneticButton -- mouse events                                  */
 /* ================================================================== */
-describe("MagneticButton — mouse event handlers", () => {
+describe("MagneticButton -- mouse event handlers", () => {
   it("renders as a link when href is provided", () => {
     render(<MagneticButton href="/test">Click me</MagneticButton>);
     const link = screen.getByText("Click me").closest("a");
@@ -378,9 +319,9 @@ describe("MagneticButton — mouse event handlers", () => {
 });
 
 /* ================================================================== */
-/*  5. Header — mobile menu deep interactions                          */
+/*  5. Header -- mobile menu deep interactions                         */
 /* ================================================================== */
-describe("Header — mobile menu interactions", () => {
+describe("Header -- mobile menu interactions", () => {
   it("shows mobile nav links when menu is opened", () => {
     render(<Header />);
     const toggle = screen.getByLabelText("Ouvrir le menu");
@@ -438,9 +379,9 @@ describe("Header — mobile menu interactions", () => {
 });
 
 /* ================================================================== */
-/*  6. ClientWidgets — renders lazily loaded components                */
+/*  6. ClientWidgets -- renders lazily loaded components               */
 /* ================================================================== */
-describe("ClientWidgets — dynamic imports", () => {
+describe("ClientWidgets -- dynamic imports", () => {
   it("renders without crashing", async () => {
     const { container } = render(<ClientWidgets />);
     await waitFor(() => {

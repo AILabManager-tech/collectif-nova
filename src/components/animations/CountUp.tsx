@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useTransform, animate, useReducedMotion } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useInView, useReducedMotion } from "@/hooks/useAnimations";
 
 interface CountUpProps {
   from?: number;
@@ -29,25 +29,36 @@ export function CountUp({
   duration = 2,
   className,
 }: CountUpProps) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const motionValue = useMotionValue(shouldReduceMotion ? to : from);
-  const rounded = useTransform(motionValue, (v) => Math.round(v));
+  const [current, setCurrent] = useState(shouldReduceMotion ? to : from);
 
   useEffect(() => {
     if (!isInView || shouldReduceMotion) return;
-    const controls = animate(motionValue, to, {
-      duration,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    });
-    return controls.stop;
-  }, [isInView, shouldReduceMotion, motionValue, to, duration]);
+    const startTime = performance.now();
+    const durationMs = duration * 1000;
+    let rafId: number;
+
+    function tick(now: number) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / durationMs, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCurrent(Math.round(from + (to - from) * eased));
+      if (progress < 1) {
+        rafId = requestAnimationFrame(tick);
+      }
+    }
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [isInView, shouldReduceMotion, from, to, duration]);
 
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {shouldReduceMotion ? <span>{to}</span> : <motion.span>{rounded}</motion.span>}
+      <span>{shouldReduceMotion ? to : current}</span>
       {suffix}
     </span>
   );

@@ -3,43 +3,10 @@ import { describe, it, expect, afterEach, vi, beforeEach } from "vitest";
 
 const motionState = vi.hoisted(() => ({ reducedMotion: false }));
 
-vi.mock("framer-motion", () => {
-  const mc = (Tag: string) => {
-    const FM_PROPS = new Set([
-      "initial", "animate", "exit", "transition", "whileInView",
-      "viewport", "variants", "whileHover", "whileTap", "layout",
-      "layoutId",
-    ]);
-    const C = ({ children, ...props }: Record<string, unknown>) => {
-      const safe: Record<string, unknown> = {};
-      for (const [k, v] of Object.entries(props)) {
-        if (!FM_PROPS.has(k)) {
-          safe[k] = v;
-        }
-      }
-      const El = Tag as unknown as React.ElementType;
-      return <El {...safe}>{children as React.ReactNode}</El>;
-    };
-    C.displayName = `motion.${Tag}`;
-    return C;
-  };
-  return {
-    motion: {
-      div: mc("div"), span: mc("span"), button: mc("button"),
-      section: mc("section"), a: mc("a"), h1: mc("h1"),
-      h2: mc("h2"), h3: mc("h3"), p: mc("p"),
-      create: (tag: string) => mc(tag),
-    },
-    animate: () => ({ stop: () => {} }),
-    useInView: () => true,
-    useScroll: () => ({ scrollYProgress: { get: () => 0.5 } }),
-    useTransform: () => 0,
-    useMotionValue: (v: number = 0) => ({ set: () => {}, get: () => v }),
-    useSpring: () => ({ set: () => {}, get: () => 0 }),
-    useReducedMotion: () => motionState.reducedMotion,
-    AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
-  };
-});
+vi.mock("@/hooks/useAnimations", () => ({
+  useInView: () => true,
+  useReducedMotion: () => motionState.reducedMotion,
+}));
 
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
@@ -69,8 +36,11 @@ describe("ScrollToTop", () => {
   it("button is not visible when scroll is 0", () => {
     Object.defineProperty(window, "scrollY", { configurable: true, writable: true, value: 0 });
     render(<ScrollToTop />);
-    const btn = screen.queryByRole("button", { name: /retour en haut/i });
-    expect(btn).not.toBeInTheDocument();
+    const btn = screen.getByRole("button", { name: /retour en haut/i });
+    // Button exists in DOM but has opacity 0 and pointerEvents none
+    expect(btn).toBeInTheDocument();
+    expect(btn.style.opacity).toBe("0");
+    expect(btn.style.pointerEvents).toBe("none");
   });
 
   it("button appears after scrolling past 400px", () => {
@@ -83,6 +53,8 @@ describe("ScrollToTop", () => {
 
     const btn = screen.getByRole("button", { name: /retour en haut/i });
     expect(btn).toBeInTheDocument();
+    expect(btn.style.opacity).toBe("1");
+    expect(btn.style.pointerEvents).toBe("auto");
   });
 
   it("button is not shown when scroll is exactly at 400px", () => {
@@ -93,8 +65,9 @@ describe("ScrollToTop", () => {
       window.dispatchEvent(new Event("scroll"));
     });
 
-    const btn = screen.queryByRole("button", { name: /retour en haut/i });
-    expect(btn).not.toBeInTheDocument();
+    const btn = screen.getByRole("button", { name: /retour en haut/i });
+    expect(btn.style.opacity).toBe("0");
+    expect(btn.style.pointerEvents).toBe("none");
   });
 
   it("button disappears when scrolling back below 400px", () => {
@@ -105,14 +78,16 @@ describe("ScrollToTop", () => {
       window.dispatchEvent(new Event("scroll"));
     });
 
-    expect(screen.getByRole("button", { name: /retour en haut/i })).toBeInTheDocument();
+    const btn = screen.getByRole("button", { name: /retour en haut/i });
+    expect(btn.style.opacity).toBe("1");
 
     act(() => {
       Object.defineProperty(window, "scrollY", { configurable: true, writable: true, value: 100 });
       window.dispatchEvent(new Event("scroll"));
     });
 
-    expect(screen.queryByRole("button", { name: /retour en haut/i })).not.toBeInTheDocument();
+    expect(btn.style.opacity).toBe("0");
+    expect(btn.style.pointerEvents).toBe("none");
   });
 
   it("clicking the button calls window.scrollTo with top: 0", () => {

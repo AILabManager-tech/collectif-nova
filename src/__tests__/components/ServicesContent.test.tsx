@@ -22,21 +22,9 @@ vi.mock("@/i18n/routing", () => ({
   ),
 }));
 
-vi.mock("framer-motion", () => ({
-  motion: {
-    div: ({
-      children,
-      className,
-      ...rest
-    }: React.HTMLAttributes<HTMLDivElement>) => (
-      <div className={className} {...rest}>
-        {children}
-      </div>
-    ),
-  },
-  AnimatePresence: ({ children }: { children: React.ReactNode }) => (
-    <>{children}</>
-  ),
+vi.mock("@/hooks/useAnimations", () => ({
+  useInView: () => true,
+  useReducedMotion: () => false,
 }));
 
 vi.mock("next/image", () => ({
