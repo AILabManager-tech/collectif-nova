@@ -60,9 +60,11 @@ export async function generateMetadata({
   };
 }
 
-export const viewport: Viewport = {
-  themeColor: "#7B61FF",
-};
+export async function generateViewport(): Promise<Viewport> {
+  return {
+    themeColor: "#0D0D0D",
+  };
+}
 
 interface RootLayoutProps {
   children: ReactNode;
