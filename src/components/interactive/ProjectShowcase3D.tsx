@@ -342,7 +342,7 @@ export function ProjectShowcase3D() {
             transition={{ duration: 0.35, ease: "easeInOut" as const }}
           >
             <div className="mb-4 text-center">
-              <span className="inline-block rounded-full bg-[#7B61FF]/10 px-4 py-1.5 text-sm font-semibold text-[#7B61FF]">
+              <span className="inline-block rounded-full bg-[#7B61FF]/20 px-4 py-1.5 text-sm font-semibold text-[#9B85FF]">
                 {t(`projects.${activeProject}.category`)}
               </span>
             </div>

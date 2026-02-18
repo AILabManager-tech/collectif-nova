@@ -28,7 +28,7 @@ export default function Error({
         </p>
         <button
           onClick={reset}
-          className="rounded-xl bg-violet-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-violet-600 hover:shadow-lg hover:shadow-violet-500/25 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-800"
+          className="rounded-xl bg-violet-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-violet-700 hover:shadow-lg hover:shadow-violet-500/25 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-800"
         >
           R&eacute;essayer
         </button>

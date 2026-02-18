@@ -38,12 +38,12 @@ const services = [
 
 const accentMap: Record<string, { bg: string; text: string; border: string }> = {
   violet: {
-    bg: "bg-[#7B61FF]/10",
-    text: "text-[#7B61FF]",
+    bg: "bg-[#7B61FF]/20",
+    text: "text-[#9B85FF]",
     border: "border-[#7B61FF]/20",
   },
   cyan: {
-    bg: "bg-[#00E5CC]/10",
+    bg: "bg-[#00E5CC]/20",
     text: "text-[#00E5CC]",
     border: "border-[#00E5CC]/20",
   },
@@ -153,7 +153,7 @@ export function HomeContent() {
               <div className="flex flex-col gap-4 sm:flex-row">
                 <MagneticButton
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#7B61FF] px-8 py-4 text-lg font-medium text-white transition-all hover:bg-[#6B51EF] hover:shadow-xl hover:shadow-[#7B61FF]/25"
+                  className="inline-flex items-center justify-center rounded-xl bg-[#6347E5] px-8 py-4 text-lg font-medium text-white transition-all hover:bg-[#4C30CC] hover:shadow-xl hover:shadow-[#7B61FF]/25"
                   strength={0.35}
                 >
                   {t("hero.cta")}

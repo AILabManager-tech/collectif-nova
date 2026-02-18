@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { AboutContent } from "@/components/pages/AboutContent";
+import { LazyAboutContent } from "@/components/pages/LazyAboutContent";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -23,5 +23,5 @@ export async function generateMetadata({
 }
 
 export default function AboutPage() {
-  return <AboutContent />;
+  return <LazyAboutContent />;
 }
