@@ -15,10 +15,15 @@
       "badge": "Agence créative",
       "title": "On transforme vos idées en expériences qui marquent.",
       "subtitle": "Branding, design web, stratégie social media et motion design — un collectif créatif qui donne vie à votre vision numérique.",
+      "cta": "Démarrer un projet",
       "cta_primary": "Démarrer un projet",
       "cta_secondary": "Voir nos réalisations"
     },
     "stats": {
+      "experience": "Années d'expérience",
+      "projects": "Projets livrés",
+      "satisfaction": "Clients satisfaits",
+      "expertises": "Disciplines créatives",
       "stat1_value": "80+",
       "stat1_label": "Projets livrés",
       "stat2_value": "4",
@@ -51,6 +56,26 @@
     "showcase": {
       "title": "Nos réalisations",
       "subtitle": "Des projets qui parlent d'eux-mêmes.",
+      "before_label": "Avant",
+      "after_label": "Après",
+      "projects": {
+        "branding": {
+          "title": "Maison Atelier",
+          "category": "Branding + Web"
+        },
+        "website": {
+          "title": "Nüvo Fitness",
+          "category": "Design Web + Social Media"
+        },
+        "social": {
+          "title": "Festival Lumières",
+          "category": "Motion Design + Social"
+        },
+        "identity": {
+          "title": "Vert & Cru",
+          "category": "Identité + Branding"
+        }
+      },
       "project1": {
         "title": "Maison Atelier",
         "category": "Branding + Web",
@@ -74,6 +99,21 @@
     },
     "testimonials": {
       "title": "Ce que nos clients en disent",
+      "0": {
+        "quote": "Le Collectif Nova a complètement transformé notre image de marque. Leur approche créative et leur rigueur technique nous ont donné une identité visuelle qui se démarque véritablement dans notre industrie.",
+        "name": "Raphaëlle D.",
+        "role": "CEO, TechPulse Solutions"
+      },
+      "1": {
+        "quote": "De la stratégie à l'exécution, l'équipe Nova a livré un site web et une présence sociale qui ont doublé notre acquisition de clients en 3 mois. Professionnels, réactifs et créatifs.",
+        "name": "Maxime L.",
+        "role": "Fondateur, Nüvo Fitness"
+      },
+      "2": {
+        "quote": "La vidéo promotionnelle et les animations créées par Nova ont généré un engagement sans précédent pour notre lancement. Leur talent pour raconter des histoires visuelles est incomparable.",
+        "name": "Camille B.",
+        "role": "Directrice marketing, Vert & Cru"
+      },
       "items": [
         {
           "name": "Raphaëlle D., CEO",
@@ -104,6 +144,7 @@
       "description": "Découvrez les services créatifs de Collectif Nova à Montréal : branding & identité, design web, stratégie social media et motion design & vidéo."
     },
     "hero": {
+      "badge": "Ce qu'on fait",
       "title": "Nos services",
       "subtitle": "Quatre disciplines créatives qui se complètent pour des résultats qui dépassent les attentes."
     },
@@ -114,7 +155,8 @@
       "item1": "Audit de marque et positionnement stratégique",
       "item2": "Création de logo et système d'identité visuelle",
       "item3": "Charte graphique et brand guidelines complètes",
-      "item4": "Papeterie d'affaires et déclinaisons marketing"
+      "item4": "Papeterie d'affaires et déclinaisons marketing",
+      "item5": "Stratégie de marque et naming"
     },
     "web": {
       "title": "Design & Développement Web",
@@ -141,10 +183,27 @@
       "item1": "Storyboard et direction artistique vidéo",
       "item2": "Animation 2D/3D et motion graphics",
       "item3": "Production vidéo promotionnelle et institutionnelle",
-      "item4": "Contenu animé pour réseaux sociaux et publicité"
+      "item4": "Contenu animé pour réseaux sociaux et publicité",
+      "item5": "Motion branding et animations d'interface"
     },
     "process": {
       "title": "Notre processus",
+      "discovery": {
+        "title": "Découverte",
+        "description": "On écoute, on analyse, on comprend vos objectifs et votre audience pour définir une stratégie créative solide."
+      },
+      "strategy": {
+        "title": "Stratégie",
+        "description": "On explore, on prototype, on itère. Chaque concept est validé avant de passer à la production."
+      },
+      "creation": {
+        "title": "Création",
+        "description": "On crée avec rigueur et passion. Design, développement ou animation — chaque livrable est peaufiné au pixel près."
+      },
+      "launch": {
+        "title": "Lancement",
+        "description": "On déploie, on mesure, on optimise. Votre projet prend vie et on s'assure qu'il performe dès le premier jour."
+      },
       "step1": {
         "title": "Découverte",
         "description": "On écoute, on analyse, on comprend vos objectifs et votre audience pour définir une stratégie créative solide."
@@ -184,6 +243,7 @@
       "description": "Découvrez l'histoire, les valeurs et l'équipe de Collectif Nova. Une agence créative montréalaise spécialisée en branding, web et motion design."
     },
     "hero": {
+      "badge": "Notre collectif",
       "title": "À propos de Collectif Nova",
       "subtitle": "Un collectif de créatifs passionnés qui repoussent les limites du design depuis 2020."
     },
@@ -211,6 +271,21 @@
     "team": {
       "title": "Rencontrez l'équipe",
       "subtitle": "Des créatifs complémentaires, unis par la passion du design et de l'innovation.",
+      "alex": {
+        "name": "Alex Moreau",
+        "role": "Directeur créatif, Fondateur",
+        "bio": "Fondateur de Collectif Nova, Alex cumule plus de 10 ans d'expérience en direction artistique et branding. Passionné par les identités visuelles qui racontent des histoires, il guide chaque projet avec un œil aiguisé pour le détail et l'impact."
+      },
+      "sam": {
+        "name": "Sam Chen",
+        "role": "Lead Développeur & Designer UX",
+        "bio": "Expert en développement front-end et design d'interfaces, Sam transforme les concepts créatifs en expériences web performantes. Spécialiste Next.js et React, il marie esthétique et technique avec précision."
+      },
+      "jules": {
+        "name": "Jules Fontaine",
+        "role": "Stratège numérique & Motion Designer",
+        "bio": "Jules combine une expertise en stratégie numérique et en motion design pour créer du contenu qui capte l'attention. De la planification éditoriale aux animations percutantes, il donne vie aux marques sur tous les écrans."
+      },
       "members": [
         {
           "name": "Alex Moreau",
@@ -234,6 +309,7 @@
     },
     "cta": {
       "title": "Prêt à collaborer?",
+      "subtitle": "Parlons de votre prochain projet et créons quelque chose d'extraordinaire ensemble.",
       "button": "Démarrer un projet"
     }
   },
@@ -243,6 +319,7 @@
       "description": "Contactez Collectif Nova pour discuter de votre prochain projet créatif. Branding, web, social media et motion design à Montréal."
     },
     "hero": {
+      "badge": "Contactez-nous",
       "title": "Parlons de votre projet",
       "subtitle": "Envoyez-nous un message ou passez nous voir au studio. On répond à toutes les demandes sous 24 heures."
     },
@@ -250,7 +327,17 @@
       "name": "Votre nom complet",
       "email": "Courriel",
       "phone": "Téléphone",
+      "company": "Entreprise",
+      "optional": "optionnel",
       "service": "Service souhaité",
+      "service_placeholder": "Choisir un service",
+      "services": {
+        "branding": "Branding & Identité",
+        "web": "Design & Développement Web",
+        "social": "Stratégie Social Media",
+        "motion": "Motion Design & Vidéo",
+        "autre": "Autre / Je ne sais pas"
+      },
       "service_options": {
         "branding": "Branding & Identité",
         "web": "Design & Développement Web",
@@ -260,6 +347,13 @@
         "other": "Autre / Je ne sais pas"
       },
       "budget": "Budget estimé",
+      "budget_placeholder": "Choisir une tranche budgétaire",
+      "budgets": {
+        "5k-10k": "5 000 $ — 10 000 $",
+        "10k-25k": "10 000 $ — 25 000 $",
+        "25k-50k": "25 000 $ — 50 000 $",
+        "50k+": "50 000 $ et plus"
+      },
       "budget_options": {
         "small": "Moins de 5 000 $",
         "medium": "5 000 $ — 15 000 $",
@@ -268,14 +362,17 @@
         "unknown": "À définir"
       },
       "message": "Décrivez votre projet",
+      "message_placeholder": "Décrivez brièvement votre projet, vos objectifs et vos échéances...",
       "consent": "J'accepte que mes données soient utilisées pour traiter ma demande.",
       "consent_notice": "Vos renseignements personnels sont traités conformément à la Loi 25 du Québec.",
       "consent_link": "Politique de confidentialité",
+      "privacy_link": "Politique de confidentialité",
       "loi25_notice": "Conformément à la Loi 25 du Québec, vos renseignements personnels ne seront utilisés que pour répondre à votre demande et ne seront pas partagés avec des tiers sans votre consentement explicite.",
       "submit": "Envoyer le message",
       "sending": "Envoi en cours...",
       "success": "Message envoyé avec succès! Nous vous répondrons sous 24 heures.",
       "error": "Une erreur est survenue. Veuillez réessayer ou nous appeler directement.",
+      "response_time": "Nous répondons habituellement dans un délai de 24 heures ouvrables.",
       "errors": {
         "name_min": "Le nom doit contenir au moins 2 caractères.",
         "email": "Veuillez entrer une adresse courriel valide.",
@@ -290,10 +387,24 @@
     "info": {
       "title": "Nos coordonnées",
       "address": "4020, rue Saint-Ambroise, bureau 350, Montréal QC H4C 2C7",
+      "address_label": "Adresse",
+      "city": "Montréal, QC H4C 2C7",
       "phone": "(514) 555-0300",
+      "phone_label": "Téléphone",
       "email": "hello@collectif-nova.ca",
+      "email_label": "Courriel",
       "hours": "Heures d'ouverture",
-      "hours_weekday": "Lundi au vendredi : 9h00 - 18h00"
+      "hours_label": "Heures d'ouverture",
+      "hours_weekday": "Lundi au vendredi : 9h00 - 18h00",
+      "hours_weekend": "Samedi et dimanche : Fermé"
+    },
+    "loi25": {
+      "title": "Protection des renseignements personnels",
+      "notice": "Conformément à la Loi 25 du Québec, vos renseignements personnels ne seront utilisés que pour répondre à votre demande. Consultez notre",
+      "link": "politique de confidentialité"
+    },
+    "map": {
+      "placeholder": "Montréal, QC — Saint-Henri"
     }
   },
   "footer": {

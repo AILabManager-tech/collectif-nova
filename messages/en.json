@@ -15,10 +15,15 @@
       "badge": "Creative agency",
       "title": "We turn your ideas into experiences that stick.",
       "subtitle": "Branding, web design, social media strategy and motion design — a creative collective that brings your digital vision to life.",
+      "cta": "Start a project",
       "cta_primary": "Start a project",
       "cta_secondary": "View our work"
     },
     "stats": {
+      "experience": "Years of experience",
+      "projects": "Projects delivered",
+      "satisfaction": "Client satisfaction",
+      "expertises": "Creative disciplines",
       "stat1_value": "80+",
       "stat1_label": "Projects delivered",
       "stat2_value": "4",
@@ -51,6 +56,26 @@
     "showcase": {
       "title": "Our work",
       "subtitle": "Projects that speak for themselves.",
+      "before_label": "Before",
+      "after_label": "After",
+      "projects": {
+        "branding": {
+          "title": "Maison Atelier",
+          "category": "Branding + Web"
+        },
+        "website": {
+          "title": "Nuvo Fitness",
+          "category": "Web Design + Social Media"
+        },
+        "social": {
+          "title": "Festival Lumieres",
+          "category": "Motion Design + Social"
+        },
+        "identity": {
+          "title": "Vert & Cru",
+          "category": "Identity + Branding"
+        }
+      },
       "project1": {
         "title": "Maison Atelier",
         "category": "Branding + Web",
@@ -74,6 +99,21 @@
     },
     "testimonials": {
       "title": "What our clients say",
+      "0": {
+        "quote": "Collectif Nova completely transformed our brand image. Their creative approach and technical rigor gave us a visual identity that truly stands out in our industry.",
+        "name": "Raphaelle D.",
+        "role": "CEO, TechPulse Solutions"
+      },
+      "1": {
+        "quote": "From strategy to execution, the Nova team delivered a website and social presence that doubled our client acquisition in 3 months. Professional, responsive and creative.",
+        "name": "Maxime L.",
+        "role": "Founder, Nuvo Fitness"
+      },
+      "2": {
+        "quote": "The promotional video and animations created by Nova generated unprecedented engagement for our launch. Their talent for visual storytelling is unmatched.",
+        "name": "Camille B.",
+        "role": "Marketing Director, Vert & Cru"
+      },
       "items": [
         {
           "name": "Raphaelle D., CEO",
@@ -104,6 +144,7 @@
       "description": "Discover Collectif Nova's creative services in Montreal: branding & identity, web design, social media strategy and motion design & video."
     },
     "hero": {
+      "badge": "What we do",
       "title": "Our services",
       "subtitle": "Four creative disciplines that complement each other for results that exceed expectations."
     },
@@ -114,7 +155,8 @@
       "item1": "Brand audit and strategic positioning",
       "item2": "Logo creation and visual identity system",
       "item3": "Brand guidelines and style guide",
-      "item4": "Business stationery and marketing collateral"
+      "item4": "Business stationery and marketing collateral",
+      "item5": "Brand strategy and naming"
     },
     "web": {
       "title": "Web Design & Development",
@@ -141,10 +183,27 @@
       "item1": "Storyboard and video art direction",
       "item2": "2D/3D animation and motion graphics",
       "item3": "Promotional and corporate video production",
-      "item4": "Animated content for social media and advertising"
+      "item4": "Animated content for social media and advertising",
+      "item5": "Motion branding and interface animations"
     },
     "process": {
       "title": "Our process",
+      "discovery": {
+        "title": "Discovery",
+        "description": "We listen, analyze and understand your goals and audience to define a solid creative strategy."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "description": "We explore, prototype and iterate. Every concept is validated before moving to production."
+      },
+      "creation": {
+        "title": "Creation",
+        "description": "We create with rigor and passion. Design, development or animation — every deliverable is polished to the pixel."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "We deploy, measure and optimize. Your project comes to life and we make sure it performs from day one."
+      },
       "step1": {
         "title": "Discovery",
         "description": "We listen, analyze and understand your goals and audience to define a solid creative strategy."
@@ -184,6 +243,7 @@
       "description": "Discover the story, values and team of Collectif Nova. A Montreal creative agency specializing in branding, web and motion design."
     },
     "hero": {
+      "badge": "Our collective",
       "title": "About Collectif Nova",
       "subtitle": "A collective of passionate creatives pushing the boundaries of design since 2020."
     },
@@ -211,6 +271,21 @@
     "team": {
       "title": "Meet the team",
       "subtitle": "Complementary creatives, united by a passion for design and innovation.",
+      "alex": {
+        "name": "Alex Moreau",
+        "role": "Creative Director, Founder",
+        "bio": "Founder of Collectif Nova, Alex has over 10 years of experience in art direction and branding. Passionate about visual identities that tell stories, he guides every project with a keen eye for detail and impact."
+      },
+      "sam": {
+        "name": "Sam Chen",
+        "role": "Lead Developer & UX Designer",
+        "bio": "Expert in front-end development and interface design, Sam transforms creative concepts into high-performance web experiences. A Next.js and React specialist, he combines aesthetics and technology with precision."
+      },
+      "jules": {
+        "name": "Jules Fontaine",
+        "role": "Digital Strategist & Motion Designer",
+        "bio": "Jules combines expertise in digital strategy and motion design to create attention-grabbing content. From editorial planning to striking animations, he brings brands to life across every screen."
+      },
       "members": [
         {
           "name": "Alex Moreau",
@@ -234,6 +309,7 @@
     },
     "cta": {
       "title": "Ready to collaborate?",
+      "subtitle": "Let's talk about your next project and create something extraordinary together.",
       "button": "Start a project"
     }
   },
@@ -243,6 +319,7 @@
       "description": "Contact Collectif Nova to discuss your next creative project. Branding, web, social media and motion design in Montreal."
     },
     "hero": {
+      "badge": "Get in touch",
       "title": "Let's talk about your project",
       "subtitle": "Send us a message or visit our studio. We respond to all inquiries within 24 hours."
     },
@@ -250,7 +327,17 @@
       "name": "Your full name",
       "email": "Email",
       "phone": "Phone",
+      "company": "Company",
+      "optional": "optional",
       "service": "Desired service",
+      "service_placeholder": "Select a service",
+      "services": {
+        "branding": "Branding & Identity",
+        "web": "Web Design & Development",
+        "social": "Social Media Strategy",
+        "motion": "Motion Design & Video",
+        "autre": "Other / Not sure"
+      },
       "service_options": {
         "branding": "Branding & Identity",
         "web": "Web Design & Development",
@@ -260,6 +347,13 @@
         "other": "Other / Not sure"
       },
       "budget": "Estimated budget",
+      "budget_placeholder": "Select a budget range",
+      "budgets": {
+        "5k-10k": "$5,000 — $10,000",
+        "10k-25k": "$10,000 — $25,000",
+        "25k-50k": "$25,000 — $50,000",
+        "50k+": "$50,000 and above"
+      },
       "budget_options": {
         "small": "Under $5,000",
         "medium": "$5,000 — $15,000",
@@ -268,14 +362,17 @@
         "unknown": "To be determined"
       },
       "message": "Describe your project",
+      "message_placeholder": "Briefly describe your project, goals and timeline...",
       "consent": "I agree that my data may be used to process my request.",
       "consent_notice": "Your personal information is processed in accordance with Quebec's Law 25.",
       "consent_link": "Privacy Policy",
+      "privacy_link": "Privacy Policy",
       "loi25_notice": "In accordance with Quebec's Law 25, your personal information will only be used to respond to your request and will not be shared with third parties without your explicit consent.",
       "submit": "Send message",
       "sending": "Sending...",
       "success": "Message sent successfully! We will respond within 24 hours.",
       "error": "An error occurred. Please try again or call us directly.",
+      "response_time": "We typically respond within 24 business hours.",
       "errors": {
         "name_min": "Name must be at least 2 characters.",
         "email": "Please enter a valid email address.",
@@ -290,10 +387,24 @@
     "info": {
       "title": "Our contact information",
       "address": "4020 Saint-Ambroise Street, Suite 350, Montreal QC H4C 2C7",
+      "address_label": "Address",
+      "city": "Montreal, QC H4C 2C7",
       "phone": "(514) 555-0300",
+      "phone_label": "Phone",
       "email": "hello@collectif-nova.ca",
+      "email_label": "Email",
       "hours": "Business hours",
-      "hours_weekday": "Monday to Friday: 9:00 AM - 6:00 PM"
+      "hours_label": "Business hours",
+      "hours_weekday": "Monday to Friday: 9:00 AM - 6:00 PM",
+      "hours_weekend": "Saturday & Sunday: Closed"
+    },
+    "loi25": {
+      "title": "Protection of personal information",
+      "notice": "In accordance with Quebec's Law 25, your personal information will only be used to respond to your request. See our",
+      "link": "privacy policy"
+    },
+    "map": {
+      "placeholder": "Montreal, QC — Saint-Henri"
     }
   },
   "footer": {
