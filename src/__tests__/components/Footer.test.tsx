@@ -36,9 +36,10 @@ describe("Footer", () => {
     expect(document.querySelector("footer")).toBeInTheDocument();
   });
 
-  it("renders the brand name", () => {
+  it("renders the Collectif Nova brand name", () => {
     render(<Footer />);
-    expect(screen.getByText(/L'Usine/)).toBeInTheDocument();
+    expect(screen.getByText(/Collectif/)).toBeInTheDocument();
+    expect(screen.getByText("Nova")).toBeInTheDocument();
   });
 
   it("renders navigation links", () => {
@@ -51,12 +52,12 @@ describe("Footer", () => {
 
   it("renders legal links (privacy, legal mentions)", () => {
     render(<Footer />);
-    const privacyLink = screen.getByText("Politique de confidentialité");
+    const privacyLink = screen.getByText("privacy");
     expect(privacyLink.closest("a")).toHaveAttribute(
       "href",
       "/politique-confidentialite"
     );
-    const legalLink = screen.getByText("Mentions légales");
+    const legalLink = screen.getByText("mentions");
     expect(legalLink.closest("a")).toHaveAttribute(
       "href",
       "/mentions-legales"
@@ -71,17 +72,29 @@ describe("Footer", () => {
   it("renders CTA section", () => {
     render(<Footer />);
     expect(screen.getByText("cta")).toBeInTheDocument();
-    expect(screen.getByText("cta_button")).toBeInTheDocument();
   });
 
-  it("renders contact info", () => {
+  it("renders Montreal address", () => {
     render(<Footer />);
-    expect(screen.getByText("Quebec, QC")).toBeInTheDocument();
-    expect(screen.getByText("LinkedIn")).toBeInTheDocument();
+    expect(screen.getByText(/Montreal/)).toBeInTheDocument();
+  });
+
+  it("renders social links", () => {
+    render(<Footer />);
+    expect(screen.getByLabelText("Instagram")).toBeInTheDocument();
+    expect(screen.getByLabelText("LinkedIn")).toBeInTheDocument();
+    expect(screen.getByLabelText("Behance")).toBeInTheDocument();
+    expect(screen.getByLabelText("Dribbble")).toBeInTheDocument();
   });
 
   it("renders copyright", () => {
     render(<Footer />);
     expect(screen.getByText(/copyright/)).toBeInTheDocument();
+  });
+
+  it("renders newsletter section", () => {
+    render(<Footer />);
+    expect(screen.getByText("newsletter.title")).toBeInTheDocument();
+    expect(screen.getByText("newsletter.button")).toBeInTheDocument();
   });
 });

@@ -19,22 +19,28 @@ describe("Button", () => {
     expect(link).toHaveAttribute("href", "/contact");
   });
 
-  it("applies primary variant classes by default", () => {
+  it("applies primary variant classes by default (violet)", () => {
     render(<Button>Primary</Button>);
     const btn = screen.getByRole("button", { name: "Primary" });
-    expect(btn.className).toContain("bg-terracotta-500");
+    expect(btn.className).toContain("bg-violet-500");
   });
 
-  it("applies secondary variant classes", () => {
+  it("applies secondary variant classes (cyan)", () => {
     render(<Button variant="secondary">Secondary</Button>);
     const btn = screen.getByRole("button", { name: "Secondary" });
-    expect(btn.className).toContain("bg-sage-500");
+    expect(btn.className).toContain("bg-cyan-500");
   });
 
-  it("applies outline variant classes", () => {
+  it("applies outline variant classes (violet border)", () => {
     render(<Button variant="outline">Outline</Button>);
     const btn = screen.getByRole("button", { name: "Outline" });
-    expect(btn.className).toContain("border-sage-500");
+    expect(btn.className).toContain("border-violet-500");
+  });
+
+  it("applies ghost variant classes", () => {
+    render(<Button variant="ghost">Ghost</Button>);
+    const btn = screen.getByRole("button", { name: "Ghost" });
+    expect(btn.className).toContain("text-violet-400");
   });
 
   it("applies size classes", () => {
@@ -49,5 +55,11 @@ describe("Button", () => {
   it("merges custom className", () => {
     render(<Button className="mt-4">Custom</Button>);
     expect(screen.getByRole("button", { name: "Custom" }).className).toContain("mt-4");
+  });
+
+  it("applies focus ring classes with violet color", () => {
+    render(<Button>Focus</Button>);
+    const btn = screen.getByRole("button", { name: "Focus" });
+    expect(btn.className).toContain("focus:ring-violet-500");
   });
 });

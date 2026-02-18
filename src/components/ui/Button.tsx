@@ -5,13 +5,13 @@ type Variant = "primary" | "secondary" | "outline" | "ghost";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-terracotta-500 text-white hover:bg-terracotta-600 hover:scale-[1.02]",
+    "bg-violet-500 text-gris-50 hover:bg-violet-400 hover:scale-[1.02] hover:shadow-lg hover:shadow-violet-500/25",
   secondary:
-    "bg-sage-500 text-white hover:bg-sage-600 hover:scale-[1.02]",
+    "bg-cyan-500 text-noir-800 hover:bg-cyan-400 hover:scale-[1.02]",
   outline:
-    "border-2 border-sage-500 text-sage-600 hover:bg-sage-50",
+    "border-2 border-violet-500 text-violet-400 hover:bg-violet-500/10",
   ghost:
-    "text-sage-600 hover:bg-sage-50",
+    "text-violet-400 hover:bg-violet-500/10",
 };
 
 interface BaseProps {
@@ -28,7 +28,8 @@ type LinkProps = BaseProps &
 type Props = ButtonProps | LinkProps;
 
 /**
- * Button - Polymorphic button/link component with variant and size support.
+ * Button - Polymorphic button/link component with dark theme variant and size support.
+ * Collectif Nova palette: violet-500 (#7B61FF) primary, cyan-500 (#00E5CC) secondary.
  *
  * @component
  * @example
@@ -44,7 +45,7 @@ export function Button({
   ...props
 }: Props) {
   const classes = clsx(
-    "inline-flex items-center justify-center rounded-lg font-medium transition-all",
+    "inline-flex items-center justify-center rounded-xl font-medium transition-all focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-800",
     variants[variant],
     {
       "px-4 py-2 text-sm": size === "sm",

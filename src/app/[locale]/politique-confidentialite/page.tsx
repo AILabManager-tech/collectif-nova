@@ -11,13 +11,13 @@ export async function generateMetadata({
     title: locale === "fr" ? "Politique de confidentialité" : "Privacy Policy",
     description:
       locale === "fr"
-        ? "Politique de confidentialité de L'Usine RH — conforme à la Loi 25 du Québec."
-        : "HR Factory privacy policy — compliant with Quebec's Law 25.",
+        ? "Politique de confidentialité de Collectif Nova inc. — conforme à la Loi 25 du Québec."
+        : "Collectif Nova Inc. privacy policy — compliant with Quebec's Law 25.",
     alternates: {
-      canonical: `https://emiliepoirierrh.ca/${locale}/politique-confidentialite`,
+      canonical: `https://collectif-nova.vercel.app/${locale}/politique-confidentialite`,
       languages: {
-        fr: "https://emiliepoirierrh.ca/fr/politique-confidentialite",
-        en: "https://emiliepoirierrh.ca/en/politique-confidentialite",
+        fr: "https://collectif-nova.vercel.app/fr/politique-confidentialite",
+        en: "https://collectif-nova.vercel.app/en/politique-confidentialite",
       },
     },
   };
@@ -29,45 +29,45 @@ export default function PrivacyPolicyPage() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-20">
-      <h1 className="mb-8 font-heading text-3xl font-bold text-charcoal">
+      <h1 className="mb-8 font-heading text-3xl font-bold text-gris-50">
         {isFr ? "Politique de confidentialité" : "Privacy Policy"}
       </h1>
-      <p className="mb-8 text-sm text-charcoal/70">
+      <p className="mb-8 text-sm text-gris-400">
         {isFr ? "Dernière mise à jour : février 2026" : "Last updated: February 2026"}
       </p>
 
-      <div className="prose prose-charcoal max-w-none space-y-8 text-charcoal/80">
+      <div className="prose prose-invert max-w-none space-y-8 text-gris-300">
         {/* 1. Introduction */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "1. Introduction" : "1. Introduction"}
           </h2>
           <p>
             {isFr
-              ? "L'Usine RH (ci-après « nous ») s'engage à protéger les renseignements personnels de ses utilisateurs conformément à la Loi 25 du Québec (Loi modernisant des dispositions législatives en matière de protection des renseignements personnels)."
-              : "HR Factory (hereinafter \"we\") is committed to protecting the personal information of its users in accordance with Quebec's Law 25 (Act to modernize legislative provisions regarding the protection of personal information)."}
+              ? "Collectif Nova inc. (ci-après « nous ») s'engage à protéger les renseignements personnels de ses utilisateurs et clients conformément à la Loi 25 du Québec (Loi modernisant des dispositions législatives en matière de protection des renseignements personnels)."
+              : "Collectif Nova Inc. (hereinafter \"we\") is committed to protecting the personal information of its users and clients in accordance with Quebec's Law 25 (Act to modernize legislative provisions regarding the protection of personal information)."}
           </p>
         </section>
 
         {/* 2. RPP */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr
               ? "2. Responsable de la protection des renseignements personnels (RPP)"
               : "2. Person responsible for the protection of personal information"}
           </h2>
           <ul className="list-none space-y-1 pl-0">
             <li>
-              <strong>{isFr ? "Nom" : "Name"} :</strong> Émilie Poirier
+              <strong>{isFr ? "Nom" : "Name"} :</strong> Alex Moreau
             </li>
             <li>
               <strong>{isFr ? "Titre" : "Title"} :</strong>{" "}
-              {isFr ? "Propriétaire et consultante RH" : "Owner and HR Consultant"}
+              {isFr ? "Directeur créatif, Fondateur" : "Creative Director, Founder"}
             </li>
             <li>
               <strong>{isFr ? "Courriel" : "Email"} :</strong>{" "}
-              <a href="mailto:info@emiliepoirierrh.ca" className="text-sage-600 underline">
-                info@emiliepoirierrh.ca
+              <a href="mailto:hello@collectif-nova.ca" className="text-violet-400 underline hover:text-violet-300">
+                hello@collectif-nova.ca
               </a>
             </li>
           </ul>
@@ -75,18 +75,23 @@ export default function PrivacyPolicyPage() {
 
         {/* 3. Renseignements collectés */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "3. Renseignements personnels collectés" : "3. Personal information collected"}
           </h2>
+          <p>
+            {isFr
+              ? "Nous collectons les renseignements suivants via notre site web :"
+              : "We collect the following information via our website:"}
+          </p>
           <ul className="list-disc space-y-1 pl-6">
             <li>{isFr ? "Nom et prénom" : "First and last name"}</li>
             <li>{isFr ? "Adresse courriel" : "Email address"}</li>
-            <li>{isFr ? "Nom de l'entreprise" : "Company name"}</li>
-            <li>{isFr ? "Nombre d'employés" : "Number of employees"}</li>
+            <li>{isFr ? "Numéro de téléphone" : "Phone number"}</li>
+            <li>{isFr ? "Service souhaité et budget estimé" : "Desired service and estimated budget"}</li>
             <li>
               {isFr
-                ? "Messages envoyés via le formulaire de contact ou le clavardage"
-                : "Messages sent via the contact form or chatbot"}
+                ? "Messages envoyés via le formulaire de contact"
+                : "Messages sent via the contact form"}
             </li>
             <li>
               {isFr
@@ -98,20 +103,21 @@ export default function PrivacyPolicyPage() {
 
         {/* 4. Finalités */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "4. Finalités de la collecte" : "4. Purposes of collection"}
           </h2>
           <ul className="list-disc space-y-1 pl-6">
-            <li>{isFr ? "Répondre à vos demandes de consultation" : "Respond to your consultation requests"}</li>
-            <li>{isFr ? "Fournir nos services de consultation RH" : "Provide our HR consulting services"}</li>
+            <li>{isFr ? "Répondre à vos demandes de projet" : "Respond to your project inquiries"}</li>
+            <li>{isFr ? "Fournir nos services créatifs" : "Provide our creative services"}</li>
             <li>{isFr ? "Améliorer l'expérience de navigation sur le site" : "Improve the browsing experience on the site"}</li>
-            <li>{isFr ? "Communiquer avec vous au sujet de nos services" : "Communicate with you about our services"}</li>
+            <li>{isFr ? "Communiquer avec vous au sujet de votre projet" : "Communicate with you about your project"}</li>
+            <li>{isFr ? "Envoyer notre infolettre (si consentement)" : "Send our newsletter (if consented)"}</li>
           </ul>
         </section>
 
         {/* 5. Consentement */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "5. Consentement" : "5. Consent"}
           </h2>
           <p>
@@ -123,7 +129,7 @@ export default function PrivacyPolicyPage() {
 
         {/* 6. Conservation */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "6. Durée de conservation" : "6. Retention period"}
           </h2>
           <p>
@@ -135,7 +141,7 @@ export default function PrivacyPolicyPage() {
 
         {/* 7. Droits */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "7. Vos droits" : "7. Your rights"}
           </h2>
           <p>
@@ -167,8 +173,8 @@ export default function PrivacyPolicyPage() {
           </ul>
           <p className="mt-2">
             {isFr ? "Pour exercer ces droits : " : "To exercise these rights: "}
-            <a href="mailto:info@emiliepoirierrh.ca" className="text-sage-600 underline">
-              info@emiliepoirierrh.ca
+            <a href="mailto:hello@collectif-nova.ca" className="text-violet-400 underline hover:text-violet-300">
+              hello@collectif-nova.ca
             </a>
             {isFr ? ". Nous répondrons dans un délai de 30 jours." : ". We will respond within 30 days."}
           </p>
@@ -176,15 +182,12 @@ export default function PrivacyPolicyPage() {
 
         {/* 8. Services tiers */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "8. Services tiers" : "8. Third-party services"}
           </h2>
           <ul className="list-disc space-y-1 pl-6">
             <li>
               <strong>Vercel</strong> — {isFr ? "Hébergement du site" : "Website hosting"} (USA)
-            </li>
-            <li>
-              <strong>Anthropic (Claude)</strong> — {isFr ? "Clavardage IA" : "AI chatbot"} (USA)
             </li>
             <li>
               <strong>Google Analytics</strong> —{" "}
@@ -195,19 +198,19 @@ export default function PrivacyPolicyPage() {
 
         {/* 9. Transfert hors Québec */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "9. Transfert hors Québec" : "9. Transfer outside Quebec"}
           </h2>
           <p>
             {isFr
-              ? "Certains services tiers (Vercel, Anthropic, Google) sont situés aux États-Unis. En utilisant notre site et en consentant aux témoins analytiques, vous acceptez que certaines données puissent être traitées aux États-Unis. Ces fournisseurs s'engagent à protéger vos données conformément à leurs politiques de confidentialité respectives."
-              : "Some third-party services (Vercel, Anthropic, Google) are located in the United States. By using our site and consenting to analytical cookies, you agree that some data may be processed in the United States. These providers are committed to protecting your data in accordance with their respective privacy policies."}
+              ? "Certains services tiers (Vercel, Google) sont situés aux États-Unis. En utilisant notre site et en consentant aux témoins analytiques, vous acceptez que certaines données de navigation puissent être traitées aux États-Unis. Ces fournisseurs s'engagent à protéger vos données conformément à leurs politiques de confidentialité respectives."
+              : "Some third-party services (Vercel, Google) are located in the United States. By using our site and consenting to analytical cookies, you agree that some browsing data may be processed in the United States. These providers are committed to protecting your data in accordance with their respective privacy policies."}
           </p>
         </section>
 
         {/* 10. Témoins */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "10. Témoins (cookies)" : "10. Cookies"}
           </h2>
           <ul className="list-disc space-y-1 pl-6">
@@ -234,7 +237,7 @@ export default function PrivacyPolicyPage() {
 
         {/* 11. Sécurité */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "11. Sécurité" : "11. Security"}
           </h2>
           <p>
@@ -246,36 +249,40 @@ export default function PrivacyPolicyPage() {
 
         {/* 12. Incident */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "12. Incident de confidentialité" : "12. Privacy incident"}
           </h2>
           <p>
             {isFr
-              ? "En cas d'incident de confidentialité présentant un risque de préjudice sérieux, nous nous engageons à aviser la Commission d'accès à l'information du Québec (CAI) et les personnes concernées, et à tenir un registre des incidents."
-              : "In the event of a privacy incident presenting a risk of serious harm, we commit to notifying the Commission d'accès à l'information du Québec (CAI) and affected individuals, and to maintaining a register of incidents."}
+              ? "En cas d'incident de confidentialité présentant un risque de préjudice sérieux, nous nous engageons à aviser la Commission d'accès à l'information du Québec (CAI) et les personnes concernées, et à tenir un registre des incidents conformément à l'article 3.5 de la Loi 25."
+              : "In the event of a privacy incident presenting a risk of serious harm, we commit to notifying the Commission d'accès à l'information du Québec (CAI) and affected individuals, and to maintaining a register of incidents in accordance with Section 3.5 of Law 25."}
           </p>
           <p>
             {isFr ? "Courriel de notification d'incident : " : "Incident notification email: "}
-            <a href="mailto:info@emiliepoirierrh.ca" className="text-sage-600 underline">
-              info@emiliepoirierrh.ca
+            <a href="mailto:hello@collectif-nova.ca" className="text-violet-400 underline hover:text-violet-300">
+              hello@collectif-nova.ca
             </a>
           </p>
         </section>
 
         {/* 13. Contact */}
         <section>
-          <h2 className="font-heading text-xl font-semibold text-charcoal">
+          <h2 className="font-heading text-xl font-semibold text-gris-100">
             {isFr ? "13. Contact" : "13. Contact"}
           </h2>
           <p>
-            <strong>{isFr ? "L'Usine RH" : "HR Factory"}</strong>
+            <strong>Collectif Nova inc.</strong>
             <br />
-            Émilie Poirier
+            Alex Moreau, RPP
             <br />
-            Québec, QC
+            4020, rue Saint-Ambroise, bureau 350
             <br />
-            <a href="mailto:info@emiliepoirierrh.ca" className="text-sage-600 underline">
-              info@emiliepoirierrh.ca
+            Montréal, QC H4C 2C7
+            <br />
+            (514) 555-0300
+            <br />
+            <a href="mailto:hello@collectif-nova.ca" className="text-violet-400 underline hover:text-violet-300">
+              hello@collectif-nova.ca
             </a>
           </p>
         </section>

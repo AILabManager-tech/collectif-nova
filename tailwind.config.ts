@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,90 +10,59 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // NEXOS: Palette industrielle — HR Factory / L'Usine RH
-        sage: {
-          // Remappé → Vert sécurité chantier
-          50: "#EEF3F0",
-          100: "#D5E5DC",
-          200: "#ABCBB9",
-          300: "#81B196",
-          400: "#5A9775",
-          500: "#4A7C59",
-          600: "#3D6347",
-          700: "#2F4A36",
-          800: "#213126",
-          900: "#141D16",
-        },
-        terracotta: {
-          // Remappé → Rouille / Brique industrielle
-          50: "#F9F0EE",
-          100: "#EDDBD5",
-          200: "#D9B7AB",
-          300: "#C59381",
-          400: "#B16F57",
-          500: "#A0522D",
-          600: "#8B4513",
-          700: "#6A340F",
-          800: "#4A230A",
-          900: "#291306",
-        },
-        gold: {
-          // Remappé → Cuivre oxydé
-          50: "#FBF4EE",
-          100: "#F5E5D5",
-          200: "#EBCBAB",
-          300: "#E1B181",
-          400: "#D79757",
-          500: "#B87333",
-          600: "#A0632B",
-          700: "#7A4C21",
-          800: "#543517",
-          900: "#2E1E0D",
-        },
-        cream: {
-          // Remappé → Blanc cassé / Gris ciment
-          50: "#FFFFFF",
-          100: "#F0EDE8",
-          200: "#E1DBD1",
-          300: "#D2C9BA",
-          400: "#C3B7A3",
-          500: "#7A756F",
-          600: "#7D7A75",
-          700: "#5E5C5A",
-          800: "#3F3E3D",
-          900: "#201F1F",
-        },
-        charcoal: {
-          // Béton anthracite
-          DEFAULT: "#2C2C2C",
-          light: "#3A3632",
-          dark: "#1A1A1A",
-        },
-        taupe: "#6B6560",
-        teal: {
-          50: "#F0FDFA",
-          100: "#CCFBF1",
-          200: "#99F6E4",
-          300: "#5EEAD4",
-          400: "#2DD4BF",
-          500: "#14B8A6",
-          600: "#0D9488",
-          700: "#0F766E",
+        // NEXOS: Palette Collectif Nova — Audacieux futuriste, géométrie vivante
+        noir: {
+          50: "#F5F5F5",
+          100: "#E0E0E0",
+          200: "#BDBDBD",
+          300: "#9E9E9E",
+          400: "#757575",
+          500: "#424242",
+          600: "#2A2A2A",
+          700: "#1A1A1A",
+          800: "#0D0D0D",
+          900: "#050505",
         },
         violet: {
-          50: "#F5F3FF",
-          100: "#EDE9FE",
-          200: "#DDD6FE",
-          300: "#C4B5FD",
-          400: "#A78BFA",
-          500: "#8B5CF6",
-          600: "#7C3AED",
+          50: "#F3EEFF",
+          100: "#E3D9FF",
+          200: "#C7B3FF",
+          300: "#AB8DFF",
+          400: "#9377FF",
+          500: "#7B61FF",
+          600: "#6347E5",
+          700: "#4C30CC",
+          800: "#371FB3",
+          900: "#241399",
+        },
+        cyan: {
+          50: "#E0FFF9",
+          100: "#B3FFF0",
+          200: "#66FFE1",
+          300: "#33FFD6",
+          400: "#00F2C8",
+          500: "#00E5CC",
+          600: "#00CCB3",
+          700: "#00B39E",
+          800: "#009985",
+          900: "#00806E",
+        },
+        gris: {
+          50: "#FAFAFF",
+          100: "#F0F0F5",
+          200: "#E0E0EA",
+          300: "#C5C5D0",
+          400: "#9999AA",
+          500: "#666680",
+          600: "#4D4D66",
+          700: "#33334D",
+          800: "#1A1A33",
+          900: "#0D0D1A",
         },
       },
       fontFamily: {
-        // NEXOS: Typographie industrielle
-        heading: ["var(--font-oswald)", "var(--font-bebas-neue)", "sans-serif"],
-        body: ["var(--font-barlow)", "sans-serif"],
+        heading: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        body: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
       },
       keyframes: {
         "fade-in": {
@@ -127,6 +97,17 @@ const config: Config = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        glitch: {
+          "0%, 100%": { transform: "translate(0)" },
+          "20%": { transform: "translate(-2px, 2px)" },
+          "40%": { transform: "translate(-2px, -2px)" },
+          "60%": { transform: "translate(2px, 2px)" },
+          "80%": { transform: "translate(2px, -2px)" },
+        },
+        "neon-flicker": {
+          "0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%": { opacity: "1" },
+          "20%, 24%, 55%": { opacity: "0.4" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.6s ease-out forwards",
@@ -137,11 +118,13 @@ const config: Config = {
         "gradient-shift": "gradient-shift 8s ease infinite",
         "glow-pulse": "glow-pulse 4s ease-in-out infinite",
         "spin-slow": "spin-slow 20s linear infinite",
+        glitch: "glitch 0.3s ease-in-out",
+        "neon-flicker": "neon-flicker 3s infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "grid-pattern":
-          "linear-gradient(rgba(135,148,122,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(135,148,122,0.08) 1px, transparent 1px)",
+          "linear-gradient(rgba(123,97,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(123,97,255,0.06) 1px, transparent 1px)",
       },
       backgroundSize: {
         "grid-40": "40px 40px",

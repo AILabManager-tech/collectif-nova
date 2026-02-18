@@ -15,7 +15,7 @@ describe("robots", () => {
     expect(rules!.allow).toBe("/");
   });
 
-  it("includes sitemap URL", () => {
-    expect(config.sitemap).toBe("https://emiliepoirierrh.ca/sitemap.xml");
+  it("includes sitemap URL for collectif-nova.vercel.app", () => {
+    expect(config.sitemap).toBe("https://collectif-nova.vercel.app/sitemap.xml");
   });
 });

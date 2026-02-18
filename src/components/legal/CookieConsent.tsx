@@ -12,7 +12,7 @@ interface ConsentState {
   timestamp: string;
 }
 
-const CONSENT_KEY = "usinerh-cookie-consent";
+const CONSENT_KEY = "collectif-nova-cookie-consent";
 
 const DEFAULT_CONSENT: ConsentState = {
   essential: true,
@@ -56,6 +56,7 @@ export function useConsent() {
 
 /**
  * Cookie consent banner compliant with Quebec's Law 25, with category toggles.
+ * Dark theme (#0D0D0D bg) with violet (#7B61FF) accents for Collectif Nova.
  *
  * @component
  * @example
@@ -90,66 +91,66 @@ export function CookieConsent() {
       role="dialog"
       aria-label="Gestion des témoins (cookies)"
       aria-modal="true"
-      className="fixed bottom-0 left-0 right-0 z-[60] border-t border-cream-500 bg-cream-200 p-4 shadow-2xl md:p-6"
+      className="fixed bottom-0 left-0 right-0 z-[60] border-t border-gris-800/50 bg-noir-900/95 backdrop-blur-xl p-4 shadow-2xl shadow-noir-900/80 md:p-6"
     >
       <div className="mx-auto max-w-4xl">
         <div className="mb-4">
-          <h2 className="mb-2 font-heading text-lg font-semibold text-charcoal">
+          <h2 className="mb-2 font-heading text-lg font-semibold text-gris-50">
             Gestion des témoins (cookies)
           </h2>
-          <p className="text-sm text-charcoal/70">
+          <p className="text-sm text-gris-400">
             Nous utilisons des témoins pour améliorer votre expérience. Conformément à
-            la <strong>Loi 25 du Québec</strong>, seuls les témoins essentiels sont
+            la <strong className="text-gris-200">Loi 25 du Québec</strong>, seuls les témoins essentiels sont
             actifs par défaut. Vous pouvez accepter ou refuser les témoins optionnels.
           </p>
         </div>
 
         {showDetails && (
           <div className="mb-4 space-y-3">
-            <label className="flex items-center gap-3 rounded-xl bg-cream-400/50 p-3">
+            <label className="flex items-center gap-3 rounded-xl bg-noir-700/60 border border-gris-800/30 p-3">
               <input
                 type="checkbox"
                 checked={true}
                 disabled
                 aria-label="Témoins essentiels (toujours actifs)"
-                className="h-4 w-4 accent-sage-600"
+                className="h-4 w-4 accent-violet-500"
               />
               <div>
-                <span className="font-medium text-charcoal">Essentiels</span>
-                <span className="ml-2 text-xs text-charcoal/50">(toujours actifs)</span>
-                <p className="mt-1 text-xs text-charcoal/70">
+                <span className="font-medium text-gris-100">Essentiels</span>
+                <span className="ml-2 text-xs text-gris-500">(toujours actifs)</span>
+                <p className="mt-1 text-xs text-gris-500">
                   Nécessaires au fonctionnement du site. Ne peuvent pas être désactivés.
                 </p>
               </div>
             </label>
 
-            <label className="flex cursor-pointer items-center gap-3 rounded-xl bg-cream-400/50 p-3">
+            <label className="flex cursor-pointer items-center gap-3 rounded-xl bg-noir-700/60 border border-gris-800/30 p-3 hover:border-violet-500/30 transition-colors">
               <input
                 type="checkbox"
                 checked={preferences.analytics}
                 onChange={() => toggleCategory("analytics")}
                 aria-label="Témoins analytiques"
-                className="h-4 w-4 accent-sage-600"
+                className="h-4 w-4 accent-violet-500"
               />
               <div>
-                <span className="font-medium text-charcoal">Analytiques</span>
-                <p className="mt-1 text-xs text-charcoal/70">
+                <span className="font-medium text-gris-100">Analytiques</span>
+                <p className="mt-1 text-xs text-gris-500">
                   Nous aident à comprendre comment les visiteurs utilisent le site (ex. : Google Analytics).
                 </p>
               </div>
             </label>
 
-            <label className="flex cursor-pointer items-center gap-3 rounded-xl bg-cream-400/50 p-3">
+            <label className="flex cursor-pointer items-center gap-3 rounded-xl bg-noir-700/60 border border-gris-800/30 p-3 hover:border-violet-500/30 transition-colors">
               <input
                 type="checkbox"
                 checked={preferences.marketing}
                 onChange={() => toggleCategory("marketing")}
                 aria-label="Témoins marketing"
-                className="h-4 w-4 accent-sage-600"
+                className="h-4 w-4 accent-violet-500"
               />
               <div>
-                <span className="font-medium text-charcoal">Marketing</span>
-                <p className="mt-1 text-xs text-charcoal/70">
+                <span className="font-medium text-gris-100">Marketing</span>
+                <p className="mt-1 text-xs text-gris-500">
                   Utilisés pour afficher des publicités pertinentes et mesurer leur efficacité.
                 </p>
               </div>
@@ -160,7 +161,7 @@ export function CookieConsent() {
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
           <button
             onClick={handleRejectAll}
-            className="flex-1 rounded-xl bg-cream-500 px-4 py-2.5 text-sm font-medium text-charcoal transition-colors hover:bg-cream-600 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2"
+            className="flex-1 rounded-xl bg-noir-700 border border-gris-800/50 px-4 py-2.5 text-sm font-medium text-gris-200 transition-colors hover:bg-noir-600 hover:border-gris-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-900"
             aria-label="Refuser tous les témoins optionnels"
           >
             Tout refuser
@@ -169,7 +170,7 @@ export function CookieConsent() {
           {showDetails ? (
             <button
               onClick={handleSavePreferences}
-              className="flex-1 rounded-xl bg-sage-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2"
+              className="flex-1 rounded-xl bg-violet-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-900"
               aria-label="Sauvegarder mes préférences de témoins"
             >
               Sauvegarder mes choix
@@ -177,7 +178,7 @@ export function CookieConsent() {
           ) : (
             <button
               onClick={() => setShowDetails(true)}
-              className="flex-1 rounded-xl border border-sage-400 bg-transparent px-4 py-2.5 text-sm font-medium text-sage-700 transition-colors hover:bg-sage-50 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2"
+              className="flex-1 rounded-xl border border-violet-500/50 bg-transparent px-4 py-2.5 text-sm font-medium text-violet-400 transition-colors hover:bg-violet-500/10 hover:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-900"
               aria-label="Personnaliser les préférences de témoins"
             >
               Personnaliser
@@ -186,18 +187,18 @@ export function CookieConsent() {
 
           <button
             onClick={handleAcceptAll}
-            className="flex-1 rounded-xl bg-sage-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2"
+            className="flex-1 rounded-xl bg-violet-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-900"
             aria-label="Accepter tous les témoins"
           >
             Tout accepter
           </button>
         </div>
 
-        <p className="mt-3 text-center text-xs text-charcoal/50">
+        <p className="mt-3 text-center text-xs text-gris-500">
           Pour en savoir plus, consultez notre{" "}
           <Link
             href="/fr/politique-confidentialite"
-            className="underline hover:text-charcoal/70 focus:outline-none focus:ring-2 focus:ring-sage-400"
+            className="underline transition-colors hover:text-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-500"
           >
             politique de confidentialité
           </Link>
@@ -217,7 +218,7 @@ export function CookieSettingsButton() {
   return (
     <button
       onClick={handleOpen}
-      className="text-sm text-cream-500 underline transition-colors hover:text-cream-200 focus:outline-none focus:ring-2 focus:ring-sage-400"
+      className="text-xs text-gris-500 underline transition-colors hover:text-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-500"
       aria-label="Modifier mes préférences de témoins"
     >
       Gestion des témoins

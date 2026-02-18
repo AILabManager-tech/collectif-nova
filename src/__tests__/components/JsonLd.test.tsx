@@ -19,19 +19,28 @@ describe("JsonLd", () => {
     const script = container.querySelector('script[type="application/ld+json"]');
     const parsed = JSON.parse(script!.textContent!);
     expect(parsed["@context"]).toBe("https://schema.org");
-    expect(parsed["@type"]).toBe("LocalBusiness");
-    expect(parsed.name).toBe("L'Usine RH");
+    expect(parsed["@type"]).toBe("ProfessionalService");
+    expect(parsed.name).toBe("Collectif Nova");
   });
 });
 
 describe("localBusinessSchema", () => {
-  it("has required LocalBusiness fields", () => {
-    expect(localBusinessSchema["@type"]).toBe("LocalBusiness");
-    expect(localBusinessSchema.name).toBeDefined();
+  it("has required ProfessionalService fields", () => {
+    expect(localBusinessSchema["@type"]).toBe("ProfessionalService");
+    expect(localBusinessSchema.name).toBe("Collectif Nova");
     expect(localBusinessSchema.address).toBeDefined();
-    expect(localBusinessSchema.serviceType).toHaveLength(3);
+    expect(localBusinessSchema.serviceType).toHaveLength(4);
     expect(localBusinessSchema.knowsLanguage).toContain("fr");
     expect(localBusinessSchema.knowsLanguage).toContain("en");
+  });
+
+  it("has correct URL", () => {
+    expect(localBusinessSchema.url).toBe("https://collectif-nova.vercel.app");
+  });
+
+  it("has correct address in Montreal", () => {
+    expect(localBusinessSchema.address.addressLocality).toContain("Montr");
+    expect(localBusinessSchema.address.addressRegion).toBe("QC");
   });
 });
 
@@ -39,13 +48,18 @@ describe("buildServiceSchema", () => {
   it("builds French service schema", () => {
     const schema = buildServiceSchema("fr");
     expect(schema["@type"]).toBe("Service");
-    expect(schema.serviceType).toBe("Consultation RH");
-    expect(schema.hasOfferCatalog.itemListElement).toHaveLength(3);
+    expect(schema.serviceType).toContain("cr");
+    expect(schema.hasOfferCatalog.itemListElement).toHaveLength(4);
   });
 
   it("builds English service schema", () => {
     const schema = buildServiceSchema("en");
-    expect(schema.serviceType).toBe("HR Consulting");
+    expect(schema.serviceType).toBe("Creative Services");
+  });
+
+  it("has correct provider name", () => {
+    const schema = buildServiceSchema("fr");
+    expect(schema.provider.name).toBe("Collectif Nova");
   });
 });
 

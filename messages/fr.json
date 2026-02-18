@@ -1,322 +1,343 @@
 {
   "meta": {
-    "title": "L'Usine RH — Consultante RH pour PME industrielles",
-    "description": "On diagnostique. On implante. On coache. Processus RH durables pour PME de 10 à 50 employés — secteurs industriel, manufacturier, construction."
+    "title": "Collectif Nova — Agence créative branding + digital, Montréal",
+    "description": "Collectif Nova : branding, design web, stratégie social media et motion design à Montréal. Une agence créative qui transforme votre vision en expériences numériques mémorables."
   },
   "nav": {
     "home": "Accueil",
     "services": "Services",
     "about": "À propos",
     "contact": "Contact",
-    "cta": "Réservez une consultation"
+    "cta": "Démarrer un projet"
   },
   "home": {
     "hero": {
-      "title": "Vos RH, forgées pour durer.",
-      "subtitle": "Je diagnostique. J'implante. Je coache. Pour que votre équipe tienne le coup.",
-      "cta": "Réservez une consultation découverte",
-      "cta_secondary": "Découvrir mes services"
+      "badge": "Agence créative",
+      "title": "On transforme vos idées en expériences qui marquent.",
+      "subtitle": "Branding, design web, stratégie social media et motion design — un collectif créatif qui donne vie à votre vision numérique.",
+      "cta_primary": "Démarrer un projet",
+      "cta_secondary": "Voir nos réalisations"
     },
     "stats": {
-      "experience": "Ans d'expérience",
-      "clients": "PME accompagnées",
-      "employees": "Employés / entreprise"
-    },
-    "pain": {
-      "title": "Vous naviguez seul dans la RH?",
-      "owner": {
-        "title": "Propriétaire débordé",
-        "description": "Vous gérez le recrutement, les conflits et les évaluations en plus de tout le reste. Ça marche... jusqu'à ce que ça marche plus."
-      },
-      "manager": {
-        "title": "Gestionnaire sans formation RH",
-        "description": "Vos gestionnaires improvisent les conversations difficiles et les évaluations de performance. Les talents partent."
-      },
-      "growing": {
-        "title": "PME en croissance",
-        "description": "Vos processus ad-hoc ne suivent plus. Ce qui fonctionnait à 10 employés ne fonctionne plus à 30."
-      }
+      "stat1_value": "80+",
+      "stat1_label": "Projets livrés",
+      "stat2_value": "4",
+      "stat2_label": "Disciplines créatives",
+      "stat3_value": "12",
+      "stat3_label": "Années d'expérience combinée",
+      "stat4_value": "100%",
+      "stat4_label": "Clients satisfaits"
     },
     "services": {
-      "title": "Une approche en trois temps",
-      "diagnostic": {
-        "title": "Diagnostic",
-        "description": "On fait le point. J'analyse votre situation RH actuelle — processus, défis, opportunités.",
-        "duration": "2-3 semaines"
+      "title": "Nos expertises",
+      "subtitle": "Quatre disciplines créatives complémentaires pour des marques qui se démarquent.",
+      "branding": {
+        "title": "Branding & Identité",
+        "description": "Création de marques distinctives : logo, univers visuel, guidelines et positionnement stratégique pour une identité cohérente et mémorable."
       },
-      "implementation": {
-        "title": "Implantation",
-        "description": "On construit ensemble. Je mets en place des processus RH durables, adaptés à votre réalité.",
-        "duration": "8-12 semaines"
+      "web": {
+        "title": "Design & Développement Web",
+        "description": "Sites web sur mesure, rapides et accessibles. Du design UX/UI au développement front-end, des expériences numériques qui convertissent."
       },
-      "coaching": {
-        "title": "Coaching",
-        "description": "On assure la relève. Je forme vos gestionnaires pour qu'ils maintiennent ces acquis de façon autonome.",
-        "duration": "3-6 mois"
+      "social": {
+        "title": "Stratégie Social Media",
+        "description": "Planification de contenu, gestion de communauté et campagnes ciblées pour bâtir une présence sociale authentique et engageante."
+      },
+      "motion": {
+        "title": "Motion Design & Vidéo",
+        "description": "Animations, vidéos promotionnelles et contenu visuel dynamique qui capte l'attention et raconte votre histoire en mouvement."
+      }
+    },
+    "showcase": {
+      "title": "Nos réalisations",
+      "subtitle": "Des projets qui parlent d'eux-mêmes.",
+      "project1": {
+        "title": "Maison Atelier",
+        "category": "Branding + Web",
+        "description": "Identité visuelle complète et site e-commerce pour une marque de mobilier artisanal montréalaise."
+      },
+      "project2": {
+        "title": "Nüvo Fitness",
+        "category": "Branding + Social Media",
+        "description": "Rebranding et stratégie de contenu social pour une chaîne de studios de fitness en pleine expansion."
+      },
+      "project3": {
+        "title": "Festival Lumières",
+        "category": "Motion Design + Web",
+        "description": "Campagne motion design et site événementiel pour le festival d'arts numériques de Montréal."
+      },
+      "project4": {
+        "title": "Vert & Cru",
+        "category": "Branding + Web + Social",
+        "description": "Identité de marque, site web et gestion des réseaux sociaux pour une entreprise de restauration écoresponsable."
       }
     },
     "testimonials": {
-      "title": "Ce que mes clients en disent"
+      "title": "Ce que nos clients en disent",
+      "items": [
+        {
+          "name": "Raphaëlle D., CEO",
+          "text": "Le Collectif Nova a complètement transformé notre image de marque. Leur approche créative et leur rigueur technique nous ont donné une identité visuelle qui se démarque véritablement dans notre industrie. Un travail exceptionnel.",
+          "company": "TechPulse Solutions"
+        },
+        {
+          "name": "Maxime L., Fondateur",
+          "text": "De la stratégie à l'exécution, l'équipe Nova a livré un site web et une présence sociale qui ont doublé notre acquisition de clients en 3 mois. Professionnels, réactifs et créatifs — la combinaison parfaite.",
+          "company": "Nüvo Fitness"
+        },
+        {
+          "name": "Camille B., Directrice marketing",
+          "text": "La vidéo promotionnelle et les animations créées par Nova ont généré un engagement sans précédent pour notre lancement. Leur talent pour raconter des histoires visuelles est incomparable.",
+          "company": "Vert & Cru"
+        }
+      ]
     },
     "cta_final": {
-      "title": "Prêt à structurer votre RH?",
-      "subtitle": "Pas de cirque commercial. Juste une discussion franche sur ce qu'on peut faire ensemble.",
-      "button": "Réservez une consultation découverte"
-    }
-  },
-  "quiz": {
-    "title": "Évaluez votre maturité RH",
-    "subtitle": "5 questions rapides pour savoir où vous en êtes",
-    "q1": {
-      "question": "Comment gérez-vous le recrutement?",
-      "a": "Au feeling, quand c'est urgent",
-      "b": "On a un processus, mais informel",
-      "c": "Processus structuré avec guide d'entrevue"
-    },
-    "q2": {
-      "question": "Comment se font les évaluations de performance?",
-      "a": "On n'en fait pas vraiment",
-      "b": "Une fois par an, quand on y pense",
-      "c": "Régulières avec objectifs clairs"
-    },
-    "q3": {
-      "question": "Vos politiques RH sont...",
-      "a": "Inexistantes ou dans ma tête",
-      "b": "Écrites mais pas à jour",
-      "c": "Documentées et communiquées"
-    },
-    "q4": {
-      "question": "La gestion des conflits se fait...",
-      "a": "En mode pompier quand ça explose",
-      "b": "On essaie de régler, mais sans méthode",
-      "c": "Avec un processus clair de résolution"
-    },
-    "q5": {
-      "question": "L'intégration des nouveaux employés...",
-      "a": "C'est 'bienvenue, voici ton bureau'",
-      "b": "On a un plan sommaire de première semaine",
-      "c": "Programme structuré de 90 jours"
-    },
-    "score": "Votre score",
-    "next_step": "Prochaine étape recommandée",
-    "restart": "Recommencer",
-    "results": {
-      "low": {
-        "title": "Zone rouge — Urgence RH",
-        "description": "Vos processus RH sont minimaux. C'est normal pour une PME en croissance, mais ça vous coûte cher en roulement et en temps. Un diagnostic rapide pourrait tout changer.",
-        "cta": "Réservez votre diagnostic"
-      },
-      "mid": {
-        "title": "Zone jaune — Fondations à consolider",
-        "description": "Vous avez des bases, mais elles ne sont pas solides. Quelques processus clés bien implantés pourraient transformer votre quotidien de gestionnaire.",
-        "cta": "Découvrez l'implantation"
-      },
-      "high": {
-        "title": "Zone verte — Optimisation",
-        "description": "Bravo! Vous avez de bonnes bases RH. Le coaching de gestionnaires pourrait amener votre équipe au niveau supérieur.",
-        "cta": "Explorez le coaching"
-      }
-    }
-  },
-  "calculator": {
-    "title": "Combien vous coûte le chaos RH?",
-    "subtitle": "Estimez l'impact financier du roulement de personnel",
-    "employees_label": "Nombre d'employés",
-    "salary_label": "Salaire moyen annuel",
-    "turnover_label": "Taux de roulement annuel",
-    "result_title": "Coût annuel estimé du roulement",
-    "formula": "Le roulement coûte en moyenne 33% du salaire annuel par départ",
-    "departures": "départs estimés / année",
-    "cost_per": "coût par départ",
-    "cta": "Réduisons ce chiffre ensemble"
-  },
-  "myths": {
-    "title": "Mythes RH — Ce qu'on entend souvent",
-    "subtitle": "Cliquez pour découvrir la réalité",
-    "m1": {
-      "myth": "La RH, c'est juste pour les grandes entreprises",
-      "reality": "Dès 15 employés, les enjeux RH coûtent réellement. Un processus de recrutement défaillant peut vous coûter 50 000 $ par mauvaise embauche."
-    },
-    "m2": {
-      "myth": "Un bon salaire suffit pour garder les employés",
-      "reality": "Le salaire arrive 4e dans les raisons de départ. Le manque de reconnaissance, de développement et un mauvais gestionnaire passent avant."
-    },
-    "m3": {
-      "myth": "Les évaluations de performance, ça sert à rien",
-      "reality": "Mal faites, oui. Bien faites, elles réduisent le roulement de 14.9% et augmentent l'engagement. C'est l'outil le plus sous-estimé."
-    },
-    "m4": {
-      "myth": "Je connais mon monde, pas besoin de processus",
-      "reality": "Ça marche à 10 employés. À 30, c'est impossible de tout suivre. Sans processus, les bonnes intentions deviennent des angles morts."
-    }
-  },
-  "testimonials": {
-    "title": "Transformations concrètes",
-    "subtitle": "Résultats réels, noms changés pour confidentialité",
-    "c1": {
-      "industry": "Manufacturier — 35 employés",
-      "before_title": "Avant",
-      "before": "Roulement de 40%. Aucun processus d'intégration. Les gestionnaires évitaient les conversations difficiles.",
-      "after_title": "Après 6 mois",
-      "after": "Roulement réduit à 18%. Programme d'intégration 90 jours. Gestionnaires formés au feedback constructif.",
-      "metric": "-55% roulement"
-    },
-    "c2": {
-      "industry": "Services professionnels — 22 employés",
-      "before_title": "Avant",
-      "before": "Recrutement au feeling. 3 mois pour combler un poste. Mauvaises embauches fréquentes.",
-      "after_title": "Après 3 mois",
-      "after": "Processus structuré. Temps de comblement réduit à 5 semaines. Guide d'entrevue standardisé.",
-      "metric": "-60% temps recrutement"
-    },
-    "c3": {
-      "industry": "Construction — 48 employés",
-      "before_title": "Avant",
-      "before": "Aucune politique écrite. Conflits gérés au cas par cas. Propriétaire épuisé par les urgences RH.",
-      "after_title": "Après 4 mois",
-      "after": "Manuel employé complet. Processus de gestion des conflits. Gestionnaires autonomes pour 80% des situations.",
-      "metric": "80% autonomie"
+      "title": "Prêt à créer quelque chose d'unique?",
+      "subtitle": "Discutons de votre prochain projet et donnons vie à vos ambitions créatives.",
+      "button": "Démarrer un projet"
     }
   },
   "services": {
     "meta": {
-      "title": "Services — Diagnostic, Implantation, Coaching RH",
-      "description": "Découvrez mes trois volets d'accompagnement RH pour PME : diagnostic organisationnel, implantation de processus et coaching de gestionnaires."
+      "title": "Services — Branding, Web, Social Media, Motion Design",
+      "description": "Découvrez les services créatifs de Collectif Nova à Montréal : branding & identité, design web, stratégie social media et motion design & vidéo."
     },
     "hero": {
-      "title": "Services",
-      "subtitle": "Trois volets pour structurer, implanter et maintenir une RH qui tient la route."
+      "title": "Nos services",
+      "subtitle": "Quatre disciplines créatives qui se complètent pour des résultats qui dépassent les attentes."
     },
-    "diagnostic": {
-      "title": "Diagnostic organisationnel",
-      "description": "Comprendre où vous en êtes — sans jugement.",
+    "branding": {
+      "title": "Branding & Identité",
+      "description": "Nous créons des identités de marque distinctives qui racontent votre histoire et résonnent avec votre audience. Du positionnement stratégique au système visuel complet, chaque élément est conçu pour durer.",
       "includes": "Ce que ça inclut",
-      "item1": "Entretiens confidentiels avec les parties prenantes",
-      "item2": "Audit des politiques, processus et pratiques RH actuels",
-      "item3": "Rapport de recommandations priorisées",
-      "duration": "2-3 semaines",
-      "result": "Vous savez exactement ce qui bloque — et comment le fixer."
+      "item1": "Audit de marque et positionnement stratégique",
+      "item2": "Création de logo et système d'identité visuelle",
+      "item3": "Charte graphique et brand guidelines complètes",
+      "item4": "Papeterie d'affaires et déclinaisons marketing"
     },
-    "implementation": {
-      "title": "Implantation de processus RH",
-      "description": "Construire des processus qui durent — pas juste un document sur une tablette.",
-      "includes": "Exemples de processus",
-      "item1": "Recrutement : du sourcing à l'intégration 90 jours",
-      "item2": "Évaluation de performance : objectifs, feedback, développement",
-      "item3": "Rétention : compensation, culture, parcours de carrière",
-      "item4": "Conformité : normes du travail, politiques internes",
-      "duration": "8-12 semaines",
-      "result": "Des processus documentés, votre équipe formée pour les maintenir."
+    "web": {
+      "title": "Design & Développement Web",
+      "description": "Des sites web performants, accessibles et esthétiques. Nous concevons des expériences numériques sur mesure avec les technologies les plus modernes pour maximiser l'impact et la conversion.",
+      "includes": "Ce que ça inclut",
+      "item1": "Recherche UX, wireframes et prototypes interactifs",
+      "item2": "Design UI responsive et accessible (WCAG 2.1)",
+      "item3": "Développement front-end Next.js / React",
+      "item4": "Optimisation performance, SEO technique et déploiement"
     },
-    "coaching": {
-      "title": "Coaching de gestionnaires",
-      "description": "Transformer vos gestionnaires en leaders RH confiants.",
-      "includes": "Sujets populaires",
-      "item1": "Conversations difficiles (performance, discipline)",
-      "item2": "Délégation et feedback constructif",
-      "item3": "Gestion de conflits d'équipe",
-      "item4": "Leadership et culture d'entreprise",
-      "duration": "3-6 mois",
-      "result": "Des gestionnaires autonomes qui savent gérer leur monde."
+    "social": {
+      "title": "Stratégie Social Media",
+      "description": "Une présence sociale authentique et engageante, pensée pour votre audience. Nous élaborons des stratégies de contenu qui bâtissent des communautés et génèrent des résultats mesurables.",
+      "includes": "Ce que ça inclut",
+      "item1": "Audit social et analyse de la concurrence",
+      "item2": "Stratégie éditoriale et calendrier de contenu",
+      "item3": "Création de contenu visuel et rédactionnel",
+      "item4": "Gestion de communauté et campagnes publicitaires ciblées"
+    },
+    "motion": {
+      "title": "Motion Design & Vidéo",
+      "description": "Du storytelling visuel qui capte l'attention et laisse une impression durable. Animations, vidéos promotionnelles et contenus dynamiques qui donnent vie à votre marque en mouvement.",
+      "includes": "Ce que ça inclut",
+      "item1": "Storyboard et direction artistique vidéo",
+      "item2": "Animation 2D/3D et motion graphics",
+      "item3": "Production vidéo promotionnelle et institutionnelle",
+      "item4": "Contenu animé pour réseaux sociaux et publicité"
+    },
+    "process": {
+      "title": "Notre processus",
+      "step1": {
+        "title": "Découverte",
+        "description": "On écoute, on analyse, on comprend vos objectifs et votre audience pour définir une stratégie créative solide."
+      },
+      "step2": {
+        "title": "Conception",
+        "description": "On explore, on prototype, on itère. Chaque concept est validé avant de passer à la production."
+      },
+      "step3": {
+        "title": "Production",
+        "description": "On crée avec rigueur et passion. Design, développement ou animation — chaque livrable est peaufiné au pixel près."
+      },
+      "step4": {
+        "title": "Lancement",
+        "description": "On déploie, on mesure, on optimise. Votre projet prend vie et on s'assure qu'il performe dès le premier jour."
+      }
     },
     "faq": {
       "title": "Questions fréquentes",
-      "q1": "Combien ça coûte?",
-      "a1": "Un diagnostic complet se situe entre 2 000 $ et 4 000 $. L'implantation de processus entre 8 000 $ et 15 000 $. Je peux affiner après notre première conversation — pas de surprises tarifaires.",
-      "q2": "Mon entreprise est-elle trop petite?",
-      "a2": "Mon créneau, c'est les PME de 10 à 50 employés — secteurs industriel, manufacturier, construction et services. Assez pour que les enjeux RH coûtent réellement, pas assez gros pour un département RH à temps plein.",
-      "q3": "Combien de temps ça prend?",
-      "a3": "Diagnostic : 2-3 semaines. Implantation : 8-12 semaines. Coaching : 3-6 mois. Tout dépend de l'ampleur et de votre disponibilité.",
-      "q4": "Offrez-vous du support après le mandat?",
-      "a4": "Oui, en option. Suivi mensuel, accompagnement ad-hoc, ou point trimestriel — selon vos besoins.",
-      "q5": "Quelle est la différence entre un coach et une consultante RH?",
-      "a5": "Un coach se concentre sur le développement personnel du leader. Moi, je vais plus loin : je diagnostique, j'implante des processus concrets, ET je coache. C'est une approche complète.",
-      "q6": "Travaillez-vous en anglais aussi?",
-      "a6": "Absolument. Je suis bilingue — consultations, coaching et documentation en français et en anglais."
+      "q1": "Quel est le délai moyen pour un projet de branding?",
+      "a1": "Un projet de branding complet (audit, positionnement, identité visuelle, guidelines) prend généralement 4 à 6 semaines. Les projets incluant un site web ou une stratégie social media nécessitent de 8 à 12 semaines selon la complexité.",
+      "q2": "Travaillez-vous avec des startups et des petites entreprises?",
+      "a2": "Absolument! Nous travaillons avec des entreprises de toutes tailles, des startups en démarrage aux entreprises établies. Nos forfaits sont adaptés à différents budgets et nous pouvons phaser les projets selon vos priorités.",
+      "q3": "Quelles technologies utilisez-vous pour le développement web?",
+      "a3": "Nous utilisons principalement Next.js, React et TypeScript avec Tailwind CSS pour des sites performants, accessibles et faciles à maintenir. Selon vos besoins, nous intégrons aussi des CMS headless comme Sanity ou Contentful.",
+      "q4": "Offrez-vous de la maintenance après le lancement?",
+      "a4": "Oui, nous offrons des forfaits de maintenance mensuelle incluant mises à jour de sécurité, modifications de contenu, suivi de performance et support technique. Le premier mois de support est inclus dans chaque projet web.",
+      "q5": "Pouvez-vous gérer nos réseaux sociaux de façon continue?",
+      "a5": "Oui, nous offrons des mandats de gestion continue qui incluent la création de contenu, la planification éditoriale, la gestion de communauté et le reporting mensuel. Nos forfaits s'adaptent à vos besoins et à votre budget.",
+      "q6": "Comment se déroule la première rencontre?",
+      "a6": "La première rencontre est un appel découverte gratuit de 30 minutes. On discute de votre projet, vos objectifs et vos délais. Ensuite, on vous envoie une proposition détaillée avec échéancier et budget. Aucun engagement requis."
     }
   },
   "about": {
     "meta": {
-      "title": "À propos — L'Usine RH",
-      "description": "12 ans en direction RH corporative, 3 ans comme consultante RH pour PME industrielles au Québec. Découvrez mon parcours et ma philosophie."
+      "title": "À propos — Collectif Nova, Montréal",
+      "description": "Découvrez l'histoire, les valeurs et l'équipe de Collectif Nova. Une agence créative montréalaise spécialisée en branding, web et motion design."
     },
     "hero": {
-      "title": "À propos",
-      "subtitle": "12 ans en direction RH. 3 ans comme consultante RH pour PME industrielles."
+      "title": "À propos de Collectif Nova",
+      "subtitle": "Un collectif de créatifs passionnés qui repoussent les limites du design depuis 2020."
     },
     "story": {
-      "title": "Pourquoi j'ai quitté le corporate",
-      "p1": "Pendant 12 ans, j'ai été directrice RH dans le secteur manufacturier à Québec. J'ai vu de près : des propriétaires qui s'épuisent, des gestionnaires qui improvisent, des talents qui partent faute de structure.",
-      "p2": "J'en pouvais plus du corporate. Je voulais avoir un vrai impact — pas juste remplir des cases dans un système. Dans une PME, quand tu changes quelque chose, tu vois la différence la semaine d'après.",
-      "p3": "J'ai lancé ma pratique pour offrir aux PME ce que les grandes firmes facturent 50 000 $ par an — mais de façon accessible, concrète et durable."
-    },
-    "philosophy": {
-      "title": "Ma philosophie",
-      "p1": "Mon but, c'est de vous rendre autonome. Pas de créer une dépendance. Après 6 mois, votre équipe sait maintenir les processus. Vous n'avez plus besoin de moi — et c'est exactement ce que je vise."
+      "title": "Notre histoire",
+      "p1": "Collectif Nova est né d'une idée simple : réunir des talents complémentaires sous un même toit pour offrir des solutions créatives intégrées. En 2020, Alex Moreau a fondé le collectif avec la conviction que les meilleures créations naissent de la collaboration entre disciplines.",
+      "p2": "Trop souvent, les marques doivent jongler entre plusieurs agences, perdant en cohérence et en efficacité. Chez Collectif Nova, branding, web, social media et motion design travaillent main dans la main pour livrer des expériences unifiées et percutantes.",
+      "p3": "Aujourd'hui, notre équipe de créatifs accompagne des entreprises de toutes tailles à Montréal et au-delà, transformant leurs visions en réalités numériques qui font bouger les choses."
     },
     "values": {
-      "empathy": {
-        "title": "Pragmatisme",
-        "description": "Je comprends la réalité des propriétaires de PME industrielles. Pas de théorie, juste des solutions qui tiennent la route.",
-        "example": "Quand un propriétaire me dit qu'il fait les paies à minuit, je ne le juge pas — je l'aide à sortir de ce cycle."
+      "title": "Nos valeurs",
+      "innovation": {
+        "title": "Innovation",
+        "description": "On repousse les frontières du possible. Chaque projet est une occasion d'explorer de nouvelles approches créatives et techniques pour se démarquer dans un monde saturé de contenu."
       },
-      "transparency": {
-        "title": "Transparence",
-        "description": "Vous savez d'avance ce que ça coûte, combien de temps ça prend, et ce que vous allez avoir.",
-        "example": "Mon offre de service inclut toujours un échéancier détaillé, un budget fixe et des livrables clairs. Pas de zone grise."
+      "authenticity": {
+        "title": "Authenticité",
+        "description": "On crée des marques vraies. Pas de formules toutes faites — chaque identité est le reflet fidèle de la personnalité et des ambitions uniques de nos clients."
       },
-      "autonomy": {
-        "title": "Autonomisation",
-        "description": "Je pars quand vous êtes prêts. Mon succès se mesure à votre autonomie.",
-        "example": "Après 6 mois, vos gestionnaires gèrent les évaluations de performance seuls. Vous n'avez plus besoin de moi — mission accomplie."
+      "impact": {
+        "title": "Impact",
+        "description": "Le beau ne suffit pas. Chaque création est pensée pour générer des résultats concrets : visibilité, engagement, conversion. L'esthétique au service de la performance."
       }
+    },
+    "team": {
+      "title": "Rencontrez l'équipe",
+      "subtitle": "Des créatifs complémentaires, unis par la passion du design et de l'innovation.",
+      "members": [
+        {
+          "name": "Alex Moreau",
+          "title": "Directeur créatif, Fondateur",
+          "specialty": "Branding & Direction artistique",
+          "bio": "Fondateur de Collectif Nova, Alex cumule plus de 10 ans d'expérience en direction artistique et branding. Passionné par les identités visuelles qui racontent des histoires, il guide chaque projet avec un œil aiguisé pour le détail et l'impact."
+        },
+        {
+          "name": "Sam Chen",
+          "title": "Lead Développeur & Designer UX",
+          "specialty": "Design & Développement Web",
+          "bio": "Expert en développement front-end et design d'interfaces, Sam transforme les concepts créatifs en expériences web performantes. Spécialiste Next.js et React, il marie esthétique et technique avec précision."
+        },
+        {
+          "name": "Jules Fontaine",
+          "title": "Stratège numérique & Motion Designer",
+          "specialty": "Social Media & Motion Design",
+          "bio": "Jules combine une expertise en stratégie numérique et en motion design pour créer du contenu qui capte l'attention. De la planification éditoriale aux animations percutantes, il donne vie aux marques sur tous les écrans."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt à collaborer?",
+      "button": "Démarrer un projet"
     }
   },
   "contact": {
     "meta": {
-      "title": "Contact — Réservez une consultation découverte",
-      "description": "Contactez L'Usine RH pour une consultation découverte gratuite. PME de 10 à 50 employés — secteurs industriel, manufacturier, construction au Québec."
+      "title": "Contact — Collectif Nova, Montréal",
+      "description": "Contactez Collectif Nova pour discuter de votre prochain projet créatif. Branding, web, social media et motion design à Montréal."
     },
     "hero": {
-      "title": "Parlons de votre situation",
-      "subtitle": "Pas de cirque commercial. Juste une discussion franche sur ce qu'on peut faire ensemble."
+      "title": "Parlons de votre projet",
+      "subtitle": "Envoyez-nous un message ou passez nous voir au studio. On répond à toutes les demandes sous 24 heures."
     },
     "form": {
-      "name": "Votre nom",
+      "name": "Votre nom complet",
       "email": "Courriel",
-      "company": "Entreprise",
-      "employees": "Nombre d'employés",
-      "challenge": "Votre défi RH principal",
-      "challenge_placeholder": "Décrivez brièvement votre situation...",
-      "submit": "Envoyer",
-      "response_time": "Je réponds sous 24h. Généralement plus tôt."
+      "phone": "Téléphone",
+      "service": "Service souhaité",
+      "service_options": {
+        "branding": "Branding & Identité",
+        "web": "Design & Développement Web",
+        "social": "Stratégie Social Media",
+        "motion": "Motion Design & Vidéo",
+        "multi": "Plusieurs services",
+        "other": "Autre / Je ne sais pas"
+      },
+      "budget": "Budget estimé",
+      "budget_options": {
+        "small": "Moins de 5 000 $",
+        "medium": "5 000 $ — 15 000 $",
+        "large": "15 000 $ — 40 000 $",
+        "enterprise": "40 000 $ et plus",
+        "unknown": "À définir"
+      },
+      "message": "Décrivez votre projet",
+      "consent": "J'accepte que mes données soient utilisées pour traiter ma demande.",
+      "consent_notice": "Vos renseignements personnels sont traités conformément à la Loi 25 du Québec.",
+      "consent_link": "Politique de confidentialité",
+      "loi25_notice": "Conformément à la Loi 25 du Québec, vos renseignements personnels ne seront utilisés que pour répondre à votre demande et ne seront pas partagés avec des tiers sans votre consentement explicite.",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès! Nous vous répondrons sous 24 heures.",
+      "error": "Une erreur est survenue. Veuillez réessayer ou nous appeler directement.",
+      "errors": {
+        "name_min": "Le nom doit contenir au moins 2 caractères.",
+        "email": "Veuillez entrer une adresse courriel valide.",
+        "phone": "Veuillez entrer un numéro de téléphone valide.",
+        "service": "Veuillez sélectionner un service.",
+        "budget": "Veuillez sélectionner une tranche budgétaire.",
+        "message_min": "Le message doit contenir au moins 10 caractères.",
+        "message_max": "Le message ne peut pas dépasser 2000 caractères.",
+        "consent": "Vous devez accepter le traitement de vos données pour envoyer le formulaire."
+      }
     },
     "info": {
-      "email_label": "Courriel",
-      "phone_label": "Téléphone",
-      "location_label": "Localisation",
-      "location": "Québec, QC",
-      "linkedin": "LinkedIn"
+      "title": "Nos coordonnées",
+      "address": "4020, rue Saint-Ambroise, bureau 350, Montréal QC H4C 2C7",
+      "phone": "(514) 555-0300",
+      "email": "hello@collectif-nova.ca",
+      "hours": "Heures d'ouverture",
+      "hours_weekday": "Lundi au vendredi : 9h00 - 18h00"
     }
   },
   "footer": {
-    "copyright": "L'Usine RH — Émilie Poirier. Tous droits réservés.",
-    "tagline": "On forge vos RH.",
-    "cta": "Prêt à structurer votre RH?",
-    "cta_button": "Consultation gratuite",
-    "blog": "Blogue"
+    "description": "Agence créative spécialisée en branding, design web, stratégie social media et motion design à Montréal.",
+    "nav_title": "Navigation",
+    "legal_title": "Légal",
+    "mentions": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "contact_title": "Contact",
+    "address": "4020, rue Saint-Ambroise, bureau 350, Montréal QC H4C 2C7",
+    "phone": "(514) 555-0300",
+    "email": "hello@collectif-nova.ca",
+    "newsletter": {
+      "title": "Restez inspiré",
+      "description": "Recevez nos dernières réalisations et tendances créatives.",
+      "placeholder": "Votre courriel",
+      "button": "S'inscrire",
+      "consent": "En vous inscrivant, vous acceptez notre politique de confidentialité."
+    },
+    "rpp": "Responsable de la protection des renseignements personnels : Alex Moreau — hello@collectif-nova.ca",
+    "copyright": "© 2026 Collectif Nova. Tous droits réservés."
   },
-  "chatbot": {
-    "toggle": "Ouvrir le clavardage",
-    "title": "L'Usine RH",
-    "subtitle": "Assistante virtuelle",
-    "close": "Fermer",
-    "placeholder": "Écrivez votre message...",
-    "send": "Envoyer"
+  "legal": {
+    "cookie": {
+      "title": "Gestion des témoins (cookies)",
+      "description": "Nous utilisons des témoins pour améliorer votre expérience. Conformément à la Loi 25 du Québec, seuls les témoins essentiels sont actifs par défaut. Vous pouvez accepter ou refuser les témoins optionnels.",
+      "essential": "Essentiels",
+      "analytics": "Analytiques",
+      "marketing": "Marketing",
+      "accept": "Tout accepter",
+      "reject": "Tout refuser",
+      "customize": "Personnaliser",
+      "save": "Sauvegarder mes choix",
+      "privacy_link": "politique de confidentialité"
+    }
   },
-  "common": {
-    "duration": "Durée",
-    "learn_more": "En savoir plus",
-    "back_home": "Retour à l'accueil"
+  "error": {
+    "title": "Oups! Quelque chose s'est mal passé.",
+    "description": "Une erreur inattendue est survenue. Veuillez réessayer ou retourner à l'accueil.",
+    "button": "Retour à l'accueil"
+  },
+  "not_found": {
+    "title": "Page introuvable",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "button": "Retour à l'accueil"
   }
 }

@@ -24,7 +24,7 @@ describe("sitemap", () => {
 
   it("homepage has priority 1", () => {
     const homeFr = entries.find(
-      (e) => e.url === "https://emiliepoirierrh.ca/fr"
+      (e) => e.url === "https://collectif-nova.vercel.app/fr"
     );
     expect(homeFr).toBeDefined();
     expect(homeFr!.priority).toBe(1);
@@ -44,5 +44,11 @@ describe("sitemap", () => {
     expect(urls.some((u) => u.includes("/services"))).toBe(true);
     expect(urls.some((u) => u.includes("/a-propos"))).toBe(true);
     expect(urls.some((u) => u.includes("/contact"))).toBe(true);
+  });
+
+  it("uses collectif-nova.vercel.app domain", () => {
+    for (const entry of entries) {
+      expect(entry.url).toContain("collectif-nova.vercel.app");
+    }
   });
 });

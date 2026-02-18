@@ -53,10 +53,6 @@ vi.mock("@/components/animations/TextReveal", () => ({
   }) => <h2>{children}</h2>,
 }));
 
-vi.mock("@/components/animations/AuroraBackground", () => ({
-  AuroraBackground: () => <div data-testid="aurora" />,
-}));
-
 vi.mock("@/components/animations/LineReveal", () => ({
   LineReveal: () => <div data-testid="line-reveal" />,
 }));
@@ -87,6 +83,17 @@ vi.mock("@/components/ui/FaqAccordion", () => ({
   ),
 }));
 
+vi.mock("@/components/interactive/GlitchText", () => ({
+  GlitchText: ({ children, as: Tag = "span" }: { children: React.ReactNode; as?: string }) => {
+    const El = Tag as unknown as React.ElementType;
+    return <El>{children}</El>;
+  },
+}));
+
+vi.mock("@/components/interactive/NeonBadge", () => ({
+  NeonBadge: ({ children }: { children: React.ReactNode }) => <span>{children}</span>,
+}));
+
 import { ServicesContent } from "@/components/pages/ServicesContent";
 
 afterEach(cleanup);
@@ -102,11 +109,12 @@ describe("ServicesContent", () => {
     expect(screen.getByText("hero.title")).toBeInTheDocument();
   });
 
-  it("renders service sections", () => {
+  it("renders service sections (branding, web, social, motion)", () => {
     render(<ServicesContent />);
-    expect(screen.getByText("diagnostic.title")).toBeInTheDocument();
-    expect(screen.getByText("implementation.title")).toBeInTheDocument();
-    expect(screen.getByText("coaching.title")).toBeInTheDocument();
+    expect(screen.getAllByText("branding.title").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("web.title").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("social.title").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("motion.title").length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders FAQ section", () => {
@@ -115,9 +123,13 @@ describe("ServicesContent", () => {
     expect(screen.getByTestId("faq-accordion")).toBeInTheDocument();
   });
 
-  it("renders service images", () => {
+  it("renders process section", () => {
     render(<ServicesContent />);
-    const images = document.querySelectorAll("img");
-    expect(images.length).toBeGreaterThanOrEqual(3);
+    expect(screen.getByText("process.title")).toBeInTheDocument();
+  });
+
+  it("renders hero badge", () => {
+    render(<ServicesContent />);
+    expect(screen.getByText("hero.badge")).toBeInTheDocument();
   });
 });

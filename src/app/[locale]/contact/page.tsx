@@ -13,10 +13,10 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: `https://emiliepoirierrh.ca/${locale}/contact`,
+      canonical: `https://collectif-nova.vercel.app/${locale}/contact`,
       languages: {
-        fr: "https://emiliepoirierrh.ca/fr/contact",
-        en: "https://emiliepoirierrh.ca/en/contact",
+        fr: "https://collectif-nova.vercel.app/fr/contact",
+        en: "https://collectif-nova.vercel.app/en/contact",
       },
     },
   };

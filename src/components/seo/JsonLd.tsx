@@ -21,26 +21,45 @@ export function JsonLd({ data }: JsonLdProps) {
 
 export const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "L'Usine RH",
+  "@type": "ProfessionalService",
+  additionalType: "CreativeAgency",
+  name: "Collectif Nova",
   description:
-    "Consultante RH pour PME de 15 à 50 employés au Québec. Diagnostic organisationnel, implantation de processus RH et coaching de gestionnaires.",
-  url: "https://emiliepoirierrh.ca",
+    "Agence créative spécialisée en branding, design web, stratégie social media et motion design à Montréal.",
+  url: "https://collectif-nova.vercel.app",
+  telephone: "(514) 555-0300",
+  email: "hello@collectif-nova.ca",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Québec",
+    streetAddress: "4020, rue Saint-Ambroise, bureau 350",
+    addressLocality: "Montréal",
     addressRegion: "QC",
+    postalCode: "H4C 2C7",
     addressCountry: "CA",
   },
-  areaServed: {
-    "@type": "AdministrativeArea",
-    name: "Québec",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 45.4731,
+    longitude: -73.5835,
   },
-  priceRange: "$$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  areaServed: {
+    "@type": "City",
+    name: "Montréal",
+  },
+  priceRange: "$$$",
   serviceType: [
-    "Diagnostic organisationnel",
-    "Implantation de processus RH",
-    "Coaching de gestionnaires",
+    "Branding",
+    "Web Design",
+    "Social Media Strategy",
+    "Motion Design",
   ],
   knowsLanguage: ["fr", "en"],
 };
@@ -51,46 +70,61 @@ export function buildServiceSchema(locale: string) {
     "@context": "https://schema.org",
     "@type": "Service",
     provider: {
-      "@type": "LocalBusiness",
-      name: isFr ? "L'Usine RH" : "HR Factory",
+      "@type": "ProfessionalService",
+      name: "Collectif Nova",
+      url: "https://collectif-nova.vercel.app",
     },
-    serviceType: isFr ? "Consultation RH" : "HR Consulting",
+    serviceType: isFr ? "Services créatifs" : "Creative Services",
     areaServed: {
-      "@type": "AdministrativeArea",
-      name: "Québec, Canada",
+      "@type": "City",
+      name: "Montréal, Québec, Canada",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: isFr ? "Services RH" : "HR Services",
+      name: isFr ? "Services créatifs" : "Creative Services",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: isFr ? "Diagnostic organisationnel" : "Organizational Diagnostic",
+            name: isFr ? "Branding & Identité" : "Branding & Identity",
             description: isFr
-              ? "Analyse complète de la situation RH : entretiens, audit des processus, rapport de recommandations."
-              : "Complete HR situation analysis: interviews, process audit, recommendations report.",
+              ? "Création de marques distinctives : logo, univers visuel, guidelines et positionnement stratégique."
+              : "Distinctive brand creation: logo, visual universe, guidelines and strategic positioning.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: isFr ? "Implantation de processus RH" : "HR Process Implementation",
+            name: isFr
+              ? "Design & Développement Web"
+              : "Web Design & Development",
             description: isFr
-              ? "Mise en place de processus durables : recrutement, évaluation, rétention, conformité."
-              : "Implementation of lasting processes: recruitment, evaluation, retention, compliance.",
+              ? "Sites web sur mesure, rapides et accessibles. Du design UX/UI au développement front-end."
+              : "Custom websites, fast and accessible. From UX/UI design to front-end development.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: isFr ? "Coaching de gestionnaires" : "Management Coaching",
+            name: isFr
+              ? "Stratégie Social Media"
+              : "Social Media Strategy",
             description: isFr
-              ? "Formation des gestionnaires en conversations difficiles, délégation, leadership."
-              : "Training managers in difficult conversations, delegation, leadership.",
+              ? "Planification de contenu, gestion de communauté et campagnes ciblées pour une présence sociale engageante."
+              : "Content planning, community management and targeted campaigns for an engaging social presence.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: isFr ? "Motion Design & Vidéo" : "Motion Design & Video",
+            description: isFr
+              ? "Animations, vidéos promotionnelles et contenu visuel dynamique qui capte l'attention."
+              : "Animations, promotional videos and dynamic visual content that capture attention.",
           },
         },
       ],

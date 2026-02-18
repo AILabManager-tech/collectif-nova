@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "L'Usine RH — Consultante en ressources humaines";
+export const alt = "Collectif Nova — Agence créative branding + digital";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,7 +10,7 @@ export default async function Image() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #5a7a64 0%, #3d5a45 50%, #2d4433 100%)",
+          background: "#1A1A2E",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -28,23 +28,32 @@ export default async function Image() {
             gap: "16px",
           }}
         >
-          <div style={{ fontSize: 72, fontWeight: 700, color: "#fff", letterSpacing: "-2px" }}>
-            L&apos;Usine RH
+          <div
+            style={{
+              fontSize: 72,
+              fontWeight: 700,
+              backgroundImage: "linear-gradient(135deg, #7B61FF, #00E5CC)",
+              backgroundClip: "text",
+              color: "transparent",
+              letterSpacing: "-2px",
+            }}
+          >
+            Collectif Nova
           </div>
-          <div style={{ fontSize: 28, color: "#d4c5a0", fontWeight: 400 }}>
-            Consultante en ressources humaines
+          <div style={{ fontSize: 28, color: "#F0F0F5", fontWeight: 400 }}>
+            Agence créative branding + digital
           </div>
           <div
             style={{
               marginTop: "24px",
               width: "80px",
               height: "4px",
-              background: "linear-gradient(90deg, #c4724e, #d4a85c)",
+              background: "linear-gradient(90deg, #7B61FF, #00E5CC)",
               borderRadius: "2px",
             }}
           />
-          <div style={{ fontSize: 20, color: "#c9d4cb", marginTop: "8px" }}>
-            emiliepoirierrh.ca
+          <div style={{ fontSize: 20, color: "#F0F0F5", opacity: 0.6, marginTop: "8px" }}>
+            Montréal, QC
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { render, cleanup } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import { describe, it, expect, afterEach, vi } from "vitest";
 
 vi.mock("next-intl", () => ({
@@ -38,6 +38,11 @@ vi.mock("framer-motion", () => {
       h2: mc("h2"),
       h3: mc("h3"),
       p: mc("p"),
+      svg: mc("svg"),
+      path: mc("path"),
+      line: mc("line"),
+      ellipse: mc("ellipse"),
+      g: mc("g"),
       create: (tag: string) => mc(tag),
     },
     animate: () => ({ stop: () => {} }),
@@ -46,6 +51,7 @@ vi.mock("framer-motion", () => {
     useTransform: () => 0,
     useMotionValue: (v: number = 0) => ({ set: () => {}, get: () => v }),
     useSpring: () => ({ set: () => {}, get: () => 0 }),
+    useReducedMotion: () => false,
     AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
   };
 });
@@ -72,35 +78,30 @@ vi.mock("@/components/animations/MagneticButton", () => ({
 
 afterEach(cleanup);
 
-import { CostCalculator } from "@/components/interactive/CostCalculator";
-import { DiagnosticQuiz } from "@/components/interactive/DiagnosticQuiz";
-import { FlipCards } from "@/components/interactive/FlipCards";
-import { ScrollTimeline } from "@/components/interactive/ScrollTimeline";
-import { TestimonialsCarousel } from "@/components/interactive/TestimonialsCarousel";
+import { ProjectShowcase3D } from "@/components/interactive/ProjectShowcase3D";
+import { ParticleCanvas } from "@/components/interactive/ParticleCanvas";
+import { GlitchText } from "@/components/interactive/GlitchText";
+import { NeonBadge } from "@/components/interactive/NeonBadge";
 
 describe("Interactive components smoke tests", () => {
-  it("CostCalculator renders", () => {
-    const { container } = render(<CostCalculator />);
+  it("ProjectShowcase3D renders", () => {
+    const { container } = render(<ProjectShowcase3D />);
     expect(container.firstChild).toBeTruthy();
   });
 
-  it("DiagnosticQuiz renders", () => {
-    const { container } = render(<DiagnosticQuiz />);
+  it("ParticleCanvas renders with aria-hidden", () => {
+    const { container } = render(<ParticleCanvas />);
     expect(container.firstChild).toBeTruthy();
+    expect(container.querySelector('[aria-hidden="true"]')).toBeTruthy();
   });
 
-  it("FlipCards renders", () => {
-    const { container } = render(<FlipCards />);
-    expect(container.firstChild).toBeTruthy();
+  it("GlitchText renders children", () => {
+    render(<GlitchText>Hello Nova</GlitchText>);
+    expect(screen.getByText("Hello Nova")).toBeInTheDocument();
   });
 
-  it("ScrollTimeline renders", () => {
-    const { container } = render(<ScrollTimeline />);
-    expect(container.firstChild).toBeTruthy();
-  });
-
-  it("TestimonialsCarousel renders", () => {
-    const { container } = render(<TestimonialsCarousel />);
-    expect(container.firstChild).toBeTruthy();
+  it("NeonBadge renders children", () => {
+    render(<NeonBadge>Branding</NeonBadge>);
+    expect(screen.getByText("Branding")).toBeInTheDocument();
   });
 });

@@ -22,28 +22,51 @@ vi.mock("@/i18n/routing", () => ({
   ),
 }));
 
-vi.mock("framer-motion", () => ({
-  motion: {
-    div: ({
-      children,
-      className,
-      ...rest
-    }: React.HTMLAttributes<HTMLDivElement>) => (
-      <div className={className} {...rest}>
-        {children}
-      </div>
+vi.mock("framer-motion", () => {
+  const mc = (Tag: string) => {
+    const FM_PROPS = new Set([
+      "initial", "animate", "exit", "transition", "whileInView",
+      "viewport", "variants", "whileHover", "whileTap", "layout",
+      "layoutId",
+    ]);
+    const C = ({ children, ...props }: Record<string, unknown>) => {
+      const safe: Record<string, unknown> = {};
+      for (const [k, v] of Object.entries(props)) {
+        if (!FM_PROPS.has(k) && typeof v !== "object" && typeof v !== "function") {
+          safe[k] = v;
+        }
+      }
+      const El = Tag as unknown as React.ElementType;
+      return <El {...safe}>{children as React.ReactNode}</El>;
+    };
+    C.displayName = `motion.${Tag}`;
+    return C;
+  };
+  return {
+    motion: {
+      div: mc("div"),
+      span: mc("span"),
+      button: mc("button"),
+      section: mc("section"),
+      a: mc("a"),
+      h1: mc("h1"),
+      h2: mc("h2"),
+      h3: mc("h3"),
+      p: mc("p"),
+      create: (tag: string) => mc(tag),
+    },
+    animate: () => ({ stop: () => {} }),
+    useInView: () => true,
+    useScroll: () => ({ scrollYProgress: { get: () => 0.5 } }),
+    useTransform: () => 0,
+    useMotionValue: (v: number = 0) => ({ set: () => {}, get: () => v }),
+    useSpring: () => ({ set: () => {}, get: () => 0 }),
+    useReducedMotion: () => false,
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => (
+      <>{children}</>
     ),
-    span: ({
-      children,
-      ...rest
-    }: React.HTMLAttributes<HTMLSpanElement>) => (
-      <span {...rest}>{children}</span>
-    ),
-  },
-  AnimatePresence: ({ children }: { children: React.ReactNode }) => (
-    <>{children}</>
-  ),
-}));
+  };
+});
 
 vi.mock("next/image", () => ({
   default: (props: { alt: string; src: string }) => (
@@ -59,27 +82,45 @@ vi.mock("@/components/animations/TextReveal", () => ({
   }) => <h2>{children}</h2>,
 }));
 
-vi.mock("@/components/animations/AuroraBackground", () => ({
-  AuroraBackground: () => <div data-testid="aurora" />,
-}));
-
 vi.mock("@/components/animations/LineReveal", () => ({
   LineReveal: () => <div data-testid="line-reveal" />,
 }));
 
-vi.mock("@/components/animations/CountUp", () => ({
-  CountUp: ({ to, suffix }: { to: number; suffix: string }) => (
-    <span>
-      {to}
-      {suffix}
-    </span>
-  ),
+vi.mock("@/components/animations/MagneticButton", () => ({
+  MagneticButton: ({
+    children,
+    href,
+  }: {
+    children: React.ReactNode;
+    href: string;
+  }) => <a href={href}>{children}</a>,
+}));
+
+vi.mock("@/components/animations/StaggerGrid", () => ({
+  StaggerGrid: ({
+    children,
+    className,
+  }: {
+    children: React.ReactNode;
+    className?: string;
+  }) => <div className={className}>{children}</div>,
 }));
 
 vi.mock("@/components/ui/AnimatedSection", () => ({
   AnimatedSection: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
   ),
+}));
+
+vi.mock("@/components/interactive/GlitchText", () => ({
+  GlitchText: ({ children, as: Tag = "span" }: { children: React.ReactNode; as?: string }) => {
+    const El = Tag as unknown as React.ElementType;
+    return <El>{children}</El>;
+  },
+}));
+
+vi.mock("@/components/interactive/NeonBadge", () => ({
+  NeonBadge: ({ children }: { children: React.ReactNode }) => <span>{children}</span>,
 }));
 
 import { AboutContent } from "@/components/pages/AboutContent";
@@ -103,22 +144,34 @@ describe("AboutContent", () => {
     expect(screen.getByText("story.p1")).toBeInTheDocument();
   });
 
-  it("renders philosophy section", () => {
+  it("renders values section", () => {
     render(<AboutContent />);
-    expect(screen.getByText("philosophy.title")).toBeInTheDocument();
+    expect(screen.getByText("values.title")).toBeInTheDocument();
   });
 
-  it("renders value cards", () => {
+  it("renders value cards (innovation, authenticity, impact)", () => {
     render(<AboutContent />);
-    expect(screen.getByText("empathy.title")).toBeInTheDocument();
-    expect(screen.getByText("transparency.title")).toBeInTheDocument();
-    expect(screen.getByText("autonomy.title")).toBeInTheDocument();
+    expect(screen.getByText("values.innovation.title")).toBeInTheDocument();
+    expect(screen.getByText("values.authenticity.title")).toBeInTheDocument();
+    expect(screen.getByText("values.impact.title")).toBeInTheDocument();
   });
 
-  it("renders stats section", () => {
+  it("renders team section", () => {
     render(<AboutContent />);
-    expect(screen.getByText("12 ans")).toBeInTheDocument();
-    expect(screen.getByText("3 ans")).toBeInTheDocument();
-    expect(screen.getByText("100%")).toBeInTheDocument();
+    expect(screen.getByText("team.title")).toBeInTheDocument();
+    expect(screen.getByText("team.subtitle")).toBeInTheDocument();
+  });
+
+  it("renders team members", () => {
+    render(<AboutContent />);
+    expect(screen.getByText("team.alex.name")).toBeInTheDocument();
+    expect(screen.getByText("team.sam.name")).toBeInTheDocument();
+    expect(screen.getByText("team.jules.name")).toBeInTheDocument();
+  });
+
+  it("renders CTA section", () => {
+    render(<AboutContent />);
+    expect(screen.getByText("cta.title")).toBeInTheDocument();
+    expect(screen.getByText("cta.button")).toBeInTheDocument();
   });
 });
