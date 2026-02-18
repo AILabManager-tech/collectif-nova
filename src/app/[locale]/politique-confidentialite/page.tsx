@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
       <h1 className="mb-8 font-heading text-3xl font-bold text-gris-50">
         {isFr ? "Politique de confidentialité" : "Privacy Policy"}
       </h1>
-      <p className="mb-8 text-sm text-gris-400">
+      <p className="mb-8 text-sm text-gris-300">
         {isFr ? "Dernière mise à jour : février 2026" : "Last updated: February 2026"}
       </p>
 

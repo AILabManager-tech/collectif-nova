@@ -134,7 +134,7 @@ function ProjectCard({
       <div
         className={`flex h-48 items-center justify-center bg-gradient-to-br ${PROJECT_GRADIENTS[projectKey]} bg-[#1A1A2E]`}
       >
-        <div className="text-[#F0F0F5]/60 transition-colors group-hover:text-[#7B61FF]">
+        <div className="text-[#F0F0F5]/70 transition-colors group-hover:text-[#7B61FF]">
           {PROJECT_ICONS[projectKey]}
         </div>
       </div>
@@ -306,7 +306,7 @@ export function ProjectShowcase3D() {
           <h2 className="mb-3 font-heading text-3xl font-bold text-[#F0F0F5] lg:text-4xl">
             {t("title")}
           </h2>
-          <p className="mx-auto max-w-xl font-body text-[#F0F0F5]/60">
+          <p className="mx-auto max-w-xl font-body text-[#F0F0F5]/70">
             {t("subtitle")}
           </p>
         </motion.div>

@@ -52,7 +52,7 @@ export function Footer() {
               </p>
             </div>
             <p className="text-sm text-gris-400 mb-4">{t("description")}</p>
-            <address className="not-italic text-sm text-gris-500 space-y-1">
+            <address className="not-italic text-sm text-gris-400 space-y-1">
               <p>4020, rue Saint-Ambroise</p>
               <p>Bureau 350</p>
               <p>Montreal, QC H4C 2C7</p>
@@ -77,9 +77,9 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gris-500">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-gris-400">
               Services
-            </h4>
+            </p>
             <div className="flex flex-col gap-2 text-sm">
               <Link href="/services" className="text-gris-400 transition-colors hover:text-violet-400">
                 Branding & Identite
@@ -98,9 +98,9 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gris-500">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-gris-400">
               {t("nav_title")}
-            </h4>
+            </p>
             <div className="flex flex-col gap-2">
               <Link href="/" className="text-sm text-gris-400 transition-colors hover:text-violet-400">
                 {nav("home")}
@@ -119,17 +119,17 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gris-500">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-gris-400">
               {t("newsletter.title")}
-            </h4>
-            <p className="mb-3 text-sm text-gris-500">
+            </p>
+            <p className="mb-3 text-sm text-gris-400">
               {t("newsletter.description")}
             </p>
             <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
                 placeholder={t("newsletter.placeholder")}
-                className="flex-1 rounded-lg border border-gris-800 bg-noir-800 px-3 py-2 text-sm text-gris-100 placeholder:text-gris-600 focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500/50"
+                className="flex-1 rounded-lg border border-gris-800 bg-noir-800 px-3 py-2 text-sm text-gris-100 placeholder:text-gris-400 focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500/50"
                 aria-label={t("newsletter.placeholder")}
               />
               <button
@@ -147,7 +147,7 @@ export function Footer() {
                 href="https://instagram.com/collectifnova"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gris-500 transition-colors hover:text-violet-400"
+                className="text-gris-400 transition-colors hover:text-violet-400"
                 aria-label="Instagram"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -159,7 +159,7 @@ export function Footer() {
                 href="https://linkedin.com/company/collectif-nova"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gris-500 transition-colors hover:text-violet-400"
+                className="text-gris-400 transition-colors hover:text-violet-400"
                 aria-label="LinkedIn"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -171,7 +171,7 @@ export function Footer() {
                 href="https://behance.net/collectifnova"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gris-500 transition-colors hover:text-violet-400"
+                className="text-gris-400 transition-colors hover:text-violet-400"
                 aria-label="Behance"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -183,7 +183,7 @@ export function Footer() {
                 href="https://dribbble.com/collectifnova"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gris-500 transition-colors hover:text-violet-400"
+                className="text-gris-400 transition-colors hover:text-violet-400"
                 aria-label="Dribbble"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -195,7 +195,7 @@ export function Footer() {
         </div>
 
         {/* RPP notice - Loi 25 */}
-        <p className="mt-8 text-center text-xs text-gris-600">
+        <p className="mt-8 text-center text-xs text-gris-400">
           {t("rpp")}
         </p>
 
@@ -204,19 +204,19 @@ export function Footer() {
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6">
           <Link
             href="/politique-confidentialite"
-            className="text-xs text-gris-500 transition-colors hover:text-violet-400"
+            className="text-xs text-gris-400 transition-colors hover:text-violet-400"
           >
             {t("privacy")}
           </Link>
           <Link
             href="/mentions-legales"
-            className="text-xs text-gris-500 transition-colors hover:text-violet-400"
+            className="text-xs text-gris-400 transition-colors hover:text-violet-400"
           >
             {t("mentions")}
           </Link>
           <CookieSettingsButton />
         </div>
-        <div className="mt-4 text-center text-xs text-gris-500">
+        <div className="mt-4 text-center text-xs text-gris-400">
           {t("copyright")}
         </div>
       </div>

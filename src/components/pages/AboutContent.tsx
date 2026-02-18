@@ -90,7 +90,7 @@ export function AboutContent() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.4} direction="none">
-            <p className="text-lg text-[#F0F0F5]/60 md:text-xl font-body">
+            <p className="text-lg text-[#F0F0F5]/70 md:text-xl font-body">
               {t("hero.subtitle")}
             </p>
           </AnimatedSection>
@@ -149,7 +149,7 @@ export function AboutContent() {
                   <h3 className="mb-3 font-heading text-xl font-semibold text-[#F0F0F5]">
                     {t(`values.${key}.title`)}
                   </h3>
-                  <p className="text-[#F0F0F5]/60 leading-relaxed font-body">
+                  <p className="text-[#F0F0F5]/70 leading-relaxed font-body">
                     {t(`values.${key}.description`)}
                   </p>
                 </motion.div>
@@ -170,7 +170,7 @@ export function AboutContent() {
             </TextReveal>
           </AnimatedSection>
           <AnimatedSection delay={0.2} direction="none">
-            <p className="mx-auto mb-4 max-w-xl text-center text-lg text-[#F0F0F5]/60 font-body">
+            <p className="mx-auto mb-4 max-w-xl text-center text-lg text-[#F0F0F5]/70 font-body">
               {t("team.subtitle")}
             </p>
           </AnimatedSection>
@@ -196,7 +196,7 @@ export function AboutContent() {
                 <p className="mb-3 text-sm text-[#7B61FF] font-medium">
                   {t(`team.${key}.role`)}
                 </p>
-                <p className="text-sm text-[#F0F0F5]/50 leading-relaxed font-body">
+                <p className="text-sm text-[#F0F0F5]/70 leading-relaxed font-body">
                   {t(`team.${key}.bio`)}
                 </p>
               </motion.div>

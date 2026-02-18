@@ -107,7 +107,7 @@ export function ServicesContent() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.4} direction="none">
-            <p className="text-lg text-[#F0F0F5]/60 md:text-xl font-body">
+            <p className="text-lg text-[#F0F0F5]/70 md:text-xl font-body">
               {t("hero.subtitle")}
             </p>
           </AnimatedSection>
@@ -151,7 +151,7 @@ export function ServicesContent() {
                     </h2>
                   </div>
 
-                  <p className="mb-6 text-lg text-[#F0F0F5]/60 font-body">
+                  <p className="mb-6 text-lg text-[#F0F0F5]/70 font-body">
                     {t(`${key}.description`)}
                   </p>
 
@@ -225,7 +225,7 @@ export function ServicesContent() {
                 <h3 className="mb-2 font-heading text-lg font-semibold text-[#F0F0F5]">
                   {t(`process.${step}.title`)}
                 </h3>
-                <p className="text-sm text-[#F0F0F5]/50 font-body">
+                <p className="text-sm text-[#F0F0F5]/70 font-body">
                   {t(`process.${step}.description`)}
                 </p>
               </div>

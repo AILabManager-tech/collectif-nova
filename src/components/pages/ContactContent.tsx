@@ -122,7 +122,7 @@ export function ContactContent() {
 
   /* Shared input classes — dark mode */
   const inputClass =
-    "w-full rounded-xl border border-[#F0F0F5]/10 bg-[#1A1A2E] px-4 py-3 text-[#F0F0F5] font-body transition-all placeholder:text-[#F0F0F5]/30 focus:border-[#7B61FF] focus:outline-none focus:ring-2 focus:ring-[#7B61FF]/20";
+    "w-full rounded-xl border border-[#F0F0F5]/10 bg-[#1A1A2E] px-4 py-3 text-[#F0F0F5] font-body transition-all placeholder:text-[#F0F0F5]/50 focus:border-[#7B61FF] focus:outline-none focus:ring-2 focus:ring-[#7B61FF]/20";
 
   const labelClass = "mb-1.5 block text-sm font-medium text-[#F0F0F5]/80";
 
@@ -153,7 +153,7 @@ export function ContactContent() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.4} direction="none">
-            <p className="text-lg text-[#F0F0F5]/60 md:text-xl font-body">
+            <p className="text-lg text-[#F0F0F5]/70 md:text-xl font-body">
               {t("hero.subtitle")}
             </p>
           </AnimatedSection>
@@ -209,7 +209,7 @@ export function ContactContent() {
                   <div>
                     <label htmlFor="company" className={labelClass}>
                       {t("form.company")}{" "}
-                      <span className="text-[#F0F0F5]/30 text-xs">
+                      <span className="text-[#F0F0F5]/50 text-xs">
                         ({t("form.optional")})
                       </span>
                     </label>
@@ -292,7 +292,7 @@ export function ContactContent() {
                     required
                     className="mt-1 h-4 w-4 rounded border-[#F0F0F5]/20 bg-[#1A1A2E] text-[#7B61FF] focus:ring-[#7B61FF]/20"
                   />
-                  <span className="text-sm text-[#F0F0F5]/60 font-body">
+                  <span className="text-sm text-[#F0F0F5]/70 font-body">
                     {t("form.consent_notice")}{" "}
                     <Link
                       href="/politique-confidentialite"
@@ -335,7 +335,7 @@ export function ContactContent() {
                   )}
                 </Button>
 
-                <p className="text-sm text-[#F0F0F5]/40 font-body">
+                <p className="text-sm text-[#F0F0F5]/70 font-body">
                   {t("form.response_time")}
                 </p>
               </form>
@@ -345,9 +345,9 @@ export function ContactContent() {
             <AnimatedSection direction="right" delay={0.2} className="md:col-span-2">
               {/* Info card */}
               <div className="rounded-2xl border border-[#7B61FF]/20 bg-[#1A1A2E] p-8">
-                <h3 className="mb-6 font-heading text-xl font-semibold text-[#F0F0F5]">
+                <h2 className="mb-6 font-heading text-xl font-semibold text-[#F0F0F5]">
                   {t("info.title")}
-                </h3>
+                </h2>
                 <div className="space-y-6">
                   {/* Address */}
                   <div className="flex items-start gap-3">
@@ -412,10 +412,10 @@ export function ContactContent() {
 
               {/* Loi 25 notice */}
               <div className="mt-6 rounded-2xl border border-[#00E5CC]/20 bg-[#00E5CC]/5 p-6">
-                <h4 className="mb-2 font-heading text-sm font-semibold text-[#00E5CC]">
+                <h3 className="mb-2 font-heading text-sm font-semibold text-[#00E5CC]">
                   {t("loi25.title")}
-                </h4>
-                <p className="text-sm text-[#F0F0F5]/50 leading-relaxed font-body">
+                </h3>
+                <p className="text-sm text-[#F0F0F5]/70 leading-relaxed font-body">
                   {t("loi25.notice")}{" "}
                   <Link
                     href="/politique-confidentialite"
@@ -430,7 +430,7 @@ export function ContactContent() {
               <div className="mt-6 flex h-48 items-center justify-center rounded-2xl border border-[#F0F0F5]/10 bg-gradient-to-br from-[#1A1A2E] to-[#0D0D0D]">
                 <div className="text-center">
                   <MapPin className="mx-auto mb-2 h-8 w-8 text-[#7B61FF]/40" strokeWidth={1.5} />
-                  <p className="text-sm text-[#F0F0F5]/30 font-body">
+                  <p className="text-sm text-[#F0F0F5]/50 font-body">
                     {t("map.placeholder")}
                   </p>
                 </div>

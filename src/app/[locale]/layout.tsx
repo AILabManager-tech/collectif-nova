@@ -8,7 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ClientWidgets } from "@/components/layout/ClientWidgets";
 import { JsonLd, localBusinessSchema } from "@/components/seo/JsonLd";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "../globals.css";
 
 // NEXOS: Typographie audacieuse futuriste — Collectif Nova
@@ -56,10 +56,13 @@ export async function generateMetadata({
         en: "https://collectif-nova.vercel.app/en",
       },
     },
-    themeColor: "#7B61FF",
     icons: { icon: "/favicon.ico" },
   };
 }
+
+export const viewport: Viewport = {
+  themeColor: "#7B61FF",
+};
 
 interface RootLayoutProps {
   children: ReactNode;

@@ -117,8 +117,8 @@ export function CookieConsent() {
               />
               <div>
                 <span className="font-medium text-gris-100">Essentiels</span>
-                <span className="ml-2 text-xs text-gris-500">(toujours actifs)</span>
-                <p className="mt-1 text-xs text-gris-500">
+                <span className="ml-2 text-xs text-gris-400">(toujours actifs)</span>
+                <p className="mt-1 text-xs text-gris-400">
                   Nécessaires au fonctionnement du site. Ne peuvent pas être désactivés.
                 </p>
               </div>
@@ -134,7 +134,7 @@ export function CookieConsent() {
               />
               <div>
                 <span className="font-medium text-gris-100">Analytiques</span>
-                <p className="mt-1 text-xs text-gris-500">
+                <p className="mt-1 text-xs text-gris-400">
                   Nous aident à comprendre comment les visiteurs utilisent le site (ex. : Google Analytics).
                 </p>
               </div>
@@ -150,7 +150,7 @@ export function CookieConsent() {
               />
               <div>
                 <span className="font-medium text-gris-100">Marketing</span>
-                <p className="mt-1 text-xs text-gris-500">
+                <p className="mt-1 text-xs text-gris-400">
                   Utilisés pour afficher des publicités pertinentes et mesurer leur efficacité.
                 </p>
               </div>
@@ -194,7 +194,7 @@ export function CookieConsent() {
           </button>
         </div>
 
-        <p className="mt-3 text-center text-xs text-gris-500">
+        <p className="mt-3 text-center text-xs text-gris-400">
           Pour en savoir plus, consultez notre{" "}
           <Link
             href="/fr/politique-confidentialite"
@@ -218,7 +218,7 @@ export function CookieSettingsButton() {
   return (
     <button
       onClick={handleOpen}
-      className="text-xs text-gris-500 underline transition-colors hover:text-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-500"
+      className="text-xs text-gris-400 underline transition-colors hover:text-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-500"
       aria-label="Modifier mes préférences de témoins"
     >
       Gestion des témoins

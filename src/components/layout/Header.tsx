@@ -82,7 +82,7 @@ export function Header() {
           {/* Language switcher */}
           <button
             onClick={switchLocale}
-            className="rounded-lg border border-gris-700 bg-noir-700/50 px-3 py-1.5 text-xs font-medium text-gris-400 transition-all hover:border-violet-500/50 hover:text-violet-400 hover:bg-noir-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-800"
+            className="rounded-lg border border-gris-700 bg-noir-700/50 px-3 py-1.5 text-xs font-medium text-gris-300 transition-all hover:border-violet-500/50 hover:text-violet-400 hover:bg-noir-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-800"
             aria-label={locale === "fr" ? "Passer a l'anglais" : "Switch to French"}
           >
             {locale === "fr" ? "EN" : "FR"}
@@ -147,7 +147,7 @@ export function Header() {
             <div className="flex items-center gap-4 pt-2">
               <button
                 onClick={switchLocale}
-                className="rounded-lg border border-gris-700 px-3 py-1.5 text-sm text-gris-400 hover:text-violet-400 hover:border-violet-500/50 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-900"
+                className="rounded-lg border border-gris-700 px-3 py-1.5 text-sm text-gris-300 hover:text-violet-400 hover:border-violet-500/50 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-noir-900"
                 aria-label={locale === "fr" ? "Switch to English" : "Passer au francais"}
               >
                 {locale === "fr" ? "English" : "Francais"}

@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
 import { Palette, Globe, Share2, Video } from "lucide-react";
-import { ParticleCanvas } from "@/components/interactive/ParticleCanvas";
 import { GlitchText } from "@/components/interactive/GlitchText";
 import { NeonBadge } from "@/components/interactive/NeonBadge";
-import { ProjectShowcase3D } from "@/components/interactive/ProjectShowcase3D";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { LineReveal } from "@/components/animations/LineReveal";
 import { CountUp } from "@/components/animations/CountUp";
@@ -15,6 +14,16 @@ import { FloatingElement } from "@/components/animations/FloatingElement";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { StaggerGrid } from "@/components/animations/StaggerGrid";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+
+const ParticleCanvas = dynamic(
+  () => import("@/components/interactive/ParticleCanvas").then((m) => ({ default: m.ParticleCanvas })),
+  { ssr: false, loading: () => null }
+);
+
+const ProjectShowcase3D = dynamic(
+  () => import("@/components/interactive/ProjectShowcase3D").then((m) => ({ default: m.ProjectShowcase3D })),
+  { ssr: false, loading: () => <div className="bg-[#0D0D0D] py-16 lg:py-24" /> }
+);
 
 /* ------------------------------------------------------------------ */
 /*  Service card data                                                  */
@@ -69,7 +78,7 @@ function TestimonialCard({ index, prefersReduced }: TestimonialCardProps) {
         ))}
       </div>
 
-      <p className="mb-6 flex-1 text-[#F0F0F5]/70 leading-relaxed italic">
+      <p className="mb-6 flex-1 text-[#F0F0F5]/80 leading-relaxed italic">
         &ldquo;{t(`${index}.quote`)}&rdquo;
       </p>
 
@@ -79,7 +88,7 @@ function TestimonialCard({ index, prefersReduced }: TestimonialCardProps) {
         </div>
         <div>
           <p className="text-sm font-medium text-[#F0F0F5]">{t(`${index}.name`)}</p>
-          <p className="text-xs text-[#F0F0F5]/50">{t(`${index}.role`)}</p>
+          <p className="text-xs text-[#F0F0F5]/70">{t(`${index}.role`)}</p>
         </div>
       </footer>
     </motion.blockquote>
@@ -189,25 +198,25 @@ export function HomeContent() {
                 <p className="font-heading text-3xl font-bold text-[#7B61FF] md:text-4xl">
                   <CountUp to={12} suffix="+" />
                 </p>
-                <p className="mt-1 text-sm text-[#F0F0F5]/50">{t("stats.experience")}</p>
+                <p className="mt-1 text-sm text-[#F0F0F5]/70">{t("stats.experience")}</p>
               </div>
               <div>
                 <p className="font-heading text-3xl font-bold text-[#00E5CC] md:text-4xl">
                   <CountUp to={200} suffix="+" />
                 </p>
-                <p className="mt-1 text-sm text-[#F0F0F5]/50">{t("stats.projects")}</p>
+                <p className="mt-1 text-sm text-[#F0F0F5]/70">{t("stats.projects")}</p>
               </div>
               <div>
                 <p className="font-heading text-3xl font-bold text-[#7B61FF] md:text-4xl">
                   <CountUp to={95} suffix="%" />
                 </p>
-                <p className="mt-1 text-sm text-[#F0F0F5]/50">{t("stats.satisfaction")}</p>
+                <p className="mt-1 text-sm text-[#F0F0F5]/70">{t("stats.satisfaction")}</p>
               </div>
               <div>
                 <p className="font-heading text-3xl font-bold text-[#00E5CC] md:text-4xl">
                   <CountUp to={4} />
                 </p>
-                <p className="mt-1 text-sm text-[#F0F0F5]/50">{t("stats.expertises")}</p>
+                <p className="mt-1 text-sm text-[#F0F0F5]/70">{t("stats.expertises")}</p>
               </div>
             </div>
           </div>
@@ -225,7 +234,7 @@ export function HomeContent() {
             </TextReveal>
           </AnimatedSection>
           <AnimatedSection delay={0.2} direction="none">
-            <p className="mx-auto mb-4 max-w-xl text-center text-lg text-[#F0F0F5]/60 font-body">
+            <p className="mx-auto mb-4 max-w-xl text-center text-lg text-[#F0F0F5]/70 font-body">
               {t("services.subtitle")}
             </p>
           </AnimatedSection>
@@ -248,7 +257,7 @@ export function HomeContent() {
                   <h3 className={`mb-2 font-heading text-lg font-semibold ${colors.text} transition-colors`}>
                     {t(`services.${key}.title`)}
                   </h3>
-                  <p className="text-sm text-[#F0F0F5]/50 leading-relaxed font-body">
+                  <p className="text-sm text-[#F0F0F5]/70 leading-relaxed font-body">
                     {t(`services.${key}.description`)}
                   </p>
                 </Link>
