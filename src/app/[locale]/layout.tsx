@@ -84,10 +84,8 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
-      <head>
-        <title>Collectif Nova — Agence créative à Montréal</title>
-        <meta name="description" content={locale === 'fr' ? "Collectif Nova : branding, design web, stratégie social media et motion design à Montréal. Une agence créative qui transforme votre vision en expériences numériques mémorables." : 'Collectif Nova: branding, web design, social media strategy and motion design in Montreal. A creative agency that transforms your vision into memorable digital experiences.'} />
-      </head>
+      <head />
+
       <body className="font-body bg-noir-800 text-gris-100 antialiased">
         <a
           href="#main-content"
